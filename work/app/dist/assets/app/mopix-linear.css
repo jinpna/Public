@@ -254,3 +254,18 @@ html body #root#root .mopix-image-tools .image-preset-grid>button{display:flex!i
 html body #root#root .mopix-image-tools .image-preset-grid>button svg{width:23px!important;height:23px!important;color:inherit!important;flex:none!important}
 html body #root#root .mopix-image-tools .image-preset-grid>button[aria-pressed=true]{background:#202122!important;color:#d0d6e0!important;border-color:#ffffff30!important}
 html body #root#root .mopix-image-tools .image-preset-grid>button:hover:not(:disabled){background:#1c1d1e!important;color:#d0d6e0!important;border-color:#ffffff24!important}
+/* The home composer is one writing surface, with a quiet utility row. */
+html body #root#root :is(.alara-rail,.alara-gallery){border-radius:8px!important}
+html body #root#root .alara-image-stage{border-radius:4px!important}
+html body #root#root .alara-rail .muse-home-six .mopix-home-composer{background:#111213!important;border:1px solid #ffffff12!important;border-radius:6px!important;box-shadow:none!important;gap:8px!important;padding:12px!important;transition:border-color .2s ease!important}
+html body #root#root .alara-rail .muse-home-six .mopix-home-composer:focus-within{border-color:#ffffff2b!important}
+html body #root#root .alara-rail .muse-home-six .mopix-home-composer textarea{background:transparent!important;border:0!important;border-radius:0!important;outline:none!important;box-shadow:none!important;padding:10px 4px!important;resize:none!important;font-size:15px!important;line-height:1.65!important}
+html body #root#root .alara-rail .mopix-home-composer .mopix-quick-mode{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;gap:4px!important}
+html body #root#root .alara-rail .mopix-home-composer .mopix-quick-mode button{background:transparent!important;border:0!important;border-radius:4px!important;box-shadow:none!important;color:#62666d!important;padding:6px 10px!important}
+html body #root#root .alara-rail .mopix-home-composer .mopix-quick-mode button[aria-pressed=true]{background:#ffffff08!important;color:#d0d6e0!important}
+html body #root#root .alara-rail .mopix-home-composer>header>button{background:transparent!important;border:0!important;border-radius:4px!important;color:#62666d!important;box-shadow:none!important}
+html body #root#root .alara-rail .mopix-home-composer>footer{border-top:1px solid #ffffff0d!important;padding-top:10px!important;flex-wrap:nowrap!important;gap:4px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>:is(button,select){background:transparent!important;border-color:transparent!important;border-radius:4px!important;box-shadow:none!important;color:#8a8f98!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>button:first-child{width:32px!important;padding:6px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>select{width:auto!important;max-width:82px!important;padding:6px!important}
+html body #root#root .alara-rail .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn{border-radius:6px!important;margin-left:auto!important;min-width:76px!important}
