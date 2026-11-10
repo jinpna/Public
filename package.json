@@ -1,0 +1,19 @@
+{
+  "name": "mopix-workspace",
+  "version": "1.1.0",
+  "private": true,
+  "description": "MOPIX desktop interface and runtime snapshot",
+  "scripts": {
+    "build:css": "node work/build-mopix-css.cjs",
+    "preview": "node work/preview.cjs",
+    "start:server": "cd work/app && node dist/server/index.js",
+    "check:tools": "node work/check-ten-tools.cjs",
+    "check:fonts": "node work/check-inter-tight.cjs",
+    "check:no-film": "node work/check-no-film.cjs",
+    "package:installed": "python3 work/package-update.py"
+  },
+  "devDependencies": {
+    "lightningcss": "1.33.0",
+    "playwright": "1.64.1"
+  }
+}

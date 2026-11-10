@@ -1,0 +1,256 @@
+/* Linear reference adapted to the MOPIX desktop workspace. */
+:root{
+ --mopix-bg:#08090a;--mopix-stage:#090a0b;--mopix-panel:#0f1011;
+ --mopix-input:#141516;--mopix-control:#141516;--mopix-hover:#1c1d1e;--mopix-active:#262727;
+ --mopix-fg:#f7f8f8;--mopix-muted:#8a8f98;--mopix-subtle:#62666d;
+ --mopix-line:rgba(255,255,255,.08);--mopix-line-active:rgba(255,255,255,.12);
+ --mopix-radius:12px;--mopix-control-size:44px;--mopix-font:15px;
+ --mopix-action:#e5e5e6;--mopix-silver:#d0d6e0;--mopix-rule:#23252a;
+ --muse-ink:var(--mopix-bg);--muse-stage:var(--mopix-stage);--muse-surface:var(--mopix-panel);--muse-raised:var(--mopix-control);--muse-text:var(--mopix-fg);--muse-muted:var(--mopix-muted);--muse-rule:var(--mopix-line);
+}
+html body #root#root{font-family:Inter,MuseInter,-apple-system,system-ui,sans-serif!important;font-feature-settings:'cv01','ss03';letter-spacing:-.011em;color:var(--mopix-fg)!important;background:var(--mopix-bg)!important}
+html body #root#root .monday-editor-shell{background:var(--mopix-bg)!important}
+html body #root#root :is(h1,h2,h3,h4){color:var(--mopix-fg)!important;font-weight:510!important;letter-spacing:-.022em!important}
+html body #root#root :is(h1,h2){font-size:24px!important;line-height:1.2!important}
+html body #root#root :is(p,small,.sx-hint,.native-description,.quick-footnote){color:var(--mopix-muted)!important;line-height:1.6!important}
+html body #root#root :is(label,.quick-prompt-label){color:var(--mopix-silver)!important;font-size:13px!important;font-weight:500!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel,.muse-viewer,.muse-tools-drawer,.mopix-home-composer,.mopix-media-library,.mopix-upscale-input,.mopix-upscale-result,.muse-settings-content,.batch-composer,.batch-results,.movie-setup,.asset-picker,.recraft-inspiration){background:var(--mopix-panel)!important;background-image:none!important;border:1px solid var(--mopix-line-active)!important;border-radius:12px!important;box-shadow:0 2px 32px #00000020!important}
+html body #root#root :is(input:not([type=range]):not([type=checkbox]):not([type=file]),textarea,select,[contenteditable=true],.muse-prompt-editor),html body #root#root .muse-home-six .mopix-home-composer textarea{color:var(--mopix-silver)!important;background:var(--mopix-input)!important;background-image:none!important;border:1px solid var(--mopix-line)!important;border-radius:8px!important;box-shadow:none!important;font-size:15px!important;line-height:1.6!important}
+html body #root#root :is(textarea,[contenteditable=true]){padding:16px!important}
+html body #root#root :is(input,textarea,[contenteditable=true])::placeholder{color:var(--mopix-subtle)!important;-webkit-text-fill-color:var(--mopix-subtle)!important}
+html body #root#root [contenteditable=true]:empty:before{color:var(--mopix-subtle)!important;-webkit-text-fill-color:var(--mopix-subtle)!important}
+html body #root#root :is(input,textarea,select,[contenteditable=true]):is(:focus,:focus-visible){outline:none!important;border-color:#62666d!important;box-shadow:0 0 0 2px #ffffff08!important}
+html body #root#root :is(button,a){transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease,scale .16s ease!important}
+html body #root#root button:active:not(:disabled){scale:.97}
+html body #root#root :is(.sx-btn,.library-local-tabs button,.muse-settings-tabs button,.mopix-home-composer>footer>button,.mopix-home-composer>footer>select){min-height:44px!important;border-radius:9999px!important;background:var(--mopix-control)!important;border:1px solid var(--mopix-line)!important;color:var(--mopix-silver)!important;font-weight:510!important;font-size:13px!important;box-shadow:none!important}
+html body #root#root :is(.sx-btn,.library-local-tabs button,.muse-settings-tabs button):hover:not(:disabled){background:var(--mopix-hover)!important;border-color:var(--mopix-line-active)!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary),html body #root#root .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn.muse-pixel-button{background:var(--mopix-action)!important;color:#08090a!important;border:1px solid var(--mopix-action)!important;border-radius:9999px!important;min-height:44px!important;height:44px!important;font-size:15px!important;font-weight:510!important;box-shadow:none!important;padding:0 20px!important;overflow:hidden!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary) :is(span,svg){color:#08090a!important;-webkit-text-fill-color:#08090a!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary):hover:not(:disabled){background:#f7f8f8!important;border-color:#f7f8f8!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary):disabled,html body #root#root .muse-home-six .mopix-home-composer button.muse-create-action:disabled{background:#262727!important;border-color:#ffffff08!important;color:#8a8f98!important;opacity:1!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit):disabled :is(span,svg){color:#8a8f98!important}
+html body #root#root .muse-pixel-canvas{mix-blend-mode:multiply;opacity:.18!important;border-radius:inherit!important}
+html body #root#root .muse-global-nav>nav{height:52px!important;padding:5px!important;background:#0f1011e6!important;border:1px solid var(--mopix-line-active)!important;border-radius:9999px!important;box-shadow:0 2px 32px #0004!important}
+html body #root#root .muse-global-nav>nav>button{height:40px!important;min-height:40px!important;width:44px!important;min-width:44px!important;max-width:44px!important;flex-basis:44px!important;border-radius:9999px!important;color:var(--mopix-muted)!important}
+html body #root#root .muse-global-nav>nav>button svg{width:19px!important;height:19px!important}
+html body #root#root .muse-global-nav>nav>button:is(:hover,[aria-current=page]){color:var(--mopix-fg)!important;background:#ffffff0d!important}
+html body #root#root .muse-global-nav .nav-focus-lens{height:40px!important;top:5px!important;border-radius:9999px!important;background:#ffffff08!important}
+html body #muse-language-toggle{background:var(--mopix-panel)!important;border-color:var(--mopix-line-active)!important;color:var(--mopix-muted)!important}
+html body #root#root :is(.mopix-quick-mode,.image-series-toggle,.canvas-view-tabs,.library-local-tabs){background:var(--mopix-stage)!important;border-color:var(--mopix-line)!important;border-radius:9999px!important}
+html body #root#root :is(.mopix-quick-mode button,.image-series-toggle>button,.canvas-view-tabs button){border-radius:9999px!important;color:var(--mopix-muted)!important;font-size:13px!important}
+html body #root#root button[aria-pressed=true],html body #root#root .sx-tab.active,html body #root#root .muse-settings-tabs button[aria-current=page]{background:var(--mopix-active)!important;border-color:var(--mopix-line-active)!important;color:var(--mopix-fg)!important}
+html body #root#root .quick-reference-strip>button.quick-add-image,html body #root#root .quick-reference-strip>div{background:var(--mopix-input)!important;border:1px solid var(--mopix-line)!important;border-radius:8px!important}
+html body #root#root .quick-reference-strip>button.quick-add-image:is(:hover,:focus-visible){background:var(--mopix-hover)!important;border-color:#ffffff30!important}
+html body #root#root .quick-reference-strip small{color:var(--mopix-muted)!important}
+html body #root#root :is(.muse-compose-actions,.muse-viewer-toolbar,.quick-settings){border-color:var(--mopix-line)!important;background:var(--mopix-panel)!important}
+html body #root#root .muse-home-six .muse-home-actions{gap:0!important;border-top:1px solid var(--mopix-line)!important;border-bottom:1px solid var(--mopix-line)!important}
+html body #root#root .muse-home-six .muse-home-actions>button{background:transparent!important;border:0!important;border-right:1px solid var(--mopix-line)!important;border-radius:0!important;box-shadow:none!important;height:80px!important;min-height:80px!important}
+html body #root#root .muse-home-six .muse-home-actions>button:nth-child(4n){border-right:0!important}
+html body #root#root .muse-home-six .muse-home-actions>button:nth-child(-n+4){border-bottom:1px solid var(--mopix-line)!important}
+html body #root#root .muse-home-six .muse-home-actions>button:hover{background:#ffffff05!important}
+html body #root#root .muse-home-six .muse-home-actions>button h2{font-size:14px!important;color:var(--mopix-silver)!important}
+html body #root#root .muse-home-action-icon,html body #root#root .home-card-arrow{color:var(--mopix-muted)!important}
+html body #root#root :is(.sx-media-card,.recraft-grid article,.image-preset-grid>button,.design-mode-grid>button,.muse-tool-tile,.quick-tool-card){background:var(--mopix-panel)!important;border-color:var(--mopix-line)!important;border-radius:8px!important;box-shadow:none!important}
+html body #root#root .mopix-settings .muse-settings-content :is(section,article,[class*='bg-']){background:var(--mopix-panel)!important;border-color:var(--mopix-line)!important}
+html body #root#root .mopix-settings .muse-settings-content button{background:var(--mopix-control)!important;border-color:var(--mopix-line)!important;border-radius:9999px!important;color:var(--mopix-silver)!important}
+html body #root#root .mopix-settings .mopix-account-header+div>div{background:var(--mopix-stage)!important;border-color:var(--mopix-line)!important}
+html body #root#root :is(.sx-pagination,.mopix-eyebrow,.native-eyebrow){font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important;font-size:12px!important;color:var(--mopix-subtle)!important}
+@media(prefers-reduced-motion:reduce){html body #root#root :is(button,a){transition:none!important;scale:1!important}}
+html body #root#root .muse-global-nav .nav-focus-lens{border:0!important;box-shadow:none!important;outline:0!important}
+html body #root#root .muse-global-nav>nav>button:before,html body #root#root .muse-global-nav>nav>button:after{display:none!important}
+html body #root#root .quick-compose button.mopix-add-reference.sx-btn{min-height:32px!important;height:32px!important;margin:0 0 16px!important;background:transparent!important;border:0!important;font-weight:400!important;color:var(--mopix-muted)!important}
+html body #root#root .quick-reference-strip>button.quick-add-image:disabled{opacity:1!important;color:var(--mopix-muted)!important}
+html body #root#root .nav-focus-lens:before,html body #root#root .nav-focus-lens:after{display:none!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary),html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary) *{text-shadow:none!important;filter:none!important}
+/* Workspace layout refinement. */
+html body #root#root .monday-editor-shell:has(.muse-home-simple){overflow:hidden!important;height:100dvh!important;min-height:0!important}
+html body #root#root .muse-home-simple.muse-home-six{height:100%!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:16px!important;padding:12px 32px 20px!important}
+html body #root#root .muse-home-intro{height:clamp(64px,14vh,140px)!important;min-height:0!important;flex:0 1 140px!important}
+html body #root#root .muse-home-intro .home-hero-wordmark{height:100%!important;max-height:140px!important}
+html body #root#root .muse-home-six .mopix-home-composer{flex:0 1 auto!important;padding:20px!important;margin:0 auto!important;gap:12px!important}
+html body #root#root .muse-home-six .mopix-home-composer textarea{height:clamp(72px,14vh,144px)!important;min-height:64px!important}
+html body #root#root .muse-home-six .muse-home-actions{flex:none!important;margin:0 auto!important}
+html body #root#root .muse-home-six .muse-home-actions>button{height:clamp(52px,8vh,76px)!important;min-height:48px!important;padding:12px 20px!important}
+html body #root#root .muse-home-six>footer{margin:0!important;padding:8px!important;flex:none!important}
+html body #root#root .monday-editor-shell>div:has(>.muse-home-simple){height:100%!important;min-height:0!important;overflow:hidden!important}
+html body #root#root .quick-studio.mopix-design-workspace{grid-template-columns:360px minmax(0,1fr) 340px!important}
+html body #root#root .mopix-design-tools{min-height:0!important;overflow:auto!important;padding:24px!important}
+html body #root#root .mopix-design-tools .design-tool-section{margin:0 0 24px!important}
+html body #root#root .mopix-design-tools h3{font-size:14px!important;margin:0 0 12px!important;color:var(--mopix-silver)!important}
+html body #root#root .mopix-design-tools .design-mode-grid{gap:10px!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button{min-height:104px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;text-align:center!important;gap:12px!important;padding:12px!important;border-radius:8px!important;font-size:13px!important;background:var(--mopix-input)!important;border:1px solid var(--mopix-line)!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button svg{width:25px!important;height:25px!important}
+html body #root#root .sx-import{padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;margin:0 0 20px!important}
+html body #root#root .sx-strip-empty{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;padding:0!important}
+html body #root#root .sx-strip-empty>button{height:112px!important;min-height:112px!important;min-width:0!important;width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;border:1px solid var(--mopix-line)!important;border-radius:8px!important;background:var(--mopix-input)!important;font-size:13px!important}
+html body #root#root .sx-strip-meta{padding:12px 0 0!important;text-align:center!important;justify-content:center!important}
+html body #root#root .mopix-film-workspace{display:flex!important;flex-direction:column!important;min-height:0!important;height:100%!important;flex:1!important;padding:16px 24px 24px!important;gap:16px!important;overflow:hidden!important}
+html body #root#root .mopix-film-heading{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:24px!important;flex:none!important;margin:0!important;padding:0 0 16px!important;border-bottom:1px solid var(--mopix-line)!important}
+html body #root#root .mopix-film-heading h1{margin:0!important;font-size:24px!important}
+html body #root#root .mopix-film-heading label{display:flex!important;align-items:center!important;gap:12px!important}
+html body #root#root .mopix-film-heading select{width:230px!important;min-height:44px!important}
+html body #root#root .mopix-film-workspace>:not(header){flex:1!important;min-height:0!important;overflow:auto!important;margin:0!important;padding:0!important}
+html body #root#root .mopix-film-workspace :is(.sx-panel,.movie-setup,.brief-conversation,.batch-composer,.batch-results){background:var(--mopix-panel)!important;border:1px solid var(--mopix-line-active)!important;border-radius:12px!important;box-shadow:none!important}
+html body #root#root .mopix-film-workspace :is(.movie-wizard,.movie-workspace,.batch-page,.film-studio,.brief-workspace){gap:16px!important}
+html body #root#root .mopix-film-workspace .movie-setup{height:100%!important;max-height:none!important}
+html body #root#root .mopix-film-workspace .movie-projects{padding:20px!important}
+html body #root#root .mopix-settings{max-width:1440px!important;padding:24px 32px!important}
+html body #root#root .mopix-settings .muse-settings-tabs{padding:4px!important;border:0!important;background:transparent!important;border-radius:0!important}
+html body #root#root .mopix-settings .muse-settings-tabs button{border:0!important;border-radius:8px!important;background:transparent!important;min-height:44px!important}
+html body #root#root .mopix-settings .muse-settings-tabs button[aria-current=page]{background:var(--mopix-active)!important}
+html body #root#root .mopix-settings .muse-settings-content>div,html body #root#root .mopix-settings .muse-settings-content [class*='max-w-']{width:100%!important;max-width:none!important}
+html body #root#root .mopix-settings .muse-settings-content [class*='space-y-']>div{margin-top:0!important;padding:20px 0!important;border:0!important;border-bottom:1px solid var(--mopix-line)!important;border-radius:0!important;background:transparent!important}
+html body #root#root .mopix-settings .muse-settings-content h2{font-size:18px!important}
+html body #root#root .mopix-settings .muse-settings-content h3{font-size:15px!important}
+html body #root#root .mopix-support{display:flex!important;flex-direction:column!important;gap:24px!important}
+html body #root#root .mopix-support section{padding:0 0 24px!important;border-bottom:1px solid var(--mopix-line)!important}
+html body #root#root .mopix-support a{color:var(--mopix-silver)!important;font-size:14px!important}
+@media(max-width:1200px){html body #root#root .quick-studio.mopix-design-workspace{grid-template-columns:300px minmax(0,1fr) 280px!important}html body #root#root .mopix-design-tools{padding:16px!important}}
+@media(max-height:740px){html body #root#root .muse-home-simple.muse-home-six{gap:12px!important;padding-top:4px!important}html body #root#root .muse-home-intro{flex-basis:64px!important}html body #root#root .muse-home-six .mopix-home-composer{padding:16px!important}html body #root#root .muse-home-six .muse-home-actions>button{height:48px!important;min-height:48px!important}}
+html body #root#root .mopix-design-tools{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;height:100%!important;min-width:0!important;align-self:stretch!important;opacity:1!important;visibility:visible!important}
+html body #root#root .muse-home-intro .home-hero-wordmark{height:auto!important;aspect-ratio:720/220!important;width:min(480px,70vw)!important;max-height:100%!important;object-fit:contain!important}
+html body #root#root .mopix-settings .muse-settings-tabs button:not([aria-current=page]){background:transparent!important;box-shadow:none!important}
+html body #root#root .mopix-settings .muse-settings-tabs button[aria-current=page]{background:var(--mopix-active)!important;box-shadow:none!important}
+html body #root#root .mopix-film-workspace .batch-scene-composer{border:0!important;border-radius:0!important}
+/* Native top-layer modal escapes all home/canvas stacking contexts. */
+html body #root#root dialog.mopix-asset-modal{position:fixed!important;inset:0!important;margin:0!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:0!important;padding:24px!important;background:#08090ac9!important;z-index:2147483647!important;box-sizing:border-box!important;overflow:hidden!important;align-items:center!important;justify-content:center!important;isolation:isolate!important}
+html body #root#root dialog.mopix-asset-modal[open]{display:flex!important}
+html body #root#root dialog.mopix-asset-modal:not([open]){display:none!important}
+.mopix-asset-modal::backdrop{background:#08090acc;backdrop-filter:blur(8px)}
+html body #root#root dialog.mopix-asset-modal>.asset-picker{display:flex!important;flex-direction:column!important;gap:16px!important;width:min(1120px,100%)!important;height:min(760px,calc(100dvh - 48px))!important;min-height:0!important;max-height:100%!important;padding:24px!important;margin:0!important;border:1px solid var(--mopix-line-active)!important;border-radius:12px!important;background:var(--mopix-panel)!important;box-shadow:0 24px 80px #0008!important;overflow:hidden!important}
+html body #root#root .mopix-asset-modal .asset-picker>header{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:24px!important;flex:none!important}
+html body #root#root .mopix-asset-modal .asset-picker h2{font-size:22px!important;margin:0 0 8px!important}
+html body #root#root .mopix-asset-modal .asset-picker p{margin:0!important}
+html body #root#root .mopix-asset-modal .asset-picker-toolbar{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:12px!important;flex:none!important}
+html body #root#root .mopix-asset-modal .asset-picker-toolbar>.sx-seg{display:flex!important;flex:none!important;gap:4px!important;padding:4px!important;border:1px solid var(--mopix-line)!important;background:var(--mopix-stage)!important;border-radius:9999px!important}
+html body #root#root .mopix-asset-modal .sx-seg-btn{min-height:36px!important;padding:8px 14px!important;border:0!important;border-radius:9999px!important;background:transparent!important;font-size:13px!important}
+html body #root#root .mopix-asset-modal .sx-seg-btn.active{background:var(--mopix-active)!important}
+html body #root#root .mopix-asset-modal .asset-picker-toolbar>input[type=search]{flex:1 1 200px!important;width:auto!important;min-width:160px!important}
+html body #root#root .mopix-asset-modal .asset-picker-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(156px,1fr))!important;gap:16px!important;flex:1 1 0!important;min-height:0!important;width:100%!important;overflow:auto!important;align-content:start!important;padding:4px!important}
+html body #root#root .mopix-asset-modal .asset-picker-grid>:is(.sx-empty,p){grid-column:1/-1!important;align-self:center!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:180px!important;width:100%!important;max-width:none!important;margin:auto!important;padding:24px!important}
+html body #root#root .mopix-asset-modal .asset-picker-grid:has(>:only-child:is(.sx-empty,p)){align-content:stretch!important}
+html body #root#root .mopix-asset-modal .asset-picker-item{min-width:0!important;padding:6px!important;border:1px solid var(--mopix-line)!important;border-radius:8px!important;background:var(--mopix-input)!important;gap:8px!important;overflow:hidden!important}
+html body #root#root .mopix-asset-modal .asset-picker-item.selected{border-color:var(--mopix-silver)!important;box-shadow:0 0 0 1px var(--mopix-silver)!important}
+html body #root#root .mopix-asset-modal .asset-picker-item img{aspect-ratio:1!important;width:100%!important;height:auto!important;object-fit:cover!important;border-radius:4px!important}
+html body #root#root .mopix-asset-modal .asset-picker-item span{font-size:12px!important;line-height:1.5!important}
+html body #root#root .mopix-asset-modal .asset-picker>footer{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;flex:none!important;margin:0!important;padding:16px 0 0!important;border-top:1px solid var(--mopix-line)!important;min-height:60px!important}
+html body #root#root .muse-home-six .mopix-home-composer textarea::placeholder{color:#62666d!important;-webkit-text-fill-color:#62666d!important;opacity:.8!important;font-weight:400!important}
+/* Alara-inspired editorial home: a working rail and a visual stage. */
+html body #root#root .mopix-alara-home{height:100%!important;min-height:0!important;flex:1!important;display:grid!important;grid-template-columns:minmax(360px,390px) minmax(0,1fr)!important;gap:12px!important;padding:12px 24px 24px!important;overflow:hidden!important;animation:alara-enter .65s cubic-bezier(.22,1,.36,1) both}
+html body #root#root .alara-rail{min-height:0!important;overflow:hidden!important;background:var(--mopix-panel)!important;border:1px solid var(--mopix-line)!important;border-radius:16px!important}
+html body #root#root .alara-rail .muse-home-simple.muse-home-six{height:100%!important;width:100%!important;max-width:none!important;padding:24px!important;gap:16px!important;justify-content:flex-start!important;position:relative!important;box-sizing:border-box!important}
+html body #root#root .alara-rail .muse-home-intro{height:auto!important;min-height:0!important;flex:none!important;display:block!important;padding:0!important;margin:0!important}
+html body #root#root .alara-eyebrow{font:10px/1.4 ui-monospace,Menlo,monospace!important;letter-spacing:.12em!important;color:var(--mopix-muted)!important}
+html body #root#root .alara-intro-copy h1{font-size:clamp(28px,3vw,42px)!important;font-weight:510!important;line-height:1.06!important;letter-spacing:-.045em!important;margin:14px 0 12px!important}
+html body #root#root .alara-intro-copy p{font-size:13px!important;margin:0!important;color:var(--mopix-muted)!important}
+html body #root#root .alara-rail .mopix-home-composer{width:100%!important;flex:1 1 auto!important;min-height:220px!important;max-height:320px!important;padding:16px!important;margin:0!important;gap:12px!important;border-radius:12px!important;background:var(--mopix-stage)!important}
+html body #root#root .alara-rail .mopix-home-composer>header{min-height:36px!important}
+html body #root#root .alara-rail .mopix-home-composer textarea{flex:1 1 auto!important;height:100px!important;min-height:64px!important;font-size:14px!important;padding:12px!important}
+html body #root#root .alara-rail .mopix-home-composer .mopix-quick-mode button{min-height:32px!important;height:32px!important;padding:6px 10px!important;font-size:12px!important}
+html body #root#root .alara-rail .mopix-home-composer>header>button{min-height:32px!important;padding:4px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer{min-height:40px!important;gap:6px!important;flex-wrap:wrap!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>:is(button,select){min-height:36px!important;height:36px!important;padding:6px 10px!important;font-size:12px!important}
+html body #root#root .alara-rail .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn.muse-pixel-button{width:auto!important;min-width:80px!important;height:36px!important;min-height:36px!important;margin-left:auto!important;padding:0 14px!important;font-size:13px!important}
+html body #root#root .alara-rail .muse-home-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0!important;max-width:none!important;width:100%!important;margin:0!important;border:0!important;flex:none!important}
+html body #root#root .alara-rail .muse-home-actions>button{height:44px!important;min-height:44px!important;padding:8px 4px!important;gap:8px!important;border:0!important;border-bottom:1px solid var(--mopix-line)!important;border-radius:0!important}
+html body #root#root .alara-rail .muse-home-actions>button h2{font-size:12px!important;font-weight:400!important;white-space:nowrap!important}
+html body #root#root .alara-rail .muse-home-actions .muse-home-action-icon{width:20px!important;height:20px!important;flex:0 0 20px!important}
+html body #root#root .alara-rail .muse-home-action-icon svg{width:17px!important;height:17px!important}
+html body #root#root .alara-rail .home-card-arrow{font-size:12px!important;margin-left:auto!important}
+html body #root#root .alara-rail .muse-home-six>footer{margin-top:auto!important;padding:0!important;gap:12px!important;min-height:24px!important}
+html body #root#root .alara-gallery{display:flex!important;flex-direction:column!important;min-height:0!important;min-width:0!important;padding:24px!important;border:1px solid var(--mopix-line)!important;border-radius:16px!important;background:var(--mopix-panel)!important;gap:16px!important;overflow:hidden!important}
+html body #root#root .alara-gallery>header{display:flex!important;align-items:center!important;justify-content:space-between!important;flex:none!important;font:11px/1.4 ui-monospace,Menlo,monospace!important;letter-spacing:.06em!important}
+html body #root#root .alara-gallery>header span{color:var(--mopix-muted)!important}
+html body #root#root .alara-image-stage{flex:1 1 0!important;min-height:0!important;overflow:hidden!important;position:relative!important;border-radius:8px!important;background:#141516!important}
+html body #root#root .alara-image-stage>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:0;transform:scale(1.045);transition:opacity .85s ease,transform 6.5s cubic-bezier(.2,.65,.3,1);pointer-events:none!important}
+html body #root#root .alara-image-stage>img.is-active{opacity:1;transform:scale(1)}
+html body #root#root .alara-image-caption{position:absolute!important;inset:auto 0 0!important;padding:64px 28px 28px!important;background:linear-gradient(transparent,#000b)!important;pointer-events:none!important;animation:alara-caption .65s .15s both}
+html body #root#root .alara-image-caption span{font:10px/1.4 ui-monospace,Menlo,monospace!important;letter-spacing:.1em!important;color:#ffffffa6!important}
+html body #root#root .alara-image-caption h2{font-size:clamp(24px,2.5vw,38px)!important;font-weight:400!important;line-height:1.1!important;margin:12px 0 0!important;max-width:400px!important;color:#fff!important;letter-spacing:-.035em!important}
+html body #root#root .alara-gallery>footer{flex:none!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important}
+html body #root#root .alara-gallery>footer>div:first-child{display:flex!important;flex-direction:column!important;gap:4px!important}
+html body #root#root .alara-gallery strong{font-size:14px!important;font-weight:500!important}
+html body #root#root .alara-gallery small{font-size:11px!important;color:var(--mopix-subtle)!important}
+html body #root#root .alara-gallery-controls{display:flex!important;gap:8px!important}
+html body #root#root .alara-gallery-controls button{height:36px!important;min-width:36px!important;padding:8px!important;border:1px solid var(--mopix-line)!important;border-radius:9999px!important;background:transparent!important;color:var(--mopix-silver)!important}
+html body #root#root .alara-gallery-controls button:hover{background:var(--mopix-hover)!important}
+@keyframes alara-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes alara-caption{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-height:780px){html body #root#root .alara-rail .muse-home-simple.muse-home-six{padding:16px!important;gap:12px!important}html body #root#root .alara-intro-copy h1{font-size:30px!important;margin:10px 0!important}html body #root#root .alara-rail .muse-home-actions>button{height:36px!important;min-height:36px!important}html body #root#root .alara-rail .mopix-home-composer{min-height:190px!important;padding:12px!important}}
+@media(max-width:1100px){html body #root#root .mopix-alara-home{grid-template-columns:350px minmax(0,1fr)!important;padding:12px 16px 16px!important}html body #root#root .alara-gallery{padding:16px!important}html body #root#root .alara-image-caption{padding:48px 20px 20px!important}}
+@media(prefers-reduced-motion:reduce){html body #root#root .mopix-alara-home,html body #root#root .alara-image-caption{animation:none!important}html body #root#root .alara-image-stage>img{transition:none!important;transform:none!important}}
+html body #root#root .alara-rail .muse-home-guide{position:absolute!important;inset:12px!important;z-index:10!important;max-width:none!important;width:auto!important;margin:0!important;padding:24px!important;overflow:auto!important;background:var(--mopix-panel)!important;border-radius:12px!important;box-shadow:0 4px 40px #0008!important}
+html body #root#root .alara-guide-close{display:block!important;margin-left:auto!important;margin-bottom:16px!important}
+html body #root#root .alara-rail .muse-home-intro,html body #root#root .alara-intro-copy{text-align:left!important}
+html body #root#root .alara-intro-copy h1{font-weight:510!important}
+
+/* Image tools remain visible in the workspace, independent of saved drawer state. */
+html body #root#root .quick-studio.mopix-image-workspace{grid-template-columns:360px minmax(0,1fr) 340px!important}
+html body #root#root .mopix-image-tools{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;height:100%!important;min-width:0!important;min-height:0!important;align-self:stretch!important;opacity:1!important;visibility:visible!important;overflow:auto!important;padding:24px!important}
+@media(max-width:1200px){html body #root#root .quick-studio.mopix-image-workspace{grid-template-columns:300px minmax(0,1fr) 280px!important}html body #root#root .mopix-image-tools{padding:16px!important}}
+
+/* Quiet, compact placeholder states across the image and video canvases. */
+html body #root#root :is(.muse-viewer-stage .muse-viewer-empty,.mopix-upscale-empty){display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:0!important;width:100%!important;max-width:400px!important;margin:auto!important;padding:24px!important;text-align:center!important}
+html body #root#root :is(.muse-viewer-stage .muse-viewer-empty,.mopix-upscale-empty) .muse-liquid-loader:not(.is-compact){width:220px!important;max-width:80%!important;height:104px!important;margin:0 auto 8px!important;opacity:.55!important}
+html body #root#root :is(.muse-viewer-empty,.mopix-upscale-empty)>h2{font-size:14px!important;line-height:1.5!important;font-weight:450!important;letter-spacing:0!important;color:#8a8f98!important;-webkit-text-fill-color:#8a8f98!important;margin:0 0 6px!important}
+html body #root#root :is(.muse-viewer-empty,.mopix-upscale-empty)>p{font-size:12px!important;line-height:1.6!important;font-weight:400!important;color:#62666d!important;-webkit-text-fill-color:#62666d!important;max-width:280px!important;margin:0!important}
+html body #root#root .inpaint-pane-empty{font-size:12px!important;color:#62666d!important;-webkit-text-fill-color:#62666d!important}
+html body #root#root .mopix-upscale-empty progress{width:160px!important;height:3px!important;margin-top:20px!important;opacity:.6}
+/* Comet-inspired monochrome action: moving light stays on the edge. */
+@property --mopix-comet-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes mopix-comet-orbit{to{--mopix-comet-angle:360deg}}
+html body #root#root button:hover:not(:disabled){background-color:#1c1d1e!important;color:#d0d6e0!important;border-color:#ffffff26!important}
+html body #root#root button:focus-visible{outline:2px solid #8a8f98!important;outline-offset:3px!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary),
+html body #root#root .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn.muse-pixel-button{
+ border:1px solid transparent!important;color:#d0d6e0!important;-webkit-text-fill-color:#d0d6e0!important;
+ background:linear-gradient(#141516,#0f1011) padding-box,conic-gradient(from var(--mopix-comet-angle),#ffffff16 0deg,#ffffff16 260deg,#ffffff30 300deg,#d0d6e0 334deg,#ffffff16 360deg) border-box!important;
+ box-shadow:inset 0 1px 0 #ffffff06,0 2px 8px #0003!important;animation:mopix-comet-orbit 5s linear infinite!important;
+}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary):hover:not(:disabled),
+html body #root#root .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn.muse-pixel-button:hover:not(:disabled){
+ background:linear-gradient(#1c1d1e,#141516) padding-box,conic-gradient(from var(--mopix-comet-angle),#ffffff20 0deg,#ffffff20 260deg,#ffffff50 300deg,#f7f8f8 334deg,#ffffff20 360deg) border-box!important;
+ color:#f7f8f8!important;-webkit-text-fill-color:#f7f8f8!important;border-color:transparent!important;box-shadow:inset 0 1px 0 #ffffff0a,0 0 16px #ffffff08!important;
+}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary) :is(span,svg){color:inherit!important;-webkit-text-fill-color:inherit!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary) .muse-pixel-canvas{mix-blend-mode:screen!important;opacity:.08!important}
+html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary):disabled,
+html body #root#root .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn.muse-pixel-button:disabled{animation:none!important;background:#111213!important;border-color:#ffffff0a!important;color:#62666d!important;-webkit-text-fill-color:#62666d!important;box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){html body #root#root :is(button.muse-create-action,button.quick-submit,button.sx-submit,button.sx-btn-primary){animation:none!important;--mopix-comet-angle:30deg}}
+/* One regular typeface throughout the desktop interface, including Vietnamese. */
+@font-face{font-family:'Mopix Inter Tight';src:url('/assets/InterTight.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+:root{--mopix-font:'Mopix Inter Tight',sans-serif;--font-sans:'Mopix Inter Tight',sans-serif;--default-font-family:'Mopix Inter Tight',sans-serif}
+html body,html body *,html body *::before,html body *::after,
+html body #root#root#root,html body #root#root#root *,html body #root#root#root *::before,html body #root#root#root *::after{
+ font-family:'Mopix Inter Tight',sans-serif!important;font-weight:400!important;font-variation-settings:'wght' 400!important;font-synthesis:none!important;
+}
+/* Design and concept controls share the same dark surfaces and selection states. */
+html body #root#root .mopix-design-tools .design-tool-section{background:transparent!important;border:0!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button{background:#141516!important;background-image:none!important;color:#8a8f98!important;-webkit-text-fill-color:#8a8f98!important;border-color:#ffffff0d!important;box-shadow:none!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button:hover:not(:disabled){background:#1c1d1e!important;color:#d0d6e0!important;-webkit-text-fill-color:#d0d6e0!important;border-color:#ffffff24!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button[aria-pressed=true]{background:#202122!important;color:#d0d6e0!important;-webkit-text-fill-color:#d0d6e0!important;border-color:#ffffff30!important;box-shadow:inset 0 1px 0 #ffffff06!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button :is(svg,span){color:inherit!important;-webkit-text-fill-color:inherit!important}
+html body #root#root .mopix-design-tools .design-mode-grid>button:disabled{background:#111213!important;color:#62666d!important;-webkit-text-fill-color:#62666d!important;border-color:#ffffff08!important;opacity:.6!important}
+html body #root#root .concept-workflow{background:transparent!important;color:var(--mopix-muted)!important;gap:16px!important}
+html body #root#root .concept-input-groups{gap:16px!important}
+html body #root#root .concept-input-group>header :is(strong,small){color:var(--mopix-muted)!important;font-size:12px!important}
+html body #root#root .concept-input-row{gap:10px!important;min-height:76px!important}
+html body #root#root .concept-input-row>:is(button,div){width:76px!important;height:76px!important;flex:0 0 76px!important}
+html body #root#root .concept-input-row>button,html body #root#root .concept-input-row img{background:var(--mopix-input)!important;border:1px solid var(--mopix-line)!important;border-radius:8px!important;color:var(--mopix-muted)!important}
+html body #root#root .concept-input-row>button:hover:not(:disabled){background:var(--mopix-hover)!important;border-color:var(--mopix-line-active)!important}
+html body #root#root .concept-input-row>div>button{background:#1c1d1e!important;border-color:#ffffff24!important;color:#d0d6e0!important}
+html body #root#root .concept-brand-fields{gap:10px!important}
+html body #root#root .concept-brand-fields input{height:44px!important;padding:10px 12px!important;font-size:13px!important}
+html body #root#root .concept-count>span{font-size:12px!important;color:var(--mopix-muted)!important}
+html body #root#root .concept-count button{width:32px!important;height:32px!important;background:var(--mopix-input)!important;border:1px solid var(--mopix-line)!important;color:var(--mopix-muted)!important}
+html body #root#root .concept-count button[aria-pressed=true]{background:#262727!important;color:#d0d6e0!important;border-color:#ffffff30!important}
+html body #root#root .concept-json pre{background:var(--mopix-stage)!important;color:var(--mopix-muted)!important;border-color:var(--mopix-line)!important}
+/* Ten image tools, immediately accessible in two columns. */
+html body #root#root .mopix-image-tools{padding:20px!important}
+html body #root#root .mopix-image-tools>.quick-tools-unified{display:flex!important;flex-direction:column!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;gap:0!important}
+html body #root#root .mopix-image-tools .quick-tools-unified>h2{font-size:15px!important;color:#d0d6e0!important;margin:0 0 16px!important;line-height:24px!important}
+html body #root#root .mopix-image-tools .image-preset-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(5,minmax(64px,1fr))!important;gap:10px!important;flex:1!important;min-height:0!important;margin:0!important}
+html body #root#root .mopix-image-tools .image-preset-grid>button{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:10px!important;min-height:0!important;height:auto!important;padding:10px 8px!important;border:1px solid #ffffff0d!important;border-radius:8px!important;background:#141516!important;color:#8a8f98!important;box-shadow:none!important;text-align:center!important;font-size:13px!important;line-height:1.35!important}
+html body #root#root .mopix-image-tools .image-preset-grid>button svg{width:23px!important;height:23px!important;color:inherit!important;flex:none!important}
+html body #root#root .mopix-image-tools .image-preset-grid>button[aria-pressed=true]{background:#202122!important;color:#d0d6e0!important;border-color:#ffffff30!important}
+html body #root#root .mopix-image-tools .image-preset-grid>button:hover:not(:disabled){background:#1c1d1e!important;color:#d0d6e0!important;border-color:#ffffff24!important}

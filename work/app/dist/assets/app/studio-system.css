@@ -1,0 +1,96 @@
+/* MUSE shared foundations. Font faces and expressive effects remain in monday-ui.css. */
+:root{--muse-ink:#0c0c0c;--muse-stage:#080808;--muse-surface:#111;--muse-raised:#1c1c1c;--muse-text:#f6f6ef;--muse-muted:#a6a6a6;--muse-rule:#ffffff24;--muse-hover:#ffffff0b;--muse-radius:12px;--muse-gap:16px;--muse-control:44px;--muse-ease:cubic-bezier(.22,1,.36,1)}
+html body #root :is(.sx-panel,.quick-compose,.muse-viewer,.muse-tools-drawer,.movie-setup,.brief-conversation){border-color:var(--muse-rule)!important;border-radius:var(--muse-radius)!important;color:var(--muse-text)}
+html body #root :is(button,input,textarea,select,[contenteditable]){box-sizing:border-box}
+html body #root :is(button,a){-webkit-tap-highlight-color:transparent}
+html body #root button:not(:disabled){transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+html body #root :is(button,a,input,textarea,select,[contenteditable]):focus-visible{outline:2px solid #f6f6ef!important;outline-offset:3px!important}
+html body #root :is(input,textarea,select,[contenteditable]){caret-color:var(--muse-text)}
+html body #root :is(.sx-hint,.quick-footnote,.native-description){color:var(--muse-muted)!important;line-height:1.6}
+html body #root :is(.quick-compose,.sx-composer-panel){padding:0!important;overflow:hidden!important;min-height:0!important;display:flex!important;flex-direction:column!important;gap:0!important}
+html body #root .sx-composer-panel>.sx-panel-head{flex:none!important;padding:20px!important;margin:0!important;border-bottom:1px solid var(--muse-rule)}
+html body #root .sx-composer-panel>.sx-composer{display:flex!important;flex-direction:column!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important;padding:0!important;margin:0!important;gap:0!important}
+html body #root .muse-compose-scroll{flex:1 1 0!important;min-height:0!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-gutter:stable;padding:20px!important;scrollbar-width:thin;scrollbar-color:#444 transparent}
+html body #root .muse-compose-actions{position:relative!important;flex:0 0 auto!important;margin:0!important;padding:14px 20px 18px!important;border-top:1px solid var(--muse-rule)!important;background:var(--muse-surface)!important;z-index:3}
+html body #root .muse-compose-actions>.muse-create-action{position:relative!important;inset:auto!important;width:100%!important;min-height:49px!important;height:49px!important;margin:0!important;border-radius:12px!important;transform:none;display:flex!important;justify-content:center;align-items:center;gap:8px}
+html body #root .sx-composer-panel>:last-child:not(.sx-composer):not(.sx-panel-head){flex:none;padding:8px 20px!important;margin:0!important}
+html body #root .muse-compose-scroll>header{margin:0 0 20px!important;padding:0!important}
+html body #root .muse-compose-scroll>header :is(h1,h2){font-size:19px!important;line-height:1.35!important;font-weight:500!important;margin:0!important}
+html body #root .quick-reference-strip{margin-bottom:20px!important;gap:8px!important}
+html body #root .muse-compose-scroll .quick-prompt-label{display:block!important;margin:16px 0 0!important;padding:0!important}
+html body #root .muse-compose-scroll .quick-prompt-label>.muse-prompt-editor-wrap{margin-top:10px}
+html body #root .muse-compose-scroll>.inline-muse{position:relative!important;inset:auto!important;width:auto!important;height:auto!important;max-width:none!important;margin:8px 0 16px!important;display:flex!important;flex-direction:column!important;align-items:flex-end}
+html body #root .muse-compose-scroll>.inline-muse .muse-gradient-icon{display:none!important}
+html body #root .muse-compose-scroll>.inline-muse .inline-muse-row{padding:0!important;border:0!important;background:transparent!important;min-height:30px!important}
+html body #root .muse-compose-scroll>.inline-muse:has(.muse-prompt-proposal){align-items:stretch}
+html body #root .muse-compose-scroll .muse-prompt-editor{min-height:126px!important;height:clamp(126px,19vh,220px)!important;max-height:260px!important;padding:14px!important;font-size:13px!important;line-height:1.65!important}
+html body #root .muse-compose-scroll .muse-ratios[data-count][role=group]{margin:12px 0 0!important;gap:6px!important}
+html body #root .muse-compose-scroll .quick-settings{margin-top:20px!important;padding-top:16px!important;border-top:1px solid var(--muse-rule)!important}
+html body #root .muse-compose-scroll .sx-compact-options{display:block!important;margin:16px 0 0!important;padding:0!important}
+html body #root .muse-compose-scroll .sx-run-hint{display:none!important}
+html body #root .muse-tools-drawer{padding:20px!important}
+html body #root :is(.muse-tool-tile,.quick-tool-card){border-color:var(--muse-rule)!important;border-radius:12px!important;min-height:88px}
+html body #root :is(.muse-tool-tile,.quick-tool-card):hover{background:var(--muse-hover)!important;border-color:#ffffff50!important}
+html body #root .library-local-tabs{flex:none;display:flex;gap:8px;padding:4px 0 16px}
+html body #root .library-local-tabs button{min-height:44px;padding:0 18px;border-radius:12px;border:1px solid var(--muse-rule);background:transparent;color:var(--muse-muted)}
+html body #root .library-local-tabs button[aria-pressed=true]{background:#242424;color:var(--muse-text);border-color:#ffffff45}
+html body #root .unified-library{min-width:0;min-height:0;overflow:auto;padding:20px!important;display:flex;flex-direction:column}
+html body #root .recraft-inspiration{padding:20px 4px 40px;overflow:visible;min-width:0}
+.recraft-inspiration>header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;border-bottom:1px solid var(--muse-rule);padding-bottom:24px}
+.recraft-inspiration h1{font-size:28px;line-height:1.2;font-weight:400;margin:12px 0}
+.recraft-inspiration :is(p,small){color:var(--muse-muted);line-height:1.6}
+.recraft-inspiration>header input{background:var(--muse-surface);border:1px solid var(--muse-rule);border-radius:12px;color:var(--muse-text);min-height:44px;width:min(340px,100%);padding:0 16px}
+.recraft-source-note{font-size:12px;max-width:900px;margin:16px 0 24px}
+.recraft-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 16px}
+.recraft-grid article{min-width:0;border-bottom:1px solid var(--muse-rule);padding-bottom:16px}
+.recraft-image{position:relative;display:block;width:100%;padding:0;border:0;overflow:hidden;border-radius:12px;background:var(--muse-raised);cursor:pointer}
+.recraft-image img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .45s var(--muse-ease)}
+.recraft-image:hover img{transform:scale(1.025)}
+.recraft-image span{position:absolute;bottom:12px;left:12px;padding:7px 10px;border:1px solid #ffffff50;border-radius:8px;background:#0c0c0cbf;color:white;font-size:12px;backdrop-filter:blur(10px)}
+.recraft-grid article>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;min-height:58px;margin:12px 0}
+.recraft-grid footer,.recraft-dialog footer{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.recraft-grid footer>a{margin-left:auto;font-size:12px;color:var(--muse-muted)}
+.recraft-dialog{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,1fr);width:min(1060px,92vw);max-height:88vh;overflow:auto;background:var(--muse-surface);border:1px solid var(--muse-rule);border-radius:16px;color:var(--muse-text)}
+.recraft-dialog>img{width:100%;height:100%;max-height:88vh;object-fit:contain;background:var(--muse-stage)}
+.recraft-dialog>div{padding:28px;overflow:auto}
+.recraft-dialog>div>button{display:block;margin-left:auto;margin-bottom:28px}
+.recraft-dialog :is(p,small){line-height:1.65;color:var(--muse-muted)}
+.recraft-dialog h2{font-size:24px;font-weight:400}
+.recraft-dialog footer{margin:24px 0}
+html body #root .donate-card{display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;gap:48px!important;border:1px solid #ffffff30!important;border-radius:12px!important;background:linear-gradient(125deg,#1c1c1c,#0c0c0c)!important;padding:40px!important;max-width:1000px!important;box-shadow:inset 0 1px #ffffff10!important}
+html body #root .donate-story h3{font-size:clamp(24px,2.6vw,38px)!important;line-height:1.15!important;font-weight:400!important;max-width:500px;margin:20px 0!important}
+html body #root .donate-story p{max-width:440px;font-size:16px!important;line-height:1.65!important;color:#c8c8c8!important}
+html body #root .donate-eyebrow{font-size:11px;letter-spacing:.08em;color:#a6a6a6}
+html body #root .donate-qr{border-left:1px solid var(--muse-rule);padding-left:32px!important;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+html body #root .donate-qr img{width:180px!important;height:180px!important;border-radius:12px!important;background:white;padding:10px;object-fit:contain}
+html body #root .donate-qr p{font-size:12px;line-height:1.5;color:var(--muse-muted)}
+@media(max-width:1100px){.recraft-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.recraft-inspiration>header{align-items:flex-start;flex-direction:column}}
+@media(max-width:760px){.recraft-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recraft-dialog{grid-template-columns:1fr}.recraft-dialog>img{max-height:45vh}html body #root .donate-card{grid-template-columns:1fr!important;gap:24px!important;padding:24px!important}html body #root .donate-qr{border-left:0;border-top:1px solid var(--muse-rule);padding:24px 0 0!important}}
+@media(prefers-reduced-motion:reduce){html body #root :is(button,a,.recraft-image img){transition:none!important}.recraft-image:hover img{transform:none}}
+html body #root .quick-compose>.muse-compose-scroll>header{display:flex!important;align-items:center!important;gap:8px!important;min-height:38px!important}
+html body #root .quick-compose>.muse-compose-scroll>header>:is(.native-eyebrow,p){display:none!important}
+html body #root .quick-compose>.muse-compose-scroll>header>h1{margin-right:auto!important;font-size:19px!important}
+html body #root .quick-compose>.muse-compose-scroll>header>button{position:static!important;flex:none!important;margin:0!important;min-height:34px!important;height:34px!important;padding:0 10px!important}
+html body #root .muse-compose-scroll>.inline-muse{background:transparent!important;border:0!important;padding:0!important;min-height:30px!important;border-radius:0!important;box-shadow:none!important}
+html body #root .muse-compose-scroll>.inline-muse .inline-muse-row{width:auto!important;box-shadow:none!important}
+html body #root :is(.batch-scene-composer,.movie-setup){display:flex!important;flex-direction:column!important;min-height:0!important;overflow:hidden!important;padding:0!important;gap:0!important}
+html body #root .batch-composer{display:flex!important;min-height:0!important;overflow:hidden!important}
+html body #root .batch-scene-composer{flex:1 1 0!important;height:100%!important}
+html body #root .movie-setup{height:calc(100dvh - 176px)!important;max-height:calc(100dvh - 176px)!important}
+html body #root :is(.batch-scene-composer,.movie-setup)>.muse-compose-actions>.sx-btn{width:100%!important;min-height:49px!important;margin:0!important;border-radius:12px!important}
+html body #root :is(.batch-scene-composer,.movie-setup)>:is(.sx-error,p){flex:none;margin:0!important;padding:8px 20px!important;font-size:12px!important}
+html body #root .muse-compose-scroll>h1{font-size:22px!important;font-weight:400!important;line-height:1.25!important;margin:0 0 16px!important}
+html body #root .batch-results .batch-queue-head{display:flex;gap:16px;align-items:center;justify-content:space-between}
+html body #root .batch-results [aria-label="Lọc trạng thái video"]{display:flex!important;flex-wrap:wrap!important;gap:6px!important;align-items:center!important}
+html body #root .batch-results [aria-label="Lọc trạng thái video"]>button{min-height:36px!important;white-space:nowrap!important;padding:0 12px!important}
+html body #root .muse-home-guide:has(.donate-card){width:min(100%,1000px)!important;max-width:1000px!important;padding:24px!important;margin:28px auto!important;box-sizing:border-box}
+html body #root .muse-home-guide .donate-card{width:100%!important;box-sizing:border-box}
+html body #root .donate-story{min-width:0}
+html body #root .donate-qr{background:transparent!important;border-radius:0!important;border-top:0!important;border-right:0!important;border-bottom:0!important;box-shadow:none!important}
+@media(max-width:900px){html body #root .donate-card{grid-template-columns:1fr!important;gap:24px!important;padding:24px!important}html body #root .donate-qr{border-left:0!important;border-top:1px solid var(--muse-rule)!important;padding:24px 0 0!important}}
+html body #root :is(.movie-setup,.batch-scene-composer)>.muse-compose-scroll{display:flex!important;flex-direction:column!important;gap:16px!important}
+html body #root :is(.movie-setup,.batch-scene-composer)>.muse-compose-scroll>*{flex-shrink:0}
+html body #root :is(.movie-setup,.batch-scene-composer)>.muse-compose-scroll>:is(input,textarea){width:100%!important}
+html body #root :is(.movie-setup,.batch-scene-composer)>.muse-compose-scroll>label{display:flex;flex-direction:column;gap:8px}
+html body #root .movie-setup>.muse-compose-scroll>.sx-btn{width:100%!important;align-items:center}
+html body #root .movie-setup>.muse-compose-scroll>.film-preset-library{margin:0!important}

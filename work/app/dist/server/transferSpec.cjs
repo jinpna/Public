@@ -1,0 +1,25 @@
+const TRANSFERS=['clone','outfit','pose','style','material','colorMatch'];
+const TRANSFER_LABELS={clone:'ảnh mẫu',outfit:'Trang phục mẫu',pose:'Dáng mẫu',style:'Phong cách mẫu',material:'Chất liệu mẫu',colorMatch:'Màu mẫu'};
+function transferInstruction(d){
+ const kind=d.kind;if(!TRANSFERS.includes(kind))return '';
+ const strength=d.fidelity||'strict';
+ const detail=strength==='strict'?'Bám sát các thuộc tính được chuyển: đối chiếu từng chi tiết nhìn thấy trong ref, không tự sáng tạo thêm.':strength==='balanced'?'Bám đặc điểm chính của ref, điều chỉnh nhẹ để phù hợp ảnh nguồn.':'Chỉ lấy cảm hứng từ ref, cho phép biến tấu nhẹ.';
+ const scope={
+ clone:`Ảnh BASE là MASTER của duy nhất một nhân vật; GUIDE là ảnh mẫu cho lần tạo này. Giữ danh tính, cấu trúc khuôn mặt, tóc và tỷ lệ cơ thể MASTER, không sao chép người mẫu trong GUIDE.
+${d.copyPose!==false?'Lấy chính xác tư thế thân, đầu, vai, hông, tay chân, trọng tâm và hướng nhìn theo GUIDE; không ép nhân vật nhìn thẳng camera. Khớp chính xác hướng mắt, góc đầu, mặt nghiêng, quay lưng và mức che khuất theo GUIDE. Không tự xoay mặt về camera để phô danh tính.':'Giữ tư thế và hướng đầu/cơ thể của MASTER.'}
+${d.copyCamera!==false?'Lấy góc máy, độ cao, hướng máy, cỡ cảnh, phối cảnh và cách đặt chủ thể trong khung theo GUIDE.':'Giữ góc máy và bố cục MASTER.'}
+${d.copyStyle===true?'Lấy phong cách chụp, chất lượng ánh sáng, tương phản, độ mềm và grain từ GUIDE.':'Giữ phong cách, ánh sáng và xử lý chất liệu ảnh MASTER.'}
+${d.copyOutfit===true?'Lấy thiết kế, màu và chất liệu trang phục từ GUIDE, mặc tự nhiên trên nhân vật MASTER.':'KHÓA TRANG PHỤC MASTER: giữ thiết kế, màu gốc, chất liệu, họa tiết, đường may, giày và phụ kiện. Không lấy bất cứ trang phục hoặc phụ kiện nào từ GUIDE; chỉ cho phép nếp gấp thích nghi với tư thế mới.'}
+${d.copyExpression===true?'Lấy biểu cảm và hướng mắt từ GUIDE, không thay đặc điểm nhận diện khuôn mặt.':'Giữ sắc thái biểu cảm MASTER; hướng mắt thích nghi tự nhiên với hướng đầu được chọn.'}
+${d.copyBackground===true?'Lấy bối cảnh và cấu trúc không gian GUIDE, hòa ánh sáng tự nhiên.':'Giữ bối cảnh MASTER, không đưa đồ vật hoặc bối cảnh GUIDE vào ảnh.'}
+${d.referenceColors===true?'Lấy grading/palette tổng thể theo GUIDE; nếu khóa trang phục, vẫn giữ màu nhận diện vật liệu trang phục MASTER.':'Giữ màu nhận diện của MASTER, không đổi màu quần áo theo ảnh mẫu.'}
+Khung xuất ${d.ratio||'3:4'}${d.referenceAspect?' dựa trên ref '+d.referenceAspect:''}. Khớp cỡ chủ thể và khoảng trống theo bố cục đã chọn; không cắt mất chi thể chỉ để nhồi vào khung. Yêu cầu bổ sung chỉ điều chỉnh thuộc tính đang bật; các thuộc tính đang khóa vẫn phải giữ.`,
+ outfit:'Chuyển thiết kế trang phục từ ref: phom, đường may, cổ áo, tay áo, phụ kiện đi kèm, chất liệu và màu. Giữ danh tính, tóc, tư thế, góc máy và bối cảnh ảnh nguồn.',
+ pose:`Khớp hướng mắt và góc đầu theo ảnh mẫu, kể cả mặt nghiêng hoặc quay lưng; không tự xoay mặt về camera. Chuyển tư thế từ ref: hướng thân, vai, hông, đầu, vị trí tay chân, điểm tiếp xúc và trọng tâm. ${d.copyCamera!==false?'Lấy góc máy, cỡ cảnh và cách đặt chủ thể trong khung từ ref.':'Giữ góc máy và cỡ cảnh ảnh nguồn.'} ${d.copyExpression===true?'Lấy biểu cảm, hướng mắt và độ mở miệng từ ref nhưng giữ đặc điểm khuôn mặt của chủ thể gốc.':'Giữ biểu cảm ảnh nguồn; chỉ điều chỉnh hướng đầu theo dáng mẫu.'} Giữ trang phục, tóc, màu và bối cảnh ảnh nguồn. Không giữ nguyên tư thế nguồn nếu mâu thuẫn với dáng ref.`,
+ style:`Chuyển ngôn ngữ hình ảnh của ref: loại hình ảnh, ánh sáng, tương phản, độ mềm, film grain và cách xử lý chi tiết. ${d.referenceColors!==false?'Đồng bộ palette và tông màu với ref.':'Giữ màu vật thể và palette của ảnh nguồn.'} Giữ hình học, tư thế, bố cục, trang phục và nội dung ảnh nguồn; không đưa người hay đồ vật của ref vào ảnh.`,
+ material:`Chỉ đổi chất liệu tại vùng: ${d.transferTarget?.trim()||'bề mặt chính của chủ thể'}. Đối chiếu ref về vân bề mặt, độ nhám, độ bóng, phản xạ, độ trong, độ dày và tỷ lệ texture. Áp texture theo phối cảnh và nếp gấp, không dán phẳng. ${d.referenceColors===true?'Lấy màu chất liệu từ ref.':'Giữ màu gốc của vùng được chỉnh.'} Giữ hình dáng, đường biên, thiết kế, tư thế và bối cảnh nguồn.`,
+ colorMatch:`Chỉ chỉnh màu tại vùng: ${d.transferTarget?.trim()||'toàn ảnh, bảo vệ màu da tự nhiên'}. ${d.colorMode==='custom'?`Dùng màu đích ${d.targetColor||'#C46B51'} làm màu chính, giữ chuyển sắc sáng tối và texture tự nhiên.`:'Lấy palette, cân bằng trắng, sắc độ vùng sáng/tối và quan hệ màu từ ref; ánh xạ màu theo các vùng tương ứng của ảnh nguồn.'} Giữ nguyên hình học, danh tính, tư thế, bố cục, chi tiết chất liệu và chữ/logo. Không lấy đồ vật, texture hay danh tính từ ảnh màu mẫu.`
+ }[kind];
+ return ['CHẾ ĐỘ THAM CHIẾU: '+kind,scope,detail,'Ảnh nguồn quyết định danh tính và cấu trúc. Ref chỉ quyết định thuộc tính đã chọn. Yêu cầu bổ sung bên dưới có thể điều chỉnh thuộc tính trong chế độ này; không tự đổi các thuộc tính còn lại. Xuất đúng một ảnh hoàn chỉnh, không collage, không chèn bảng màu hay ảnh ref.'].join('\n');
+}
+module.exports={TRANSFERS,TRANSFER_LABELS,transferInstruction};

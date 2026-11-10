@@ -1,0 +1,3 @@
+const MOTION_LIMITS={image:10,video:30};
+function motionOptions(data={},duration){const orientation=data.characterOrientation??'image';if(!Object.hasOwn(MOTION_LIMITS,orientation))throw Error('Chế độ hướng chuyển động không hợp lệ');const max=MOTION_LIMITS[orientation];if(!Number.isFinite(duration)||duration<3)throw Error('Motion Control cần video từ 3 giây');if(duration>max+.05)throw Error('Chế độ '+(orientation==='video'?'bám hướng video':'giữ hướng ảnh')+' nhận video tối đa '+max+' giây');return {character_orientation:orientation,keep_original_sound:data.keepSound!==false}}
+module.exports={MOTION_LIMITS,motionOptions};
