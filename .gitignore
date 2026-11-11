@@ -44,3 +44,6 @@
 **/.DS_Store
 **/cookies*.json
 **/accounts*.json
+
+!work/app/dist/assets/data/
+!work/app/dist/assets/data/motion-library.json

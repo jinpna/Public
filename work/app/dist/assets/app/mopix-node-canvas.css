@@ -1,0 +1,65 @@
+/* The node workspace shares the app's dark surfaces and 36px controls. */
+#root .mopix-canvas-workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:12px;height:calc(100dvh - 110px);min-height:0;margin:0 16px 16px;padding:0;color:#d0d6e0;overflow:hidden;font-size:14px}
+#root .mopix-node-stage{position:relative;min-width:0;min-height:0;overflow:clip;isolation:isolate;background-color:#08090a;background-image:radial-gradient(#25272a .7px,transparent .7px);background-size:20px 20px;border:1px solid #202226;border-radius:12px;touch-action:none;user-select:none;cursor:grab}
+#root .mopix-node-stage:active{cursor:grabbing}
+#root .mopix-node-world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#root .mopix-node-edges{position:absolute;left:0;top:0;width:1px;height:1px;overflow:visible;pointer-events:none}
+#root .mopix-node-edges path{fill:none;stroke:#4c515a;stroke-width:2;pointer-events:stroke;cursor:pointer;outline:none}
+#root .mopix-node-edges path:hover,#root .mopix-node-edges path:focus,#root .mopix-node-edges path.is-selected{stroke:#d0d6e0;stroke-width:3}
+#root .mopix-node-edges path.is-draft{stroke:#8a8f98;stroke-dasharray:5 5;pointer-events:none}
+#root .mopix-canvas-node{position:absolute;display:flex;flex-direction:column;background:#0f1011;border:1px solid #292c30;border-radius:10px;overflow:visible;box-sizing:border-box;cursor:grab;outline:none}
+#root .mopix-canvas-node.is-selected,#root .mopix-canvas-node:focus-visible{border-color:#8a8f98}
+#root .mopix-canvas-node>header,#root .mopix-canvas-node>footer{display:flex;align-items:center;gap:8px;padding:8px 10px;min-height:42px;box-sizing:border-box}
+#root .mopix-canvas-node>header>span{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#root .mopix-canvas-node>footer{justify-content:space-between;color:#62666d;border-top:1px solid #1c1d1e}
+#root .mopix-node-media{flex:1;min-height:0;margin:0 8px;overflow:hidden;background:#090a0b;border-radius:4px}
+#root .mopix-node-media img,#root .mopix-node-media video{width:100%;height:100%;object-fit:contain;display:block}
+#root .mopix-node-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;box-sizing:border-box;color:#62666d;text-align:center}
+#root .mopix-node-empty small{font-size:12px;line-height:1.5;overflow:hidden;max-height:54px;white-space:pre-wrap;overflow-wrap:anywhere}
+#root .mopix-canvas-workspace button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:36px;height:36px;padding:0;border:1px solid transparent;border-radius:7px;color:#8a8f98;background:transparent;font-weight:400;cursor:pointer;box-shadow:none;transition:background .15s,color .15s}
+#root .mopix-canvas-workspace button:hover,#root .mopix-canvas-workspace button[aria-pressed=true]{background:#1c1e21;color:#f7f8f8}
+#root .mopix-canvas-workspace button:focus-visible{outline:1px solid #8a8f98;outline-offset:2px}
+#root .mopix-canvas-workspace button:disabled{opacity:.35;cursor:default}
+#root .mopix-canvas-node>header button,#root .mopix-canvas-node>footer button{width:28px;height:28px}
+#root .mopix-canvas-node .mopix-node-port{position:absolute;top:100px;width:20px;height:20px;border:5px solid #0f1011;border-radius:50%;background:#8a8f98;z-index:2;cursor:crosshair}
+#root .mopix-canvas-node .mopix-node-port:hover{background:#f7f8f8}
+#root .mopix-node-port.is-output{right:-10px}#root .mopix-node-port.is-input{left:-10px}
+#root .mopix-canvas-toolbar,#root .mopix-canvas-zoom{position:absolute;z-index:3;display:flex;align-items:center;gap:4px;padding:5px;background:#0f1011;border:1px solid #292c30;border-radius:9px}
+#root .mopix-canvas-toolbar{top:16px;left:16px}#root .mopix-canvas-zoom{left:16px;bottom:16px}
+#root .mopix-canvas-zoom output{font-size:12px;min-width:42px;text-align:center;color:#8a8f98}
+#root .mopix-canvas-minimap{position:absolute;bottom:16px;right:16px;width:160px;height:98px;background:#0f1011;border:1px solid #292c30;border-radius:8px;cursor:crosshair;z-index:3}
+#root .mopix-canvas-minimap rect{fill:#292c30;stroke:#62666d;stroke-width:3}#root .mopix-canvas-minimap rect.is-selected{fill:#62666d;stroke:#d0d6e0}
+#root .mopix-canvas-hint,#root .mopix-canvas-error{position:absolute;bottom:78px;left:16px;right:16px;z-index:4;margin:0;padding:10px 12px;background:#141516;border:1px solid #292c30;border-radius:6px;font-size:12px;color:#d0d6e0;pointer-events:none}
+#root .mopix-canvas-inspector{display:flex;flex-direction:column;min-height:0;overflow:hidden;background:#0f1011;border:1px solid #202226;border-radius:12px;padding:18px;box-sizing:border-box}
+#root .mopix-canvas-inspector>header{display:flex;align-items:center;justify-content:space-between;min-height:36px;margin-bottom:14px}
+#root .mopix-canvas-inspector h1{font-size:20px;font-weight:400;margin:0;color:#d0d6e0}
+#root .mopix-canvas-details{display:flex;flex-direction:column;gap:12px;flex:1;min-height:0}
+#root .mopix-canvas-details label{display:flex;flex-direction:column;gap:6px;color:#8a8f98;font-size:12px;min-width:0}
+#root .mopix-canvas-details input,#root .mopix-canvas-details textarea,#root .mopix-canvas-details select{width:100%;box-sizing:border-box;background:#111315;border:1px solid #292c30;border-radius:6px;color:#d0d6e0;padding:10px;font:inherit;font-size:14px;outline:none;font-weight:400;min-height:36px}
+#root .mopix-canvas-details textarea{height:clamp(90px,19dvh,190px);resize:none;line-height:1.5}
+#root .mopix-canvas-details textarea:focus,#root .mopix-canvas-details input:focus{border-color:#62666d}
+#root .mopix-canvas-properties{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#root .mopix-canvas-properties label:last-child:nth-child(3){grid-column:1/-1}
+#root .mopix-canvas-source-actions{display:flex;gap:6px}
+#root .mopix-canvas-inputs{display:flex;flex-direction:column;gap:2px;min-height:0;max-height:120px;overflow:auto}
+#root .mopix-canvas-inputs>div{display:flex;align-items:center;gap:6px;min-height:30px;font-size:12px}
+#root .mopix-canvas-inputs small{color:#8a8f98;min-width:52px}#root .mopix-canvas-inputs span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+#root .mopix-canvas-reference-note{font-size:11px;line-height:1.5;color:#62666d}
+#root .mopix-canvas-details>footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;color:#62666d;border-top:1px solid #202226;padding-top:10px}
+#root .mopix-canvas-empty{margin:auto;text-align:center;color:#62666d;font-size:13px}
+@media(max-height:760px){#root .mopix-canvas-inspector{padding:12px}#root .mopix-canvas-inspector>header{margin-bottom:8px}#root .mopix-canvas-details{gap:8px}#root .mopix-canvas-details textarea{height:86px}#root .mopix-canvas-inputs{max-height:74px}}
+@media(max-width:1100px){#root .mopix-canvas-workspace{grid-template-columns:minmax(0,1fr) 270px;margin:0 12px 12px;gap:10px}}
+
+#root .mopix-canvas-inputs{flex-direction:row;flex-wrap:wrap;gap:4px;flex-shrink:0;max-height:none;overflow:visible}
+#root .mopix-canvas-inputs>div{border:1px solid #26292d;border-radius:5px;padding-left:6px;min-height:26px}
+#root .mopix-canvas-inputs span{display:none}#root .mopix-canvas-inputs small{min-width:0;font-size:11px}#root .mopix-canvas-inputs button{width:24px;height:24px}
+#root .mopix-canvas-workspace,#root .mopix-canvas-inspector{overflow:clip}
+#root .mopix-canvas-inspector>header{gap:4px;flex-shrink:0}
+#root .mopix-canvas-inspector>header>input{flex:1;min-width:0;width:100px;border:0;background:transparent;color:#d0d6e0;font:inherit;font-size:18px;outline:none}
+#root .mopix-canvas-details .mopix-prompt-field{position:relative;flex-shrink:0}
+#root .mopix-canvas-details .mopix-prompt-field textarea{padding-bottom:40px}
+#root .mopix-canvas-details .mopix-ai-helper{position:absolute;right:6px;bottom:6px}
+#root .mopix-canvas-details .mopix-ai-helper>button{width:28px;height:28px}
+#root .mopix-canvas-details .mopix-ai-error{position:absolute;right:0;top:32px;width:220px;background:#141516;padding:8px;border:1px solid #292c30;z-index:6}
+#root .mopix-canvas-details select{padding:7px;font-size:13px}
+#root .mopix-canvas-node.is-selected{z-index:1}
