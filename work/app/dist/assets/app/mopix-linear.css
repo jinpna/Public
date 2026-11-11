@@ -99,7 +99,7 @@ html body #root#root .mopix-settings .muse-settings-tabs{padding:4px!important;b
 html body #root#root .mopix-settings .muse-settings-tabs button{border:0!important;border-radius:8px!important;background:transparent!important;min-height:44px!important}
 html body #root#root .mopix-settings .muse-settings-tabs button[aria-current=page]{background:var(--mopix-active)!important}
 html body #root#root .mopix-settings .muse-settings-content>div,html body #root#root .mopix-settings .muse-settings-content [class*='max-w-']{width:100%!important;max-width:none!important}
-html body #root#root .mopix-settings .muse-settings-content [class*='space-y-']>div{margin-top:0!important;padding:20px 0!important;border:0!important;border-bottom:1px solid var(--mopix-line)!important;border-radius:0!important;background:transparent!important}
+
 html body #root#root .mopix-settings .muse-settings-content h2{font-size:18px!important}
 html body #root#root .mopix-settings .muse-settings-content h3{font-size:15px!important}
 html body #root#root .mopix-support{display:flex!important;flex-direction:column!important;gap:24px!important}
@@ -269,3 +269,177 @@ html body #root#root .alara-rail .mopix-home-composer>footer>:is(button,select){
 html body #root#root .alara-rail .mopix-home-composer>footer>button:first-child{width:32px!important;padding:6px!important}
 html body #root#root .alara-rail .mopix-home-composer>footer>select{width:auto!important;max-width:82px!important;padding:6px!important}
 html body #root#root .alara-rail .muse-home-six .mopix-home-composer button.muse-create-action.sx-btn{border-radius:6px!important;margin-left:auto!important;min-width:76px!important}
+
+/* Shared desktop geometry for every generation workspace. */
+:root{--workspace-input:340px;--workspace-tools:300px;--workspace-gap:16px;--workspace-pad:20px;--workspace-tile:13px;--workspace-row-gap:8px}
+html body #root#root :is(.quick-studio.quick-video-workspace,.sx-image.sx-image){display:grid!important;grid-template-columns:var(--workspace-input) minmax(0,1fr) var(--workspace-tools)!important;gap:var(--workspace-gap)!important;padding:16px 24px 24px!important;width:100%!important;height:100%!important;min-height:0!important;flex:1!important;overflow:hidden!important;box-sizing:border-box!important;align-items:stretch!important}
+html body #root#root :is(.quick-studio,.sx-image)>*{min-width:0!important;min-height:0!important;margin:0!important;height:100%!important;width:auto!important;box-sizing:border-box!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel){display:flex!important;flex-direction:column!important;padding:0!important;overflow:visible!important;position:relative!important;background:var(--mopix-panel)!important;border:1px solid var(--mopix-line-active)!important;border-radius:8px!important}
+html body #root#root .quick-compose>.muse-compose-scroll{display:flex!important;flex-direction:column!important;flex:1!important;min-height:0!important;padding:var(--workspace-pad)!important;gap:8px!important;overflow:visible!important}
+html body #root#root .quick-compose .muse-compose-scroll>*{margin:0!important;flex-shrink:0!important}
+html body #root#root .quick-compose .muse-compose-scroll>header,
+html body #root#root .sx-composer-panel>.sx-panel-head{height:32px!important;min-height:32px!important;padding:0!important;display:flex!important;align-items:center!important;border:0!important;background:transparent!important;flex:none!important;margin:0 0 8px!important}
+html body #root#root :is(.quick-compose .muse-compose-scroll>header,.sx-panel-head)>h1{font-size:22px!important;line-height:32px!important;margin:0!important}
+html body #root#root .sx-composer-panel>.sx-panel-head{margin:var(--workspace-pad) var(--workspace-pad) 8px!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) :is(.native-eyebrow,.quick-reference-head,.quick-footnote,.quick-advanced,.sx-counts,.sx-run-hint,.character-options,.sx-panel-head>small){display:none!important}
+html body #root#root .quick-compose .muse-compose-scroll>header>p{display:none!important}
+html body #root#root .sx-composer-panel>.sx-composer{display:flex!important;flex-direction:column!important;flex:1!important;min-height:0!important;padding:0!important;gap:0!important}
+html body #root#root .sx-composer>.muse-compose-scroll{display:flex!important;flex-direction:column!important;flex:1!important;min-height:0!important;overflow:visible!important;gap:8px!important;padding:0 var(--workspace-pad) var(--workspace-pad)!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) :is(.quick-reference-strip,.sx-strip-empty){height:88px!important;min-height:88px!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:0!important;overflow:hidden!important;margin:0!important}
+html body #root#root :is(.quick-reference-strip,.sx-strip-empty)>:is(button,div){width:100%!important;height:88px!important;min-height:0!important;border-radius:6px!important;box-sizing:border-box!important}
+html body #root#root .quick-reference-strip:has(>:nth-child(3)){grid-template-columns:repeat(5,minmax(0,1fr))!important}
+html body #root#root .quick-reference-strip img{width:100%!important;height:100%!important;object-fit:cover!important}
+html body #root#root .sx-import{flex:none!important;margin:0!important;padding:0!important}
+html body #root#root .sx-strip-meta{height:24px!important;min-height:24px!important;padding:0!important;margin:8px 0 0!important;justify-content:flex-start!important;font-size:12px!important}
+html body #root#root .quick-compose button.mopix-add-reference.sx-btn{height:24px!important;min-height:24px!important;width:auto!important;align-self:flex-start!important;padding:0!important;margin:0!important;font-size:12px!important;line-height:24px!important}
+html body #root#root .quick-compose .quick-prompt-label,
+html body #root#root .sx-composer .sx-field{flex:1 1 120px!important;min-height:90px!important;display:flex!important;flex-direction:column!important;margin:0!important;gap:8px!important;font-size:13px!important;line-height:20px!important}
+html body #root#root :is(.quick-prompt-label,.sx-field) :is(.muse-prompt-editor-wrap,.sx-prompt,.muse-reference-prompt){flex:1!important;min-height:0!important;display:flex!important;flex-direction:column!important;margin:0!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .muse-prompt-editor{flex:1!important;min-height:0!important;max-height:none!important;height:100%!important;padding:12px!important;border-radius:6px!important;font-size:15px!important;line-height:1.6!important;overflow:auto!important}
+html body #root#root .sx-field>.sx-hint{display:none!important}
+html body #root#root .sx-field>.sx-label{margin:0!important;font-size:13px!important;line-height:20px!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .inline-muse{height:24px!important;min-height:24px!important;margin:0!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .inline-muse-row{height:24px!important;margin:0!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) :is(.quick-settings,.sx-compact-options){padding:0!important;margin:0!important;border:0!important;background:transparent!important;min-height:64px!important;flex:none!important}
+html body #root#root .quick-settings>header{display:none!important}
+html body #root#root .quick-options{display:flex!important;flex-direction:column!important;gap:8px!important}
+html body #root#root .quick-options>div{font-size:12px!important;line-height:18px!important}
+html body #root#root .quick-options>label{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;font-size:12px!important}
+html body #root#root .quick-options>label>select{height:32px!important;min-height:32px!important;width:100px!important;padding:4px 10px!important;font-size:13px!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .muse-ratios{height:52px!important;min-height:52px!important;gap:4px!important;margin:4px 0 0!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .muse-ratios>button{height:52px!important;min-height:52px!important;padding:4px!important;border-radius:6px!important;font-size:11px!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .muse-compose-actions{flex:none!important;display:flex!important;flex-direction:column!important;gap:8px!important;min-height:96px!important;height:96px!important;padding:10px var(--workspace-pad) 14px!important;margin:0!important;border-top:1px solid var(--mopix-line)!important;background:transparent!important;box-sizing:border-box!important}
+html body #root#root :is(.quick-compose,.sx-composer-panel) .muse-compose-actions>button{width:100%!important;height:40px!important;min-height:40px!important;margin:0!important;border-radius:6px!important;font-size:14px!important}
+html body #root#root .mopix-output-folder{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;width:100%!important;min-width:0!important;height:24px!important;color:var(--mopix-subtle)!important;font-size:12px!important;position:relative!important}
+html body #root#root .mopix-output-folder button{display:flex!important;align-items:center!important;gap:6px!important;width:auto!important;max-width:70%!important;min-width:0!important;min-height:24px!important;height:24px!important;padding:2px 0!important;border:0!important;background:transparent!important;color:var(--mopix-muted)!important;font-size:12px!important;border-radius:4px!important;box-shadow:none!important}
+html body #root#root .mopix-output-folder button>span:first-of-type{overflow:hidden!important;white-space:nowrap!important;text-overflow:ellipsis!important}
+html body #root#root .mopix-output-folder>small[role=alert]{position:absolute!important;bottom:30px!important;right:0!important;padding:8px!important;background:#1c1d1e!important;border:1px solid #ffffff1f!important;border-radius:6px!important;z-index:20!important;max-width:280px!important}
+html body #root#root .quick-compose .image-series-toggle{position:absolute!important;top:20px!important;right:var(--workspace-pad)!important;width:auto!important;min-height:28px!important;height:28px!important;padding:2px!important;gap:2px!important;margin:0!important;border-radius:5px!important}
+html body #root#root .quick-compose .image-series-toggle button{min-height:24px!important;height:24px!important;padding:2px 6px!important;font-size:11px!important;border-radius:3px!important}
+html body #root#root .quick-compose .image-series-toggle svg{display:none!important}
+html body #root#root .quick-compose .compose-region-icon{display:none!important}
+html body #root#root .mopix-floating-options{position:absolute!important;top:170px!important;right:var(--workspace-pad)!important;z-index:15!important;margin:0!important;border:0!important;background:transparent!important}
+html body #root#root .mopix-floating-options>summary{font-size:11px!important;line-height:24px!important;color:var(--mopix-muted)!important}
+html body #root#root .mopix-floating-options[open]>div{position:absolute!important;left:0!important;top:30px!important;width:320px!important;padding:16px!important;background:var(--mopix-panel)!important;border:1px solid var(--mopix-line-active)!important;border-radius:8px!important;box-shadow:0 12px 40px #000a!important}
+/* Tools use the same text, icon and tile scale, without a scrolling drawer. */
+html body #root#root :is(.mopix-image-tools,.mopix-design-tools,.image-preset-panel,.mopix-video-tools){position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:flex!important;flex-direction:column!important;padding:var(--workspace-pad)!important;overflow:hidden!important;width:auto!important;max-width:none!important;height:100%!important;min-height:0!important;background:var(--mopix-panel)!important;border:1px solid var(--mopix-line-active)!important;border-radius:8px!important;box-sizing:border-box!important}
+html body #root#root :is(.mopix-image-tools>.quick-tools-unified,.image-preset-panel>.image-presets){height:100%!important;display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important;margin:0!important;min-height:0!important;background:transparent!important;border:0!important}
+html body #root#root :is(.mopix-image-tools,.image-preset-panel) h2{height:24px!important;line-height:24px!important;margin:0 0 16px!important;font-size:15px!important;color:var(--mopix-silver)!important}
+html body #root#root .image-preset-panel .image-presets>header{height:40px!important;flex:none!important;padding:0!important;margin:0!important}
+html body #root#root .image-preset-panel :is(.preset-help,.preset-group>h3){display:none!important}
+html body #root#root .image-preset-panel .preset-group{display:flex!important;flex:1!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important}
+html body #root#root :is(.mopix-image-tools,.image-preset-panel) .image-preset-grid{flex:1!important;min-height:0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(5,minmax(0,1fr))!important;gap:10px!important;margin:0!important;width:100%!important}
+html body #root#root :is(.mopix-image-tools,.image-preset-panel,.mopix-design-tools) :is(.image-preset-grid,.design-mode-grid)>button{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;min-height:0!important;height:auto!important;padding:8px 6px!important;border-radius:6px!important;background:var(--mopix-input)!important;border:1px solid var(--mopix-line)!important;color:var(--mopix-muted)!important;font-size:var(--workspace-tile)!important;line-height:1.35!important;text-align:center!important}
+html body #root#root :is(.mopix-image-tools,.image-preset-panel,.mopix-design-tools) :is(.image-preset-grid,.design-mode-grid)>button :is(span,strong,small){font-size:var(--workspace-tile)!important;line-height:1.35!important;color:inherit!important}
+html body #root#root :is(.mopix-image-tools,.image-preset-panel,.mopix-design-tools) :is(.image-preset-grid,.design-mode-grid)>button svg{width:22px!important;height:22px!important;color:inherit!important}
+html body #root#root .mopix-design-tools>.design-controls{display:flex!important;flex-direction:column!important;gap:14px!important;height:100%!important;min-height:0!important;padding:0!important}
+html body #root#root .mopix-design-tools .design-tool-section{display:flex!important;flex-direction:column!important;flex:2!important;min-height:0!important;padding:0!important;margin:0!important;gap:8px!important}
+html body #root#root .mopix-design-tools .design-tool-section:first-child{flex:3!important}
+html body #root#root .mopix-design-tools h3{height:20px!important;line-height:20px!important;font-size:13px!important;margin:0!important;flex:none!important}
+html body #root#root .mopix-design-tools .design-mode-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr)!important;gap:8px!important;flex:1!important;min-height:0!important}
+/* Compact account structure, without descendant-wide padding rules. */
+html body #root#root .mopix-settings{overflow:hidden!important;padding:16px 24px 24px!important;max-width:none!important}
+html body #root#root .mopix-page-heading{flex:none!important;margin:0 0 20px!important}
+html body #root#root .mopix-settings-layout{height:100%!important;flex:1!important;min-height:0!important;grid-template-columns:180px minmax(0,1fr)!important;gap:16px!important;align-items:stretch!important}
+html body #root#root .mopix-settings .muse-settings-tabs{align-self:start!important;justify-content:flex-start!important;height:auto!important;position:static!important}
+html body #root#root .mopix-settings .muse-settings-content{height:100%!important;min-height:0!important;padding:20px!important;border-radius:8px!important}
+html body #root#root .mopix-settings-section-title{padding-bottom:16px!important;margin-bottom:16px!important}
+html body #root#root .mopix-settings .mopix-account-header{padding:0!important;margin:0 0 12px!important;min-height:20px!important}
+html body #root#root .mopix-settings .mopix-account-body{display:flex!important;flex-direction:column!important;gap:16px!important;padding:0!important;margin:0!important;overflow:visible!important}
+html body #root#root .mopix-settings .mopix-account-body>div{margin:0!important;background:transparent!important;border:0!important;padding:0!important}
+html body #root#root .mopix-settings .mopix-account-form{display:flex!important;flex-direction:column!important;gap:16px!important;box-shadow:none!important}
+html body #root#root .mopix-settings .mopix-account-form>div{margin:0!important}
+html body #root#root .mopix-settings .mopix-account-form>div:first-child{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;flex-wrap:wrap!important}
+html body #root#root .mopix-settings .mopix-account-form>div:first-child>div{padding:3px!important;border-radius:6px!important;gap:4px!important}
+html body #root#root .mopix-settings .mopix-account-form>div:first-child button{height:32px!important;min-height:32px!important;padding:4px 10px!important;border-radius:4px!important;font-size:12px!important}
+html body #root#root .mopix-settings .mopix-account-form input{height:40px!important;padding:8px 12px!important;font-size:14px!important;border-radius:6px!important}
+html body #root#root .mopix-settings .mopix-account-form label{margin:0 0 6px!important;line-height:20px!important}
+html body #root#root .mopix-settings .mopix-account-body button{border-radius:6px!important;min-height:36px!important;height:36px!important;padding:6px 12px!important;font-size:13px!important}
+html body #root#root .mopix-settings .mopix-account-body div.text-center{padding:24px!important;min-height:100px!important}
+html body #root#root .mopix-settings .mopix-account-body div.text-center>svg{width:28px!important;height:28px!important;margin:0 auto 8px!important}
+html body #root#root .mopix-settings .mopix-account-body div.text-center>p{font-size:12px!important;margin:4px 0!important}
+html body #root#root .mopix-settings .mopix-output-folder.is-settings{display:grid!important;grid-template-columns:1fr auto!important;height:auto!important;min-height:72px!important;padding:16px 0!important;border-top:1px solid var(--mopix-line)!important}
+html body #root#root .mopix-output-folder.is-settings>small{grid-column:1/-1!important;overflow-wrap:anywhere!important}
+html body #root#root .mopix-output-folder.is-settings>button{max-width:320px!important;padding:6px 12px!important;height:36px!important}
+html body #root#root .mopix-settings .muse-cache-tools{margin-top:16px!important;padding:16px 0 0!important;border:0!important;border-top:1px solid var(--mopix-line)!important;border-radius:0!important}
+/* The active navigation item sits under a moving glass lens. */
+html body #root#root .muse-global-nav>nav{position:absolute!important;isolation:isolate!important}
+html body #root#root .muse-global-nav .nav-focus-lens{display:block!important;position:absolute!important;left:0!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(155deg,#ffffff16,#ffffff05)!important;border:1px solid #ffffff14!important;box-shadow:inset 0 1px 0 #ffffff10,0 4px 16px #0004!important;transition:transform .38s cubic-bezier(.2,.8,.2,1),width .38s cubic-bezier(.2,.8,.2,1)!important}
+html body #root#root .muse-global-nav>nav>button{position:relative!important;z-index:1!important}
+html body #root#root .muse-global-nav>nav>button:is(:hover,[aria-current=page]){background:transparent!important}
+/* A restrained melting reveal keeps the headline's footprint stable. */
+html body #root#root .alara-rail .muse-home-intro{height:100px!important;min-height:100px!important;flex:none!important;overflow:hidden!important;display:flex!important;align-items:center!important}
+html body #root#root .alara-intro-copy h1.mopix-creative-quote{font-size:clamp(28px,2.8vw,40px)!important;line-height:1.12!important;margin:0!important;letter-spacing:-.035em!important}
+html body #root#root .mopix-creative-quote>span{display:block;animation:mopix-melty-in .75s cubic-bezier(.16,1,.3,1) both;transform-origin:left center}
+@keyframes mopix-melty-in{0%{opacity:0;filter:blur(9px);transform:translateY(12px) scaleY(1.16);letter-spacing:-.065em}55%{opacity:.85;filter:blur(2px)}100%{opacity:1;filter:blur(0);transform:none}}
+html body #root#root .alara-rail .muse-home-guide:has(.donate-card){inset:12px!important;padding:20px!important;display:flex!important;flex-direction:column!important;gap:12px!important;overflow:hidden!important}
+html body #root#root .alara-rail .donate-card{display:flex!important;flex-direction:column!important;align-items:center!important;gap:16px!important;background:transparent!important;border:0!important;padding:0!important;margin:0!important;min-height:0!important}
+html body #root#root .donate-qr{display:flex!important;flex-direction:column!important;align-items:center!important;gap:12px!important;padding:0!important;background:transparent!important;border:0!important;min-width:0!important}
+html body #root#root .donate-qr img{width:min(240px,100%)!important;height:auto!important;max-height:40vh!important;aspect-ratio:1!important;object-fit:contain!important;border:12px solid #fff!important;border-radius:4px!important;background:#fff!important;box-shadow:none!important}
+html body #root#root .donate-qr a{font-size:13px!important;min-height:36px!important;height:36px!important;border-radius:6px!important}
+html body #root#root .alara-rail .muse-donate-preview.donate-card .donate-qr{width:100%!important;max-width:none!important}
+html body #root#root .alara-rail .muse-donate-preview.donate-card .donate-qr img{width:210px!important;min-width:210px!important;max-width:100%!important;height:210px!important;min-height:210px!important;max-height:none!important;flex:none!important;border:8px solid #fff!important;border-radius:4px!important;object-fit:contain!important;filter:none!important}
+@media(max-width:1200px){:root{--workspace-input:290px;--workspace-tools:260px;--workspace-pad:16px;--workspace-gap:12px}}
+@media(max-height:760px){:root{--workspace-pad:14px}html body #root#root :is(.quick-compose,.sx-composer-panel) :is(.quick-reference-strip,.sx-strip-empty){height:72px!important;min-height:72px!important}html body #root#root :is(.quick-reference-strip,.sx-strip-empty)>:is(button,div){height:72px!important}html body #root#root .quick-compose .muse-compose-scroll{gap:6px!important}html body #root#root .mopix-floating-options{top:146px!important}html body #root#root .quick-compose .image-series-toggle{top:16px!important}html body #root#root .alara-rail .muse-home-intro{height:80px!important;min-height:80px!important}}
+@media(prefers-reduced-motion:reduce){html body #root#root .mopix-creative-quote>span{animation:none!important}html body #root#root .nav-focus-lens{transition:none!important}}
+html body #root#root .mopix-video-tools>.muse-tools-close{display:none!important}
+html body #root#root .mopix-video-tools .video-tools-simple{display:flex!important;flex-direction:column!important;height:100%!important;min-height:0!important;padding:0!important;gap:12px!important}
+html body #root#root .mopix-video-tools .motion-visual-picker{display:flex!important;flex-direction:column!important;flex:1!important;min-height:0!important;gap:10px!important;padding:0!important;border:0!important;background:transparent!important}
+html body #root#root .mopix-video-tools .motion-visual-picker>header h2{font-size:15px!important;line-height:24px!important;margin:0!important}
+html body #root#root .mopix-video-tools .motion-visual-picker>header>small,
+html body #root#root .mopix-video-tools :is(.motion-preview-note,.motion-active-note){display:none!important}
+html body #root#root .mopix-video-tools .motion-script-only{height:32px!important;min-height:32px!important;padding:6px 8px!important;border-radius:6px!important;font-size:12px!important}
+html body #root#root .mopix-video-tools .motion-subject-tabs{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;margin:0!important;padding:0!important}
+html body #root#root .mopix-video-tools .motion-subject-tabs>button{min-width:0!important;height:44px!important;min-height:44px!important;padding:4px!important;gap:4px!important;font-size:11px!important;border-radius:6px!important}
+html body #root#root .mopix-video-tools .motion-visual-grid{flex:1!important;min-height:0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr)!important;gap:8px!important;margin:0!important}
+html body #root#root .mopix-video-tools .motion-visual-grid>button{padding:8px!important;min-height:0!important;height:auto!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:6px!important;border-radius:6px!important}
+html body #root#root .mopix-video-tools .motion-visual-grid>button>strong{font-size:var(--workspace-tile)!important;line-height:18px!important}
+html body #root#root .mopix-video-tools .motion-visual-grid>button>small{display:none!important}
+html body #root#root .mopix-video-tools .motion-mini-scene{width:100%!important;height:clamp(30px,6vh,60px)!important;min-height:0!important;flex-shrink:1!important;border-radius:3px!important}
+html body #root#root .mopix-video-tools :is(.motion-reference-card,.motion-advanced){flex:none!important;margin:0!important;padding:8px 0 0!important;border:0!important;border-top:1px solid var(--mopix-line)!important;border-radius:0!important;background:transparent!important}
+html body #root#root .mopix-video-tools :is(.motion-reference-card,.motion-advanced)>summary{font-size:12px!important;line-height:24px!important}
+html body #root#root .mopix-tool-options>.mopix-options-trigger{display:flex!important;align-items:center!important;gap:8px!important;height:28px!important;min-height:28px!important;padding:0!important;border:0!important;background:transparent!important;font-size:12px!important;color:var(--mopix-muted)!important;border-radius:4px!important}
+html body #root#root dialog.mopix-options-modal{position:fixed!important;inset:0!important;margin:auto!important;width:min(640px,calc(100vw - 48px))!important;max-height:calc(100dvh - 64px)!important;padding:24px!important;border:1px solid var(--mopix-line-active)!important;border-radius:8px!important;background:var(--mopix-panel)!important;color:var(--mopix-silver)!important;box-shadow:0 24px 80px #000a!important;overflow:auto!important}
+.mopix-options-modal::backdrop{background:#08090acc;backdrop-filter:blur(8px)}
+html body #root#root .mopix-options-modal>section>header{display:flex!important;align-items:center!important;justify-content:space-between!important;margin-bottom:20px!important}
+html body #root#root .mopix-options-modal h2{display:flex!important;align-items:center!important;gap:8px!important;font-size:18px!important;margin:0!important}
+html body #root#root .mopix-options-modal>section>header>button{width:32px!important;height:32px!important;border-radius:4px!important;border:1px solid var(--mopix-line)!important;background:var(--mopix-input)!important}
+html body #root#root .mopix-options-body{display:flex!important;flex-direction:column!important;gap:12px!important}
+html body #root#root .mopix-options-body video{max-height:220px!important;width:100%!important;object-fit:contain!important}
+html body #root#root .quick-compose .quick-settings .quick-options{display:block!important;height:74px!important;min-height:74px!important;position:relative!important;padding:0!important;gap:0!important}
+html body #root#root .quick-compose .quick-settings .quick-options>div{height:74px!important;padding:0!important;margin:0!important}
+html body #root#root .quick-compose .quick-settings .quick-options>label{position:absolute!important;right:0!important;top:0!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:6px!important;width:auto!important;height:20px!important;min-height:20px!important;margin:0!important;padding:0!important;font-size:11px!important}
+html body #root#root .quick-compose .quick-settings .quick-options>label>select{width:64px!important;height:24px!important;min-height:24px!important;padding:0 4px!important;font-size:12px!important;line-height:20px!important;border-radius:4px!important}
+html body #root#root .sx-composer .sx-compact-options{height:74px!important;min-height:74px!important;position:relative!important}
+html body #root#root .sx-composer .sx-compact-options:before{content:'Khung hình';display:block;font-size:12px;line-height:18px;color:var(--mopix-silver)}
+html body #root#root .sx-composer-panel>.sx-panel-head{margin-bottom:calc(8px + var(--workspace-row-gap))!important}
+html body #root#root .sx-composer .sx-import{display:grid!important;grid-template-rows:88px 24px!important;gap:8px!important;height:120px!important;min-height:120px!important}
+html body #root#root .sx-composer .sx-import>.sx-strip-meta{margin:0!important}
+html body #root#root .sx-composer .muse-compose-scroll{gap:8px!important}
+html body #root#root .mopix-floating-options.mopix-tool-options{top:174px!important;min-height:24px!important;height:24px!important;padding:0!important;max-width:130px!important}
+html body #root#root .mopix-floating-options>.mopix-options-trigger{height:24px!important;min-height:24px!important;font-size:10px!important;line-height:14px!important;text-align:right!important}
+html body #root#root .mopix-design-tools>.design-controls{box-sizing:border-box!important;flex:1!important;height:auto!important}
+html body #root#root .mopix-settings .mopix-account-form form:has(textarea){display:grid!important;grid-template-columns:minmax(160px,1fr) minmax(0,2fr)!important;gap:12px!important}
+html body #root#root .mopix-settings .mopix-account-form form:has(textarea)>div{margin:0!important}
+html body #root#root .mopix-settings .mopix-account-form form:has(textarea)>div:last-child{grid-column:1/-1!important}
+html body #root#root .mopix-settings .mopix-account-form textarea{height:80px!important;min-height:80px!important;max-height:80px!important;resize:none!important;padding:10px!important;font-size:13px!important}
+html body #root#root .mopix-settings .mopix-account-body div.text-center{min-height:60px!important;padding:16px!important}
+html body #root#root .mopix-settings .mopix-account-body div.text-center>svg,
+html body #root#root .mopix-settings .mopix-account-body div.text-center>p:last-child{display:none!important}
+html body #root#root .mopix-settings .muse-settings-content .max-w-4xl{display:flex!important;flex-direction:column!important;gap:0!important}
+html body #root#root .mopix-settings .muse-settings-content .max-w-4xl>div:not(.mopix-output-folder){padding:12px 0!important;margin:0!important;min-height:64px!important;border:0!important;border-bottom:1px solid var(--mopix-line)!important;border-radius:0!important;box-sizing:border-box!important}
+html body #root#root .mopix-settings .muse-settings-content .max-w-4xl h3{font-size:14px!important}
+html body #root#root .mopix-settings .muse-settings-content .max-w-4xl p{font-size:12px!important;line-height:1.5!important}
+html body #root#root .mopix-settings .muse-cache-tools{min-height:72px!important;padding-top:12px!important;gap:12px!important}
+html body #root#root .mopix-settings .muse-cache-tools h3{font-size:14px!important;margin:0 0 4px!important}
+html body #root#root .mopix-settings .muse-cache-tools p{font-size:12px!important;line-height:1.5!important;margin:0!important}
+@media(max-height:760px){
+ :root{--workspace-row-gap:6px}
+ html body #root#root .sx-composer .sx-import{grid-template-rows:72px 24px!important;gap:6px!important;height:102px!important;min-height:102px!important}
+ html body #root#root .sx-composer .muse-compose-scroll{gap:6px!important}
+ html body #root#root .mopix-floating-options.mopix-tool-options{top:146px!important}
+ html body #root#root .mopix-design-tools .design-tool-section{gap:6px!important}
+ html body #root#root .mopix-design-tools>.design-controls{gap:10px!important}
+ html body #root#root .mopix-design-tools .design-mode-grid>button{gap:4px!important;padding:4px!important}
+ html body #root#root .mopix-design-tools .design-mode-grid>button svg{width:18px!important;height:18px!important}
+}

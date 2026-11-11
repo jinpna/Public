@@ -8,6 +8,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     return () => ipcRenderer.removeListener('cookie-captured', handler);
   },
   selectCodeProject: () => ipcRenderer.invoke('choose-code-project'),
+  selectSaveDirectory: (currentPath) => ipcRenderer.invoke('choose-save-directory', currentPath),
   cacheInfo: () => ipcRenderer.invoke('muse-cache-info'),
   clearCache: () => ipcRenderer.invoke('muse-cache-clear'),
   isElectron: true

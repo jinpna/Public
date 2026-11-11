@@ -10,6 +10,7 @@
     "check:tools": "node work/check-ten-tools.cjs",
     "check:fonts": "node work/check-inter-tight.cjs",
     "check:no-film": "node work/check-no-film.cjs",
+    "check:layout": "node work/check-workspace-layout.cjs",
     "package:installed": "python3 work/package-update.py"
   },
   "devDependencies": {

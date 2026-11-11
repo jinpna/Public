@@ -6,6 +6,8 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 
 - Dark mode thống nhất; Inter Tight Regular 400 lưu trực tiếp trong app.
 - Trang chủ tạo nhanh ảnh/video, ảnh demo và hiệu ứng chuyển cảnh.
+- 20 câu ngắn về sáng tạo đổi mỗi 4 giây; 9 ảnh demo, có ghi nguồn trong `assets/carousel/sources.json`.
+- Bốn tab dùng chung kích thước cột, ô ảnh, prompt và thanh Tạo; lựa chọn thư mục lưu đồng bộ qua cài đặt.
 - Tạo ảnh có 10 nút công cụ cố định ở bên phải, tự điền yêu cầu.
 - Chỉnh ảnh, thiết kế concept, video, Upscale 4K và thư viện.
 - Nút Tạo nền tối, viền sáng chuyển động; preview/loading gọn.
@@ -47,9 +49,11 @@ Mở `http://127.0.0.1:3008`. Preview lấy giao diện từ repo và chuyển y
 npm run check:tools
 npm run check:fonts
 npm run check:no-film
+npm run check:layout
 ```
 
 Các kiểm tra này chỉ thao tác giao diện bằng trình duyệt thử nghiệm, không gửi tác vụ tạo ảnh/video.
+Kiểm tra layout so sánh tọa độ các thành phần ở 1440×900, 1390×800 và 1024×700, đồng thời kiểm tra các phương thức đăng nhập, hộp tùy chọn, quote và QR.
 
 ## Cập nhật app đang cài trên macOS
 

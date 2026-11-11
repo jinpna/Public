@@ -285,6 +285,13 @@ ipcMain.handle('choose-code-project', async (event) => {
   return result.canceled ? null : result.filePaths[0];
 });
 
+ipcMain.handle('choose-save-directory', async (event, currentPath) => {
+  if (!mainWindow || event.sender.id !== mainWindow.webContents.id || !event.senderFrame.url.startsWith(SERVER_URL + '/')) throw Error('Invalid folder picker caller');
+  const defaultPath = typeof currentPath === 'string' && path.isAbsolute(currentPath) ? currentPath : app.getPath('downloads');
+  const result = await dialog.showOpenDialog(mainWindow, {title: 'Chọn thư mục lưu ảnh và video', defaultPath, properties: ['openDirectory', 'createDirectory']});
+  return result.canceled ? null : result.filePaths[0];
+});
+
 // Clear HTTP/render cache only. Cookies, storage, profiles and media are retained.
 ipcMain.handle('muse-cache-info',async()=>({bytes:await session.defaultSession.getCacheSize()}));
 ipcMain.handle('muse-cache-clear',async()=>{const before=await session.defaultSession.getCacheSize();await session.defaultSession.clearCache();return {before,after:await session.defaultSession.getCacheSize()}});

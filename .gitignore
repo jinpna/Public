@@ -17,6 +17,7 @@
 !/work/check-comet.cjs
 !/work/check-concept-dark.cjs
 !/work/check-quiet-preview.cjs
+!/work/check-workspace-layout.cjs
 !/work/mopix.icns
 /work/app/vendor
 **/node_modules/
