@@ -64,7 +64,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
  assert.equal(await page.locator('a[href^="mailto:monday.directory@gmail.com"]').count(),1);
  await page.getByRole('button',{name:'Ủng hộ Monday',exact:true}).click();
  const qr=page.locator('.donate-qr img');
- await qr.waitFor();assert(await qr.evaluate(e=>e.complete&&e.naturalWidth>0));
+ await qr.waitFor();await qr.evaluate(e=>e.decode());assert(await qr.evaluate(e=>e.complete&&e.naturalWidth>0));
  await page.screenshot({path:'outputs/donate-compact.png'});
  assert.deepEqual(errors,[]);
  await browser.close();console.log('Account modes, option dialog, quotes, demo images and donation verified');

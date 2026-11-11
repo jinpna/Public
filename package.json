@@ -11,7 +11,8 @@
     "check:fonts": "node work/check-inter-tight.cjs",
     "check:no-film": "node work/check-no-film.cjs",
     "check:layout": "node work/check-workspace-layout.cjs",
-    "package:installed": "python3 work/package-update.py"
+    "package:installed": "python3 work/package-update.py",
+    "check:upscale": "node work/check-upscale-history.cjs && node work/check-upscale-preview.cjs && node work/check-busy-workspaces.cjs"
   },
   "devDependencies": {
     "lightningcss": "1.33.0",

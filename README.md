@@ -11,6 +11,8 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 - Tạo ảnh có 10 nút công cụ cố định ở bên phải, tự điền yêu cầu.
 - Chỉnh ảnh, thiết kế concept, video, Upscale 4K và thư viện.
 - Nút Tạo nền tối, viền sáng chuyển động; preview/loading gọn.
+- Preview 4K zoom theo con trỏ bằng transform, kéo để di chuyển, thao tác icon và xóa từng mục gần đây. Xóa gần đây giữ nguyên ảnh trong thư viện.
+- Trạng thái chờ dùng lưới chấm chuyển động với câu chữ luân phiên; tôn trọng chế độ giảm chuyển động.
 - Đã bỏ giao diện Làm phim và phần cài đặt proxy.
 
 ## Cấu trúc để sửa tiếp
@@ -50,6 +52,7 @@ npm run check:tools
 npm run check:fonts
 npm run check:no-film
 npm run check:layout
+npm run check:upscale
 ```
 
 Các kiểm tra này chỉ thao tác giao diện bằng trình duyệt thử nghiệm, không gửi tác vụ tạo ảnh/video.

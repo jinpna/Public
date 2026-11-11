@@ -3,9 +3,10 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const PROVIDER='https://upscale-api.kylenguyen.me';
 function createUpscaleService({db,dataDir,sharp,fetchImpl=fetch,notify=()=>{},wait=ms=>new Promise(r=>setTimeout(r,ms))}){
  db.exec('CREATE TABLE IF NOT EXISTS mopix_upscales(id TEXT PRIMARY KEY,payload TEXT NOT NULL)');
+ const hidden=new Set(db.prepare('SELECT payload FROM mopix_upscales').all().map(r=>JSON.parse(r.payload)).filter(p=>p.hidden).map(p=>p.id));
  const dir=path.join(dataDir,'videos');fs.mkdirSync(dir,{recursive:true});const active=new Map();
  const identityFile=path.join(dataDir,'mopix-upscale-client-id');let clientId;try{clientId=fs.readFileSync(identityFile,'utf8').trim()}catch{}if(!/^[a-f0-9-]{36}$/.test(clientId||'')){clientId=crypto.randomUUID();fs.writeFileSync(identityFile,clientId,{mode:0o600})}
- const save=p=>{p.updatedAt=new Date().toISOString();db.prepare('INSERT OR REPLACE INTO mopix_upscales VALUES(?,?)').run(p.id,JSON.stringify(p));notify(p);return p};
+ const save=p=>{if(hidden.has(p.id))p.hidden=true;else delete p.hidden;p.updatedAt=new Date().toISOString();db.prepare('INSERT OR REPLACE INTO mopix_upscales VALUES(?,?)').run(p.id,JSON.stringify(p));notify(p);return p};
  const get=id=>{const r=db.prepare('SELECT payload FROM mopix_upscales WHERE id=?').get(id);return r?JSON.parse(r.payload):null};
  const headers={'X-Client-Id':clientId};
  async function json(response){let d;try{d=await response.json()}catch{throw Error('Dịch vụ 4K trả phản hồi không hợp lệ.')}if(!response.ok)throw Error(d.error||'Dịch vụ 4K chưa sẵn sàng ('+response.status+').');return d}
@@ -29,11 +30,12 @@ function createUpscaleService({db,dataDir,sharp,fetchImpl=fetch,notify=()=>{},wa
  async function start({buffer,mime,name='Ảnh',tag=null,sourceJobId=null,beforeUrl}){
   if(!Buffer.isBuffer(buffer)||buffer.length<16||buffer.length>32*1024*1024)throw Error('Chọn ảnh PNG, JPG hoặc WebP tối đa 32 MB.');
   const meta=await sharp(buffer,{limitInputPixels:100000000}).metadata();if(!['png','jpeg','webp'].includes(meta.format))throw Error('Chỉ hỗ trợ PNG, JPG và WebP.');mime={png:'image/png',jpeg:'image/jpeg',webp:'image/webp'}[meta.format];
-  const hash=crypto.createHash('sha256').update(buffer).digest('hex');const old=db.prepare('SELECT payload FROM mopix_upscales ORDER BY rowid DESC LIMIT 100').all().map(r=>JSON.parse(r.payload)).find(r=>r.hash===hash&&r.status==='running');if(old)return old;
+  const hash=crypto.createHash('sha256').update(buffer).digest('hex');const old=db.prepare('SELECT payload FROM mopix_upscales ORDER BY rowid DESC LIMIT 100').all().map(r=>JSON.parse(r.payload)).find(r=>r.hash===hash&&r.status==='running');if(old){hidden.delete(old.id);return save(old)}
   const p=save({id:'mopix_'+crypto.randomUUID(),hash,name,tag,sourceJobId,beforeUrl,status:'running',phase:'Đang gửi ảnh',progress:1,createdAt:new Date().toISOString()});active.set(p.id,process(p,buffer,mime,name));return p;
  }
  function resume(id){const p=get(id);if(!p?.remoteId)throw Error('Không có tác vụ 4K để tiếp tục kiểm tra.');if(!active.has(id)){p.status='running';delete p.error;save(p);active.set(id,process(p))}return p}
  for(const row of db.prepare('SELECT payload FROM mopix_upscales').all()){const p=JSON.parse(row.payload);if(p.status==='running'){p.status='interrupted';p.error='App đã đóng khi xử lý. Bấm Kiểm tra lại để tiếp tục tác vụ cũ.';save(p)}}
- return {start,get,resume,active};
+ function hide(id){const p=get(id);if(p){hidden.add(id);save(p)}return p}
+ return {start,get,resume,hide,active};
 }
 module.exports={createUpscaleService,PROVIDER};
