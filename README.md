@@ -2,6 +2,19 @@
 
 Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này lưu mã giao diện đã chỉnh sửa và bản runtime trích từ app hiện có; không phải mã TypeScript gốc trước khi biên dịch.
 
+## Canvas và Motion · cập nhật 11/11/2026
+
+- Canvas riêng: Text, Ảnh, Video; kéo node, nối dây có kiểm tra vòng lặp, pan/zoom, minimap, ẩn đường nối, undo và lưu bản nháp cục bộ. Chạy và xem kết quả từng node, không tự chạy toàn bộ luồng.
+- Thứ tự đường nối ảnh quyết định `@image1`…`@image5`. Menu `@` hiện cả ảnh và `@Video1`… tương ứng với video đầu vào. Một node video nhận nhiều ảnh và clip tham chiếu.
+- Clip tham chiếu được backend hiện có lấy khung mẫu và phân tích qua MUSE thành hướng dẫn chuyển động. Đây không phải direct video conditioning hay sao chép chuyển động từng frame.
+- 12 phong cách Motion: poster Miushare / Bang Motion, công thức prompt/camera MOPIX. 5s = 1 cảnh; 10s = 2 cảnh nối tiếp, mỗi cảnh 5s. Không nhúng GSAP hay hứa đầu ra 60fps.
+- Canvas có 40 preset video của app và 12 phong cách Motion. So sánh tạo hai tác vụ riêng, cùng prompt/ảnh/engine, khác phong cách. Cả hai node được giữ trên Canvas.
+- Director trong Storyboard dùng MUSE đề xuất đúng 3 cảnh, mỗi cảnh 5s hoặc 10s. Người dùng sửa và duyệt bản đề xuất trước khi thay storyboard; chưa tạo media ở bước lập kế hoạch.
+- Kho 50 motion mới đang chờ file thật; loader kiểm tra schema, ID duy nhất và thời lượng, không điền dữ liệu giả. Tệp chờ: `work/app/dist/assets/data/motion-library.json`.
+- P2 chưa triển khai: sơ đồ camera 2D/3D và xem workflow theo tác phẩm trong Thư viện. Không sao chép workflow NewTake hay nhập mẫu Miushare chưa kiểm chứng.
+
+Kiểm tra: `npm run check:canvas`. Các bài kiểm tra trình duyệt mô phỏng API tạo media; chưa tiêu hao lượt MUSE để kiểm chứng chất lượng video thật.
+
 ## Giao diện hiện tại
 
 - Dark mode thống nhất; Alpha Lyrae Medium lưu trong app; Inter Tight dự phòng cho dấu tiếng Việt còn thiếu. Tắt contextual alternates trong thao tác để không tự biến chữ thành pixel.
