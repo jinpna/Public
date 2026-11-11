@@ -6,7 +6,7 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 
 - Dark mode thống nhất; Inter Tight Regular 400 lưu trực tiếp trong app.
 - Trang chủ tạo nhanh ảnh/video, ảnh demo và hiệu ứng chuyển cảnh.
-- 20 câu ngắn về sáng tạo đổi mỗi 4 giây; 9 ảnh demo, có ghi nguồn trong `assets/carousel/sources.json`.
+- Tiêu đề sáng tạo cố định, không đổi liên tục; 9 ảnh demo, có ghi nguồn trong `assets/carousel/sources.json`.
 - Tạo ảnh/video và trợ lý MUSE yêu cầu tài khoản bật và đã đăng nhập; máy chủ cũng kiểm tra phiên. Upscale 4K dùng độc lập.
 - Preview của từng tab bắt đầu trống; chỉ hiện tác vụ vừa tạo hoặc kết quả người dùng chọn. Lịch sử Upscale tách khỏi các tab tạo.
 - Bốn tab dùng chung kích thước cột, ô ảnh, prompt và thanh Tạo; lựa chọn thư mục lưu đồng bộ qua cài đặt.
@@ -14,6 +14,10 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 - Chỉnh ảnh có xóa watermark/logo; bấm lại để khoanh vùng cần xử lý.
 - Tab Prompt nâng cao cho ảnh/video: prompt và JSON, vai trò tham chiếu, timeline, kiểm tra xung đột, sao chép và chuyển sang tab tạo. MUSE chỉ được gọi khi bấm tối ưu; bộ biên soạn cấu trúc dùng được ngoại tuyến.
 - 50 demo Recraft với prompt gốc và nguồn, chia 7 nhóm do MOPIX phân loại. Ảnh xem trước raster, kể cả nhóm minh họa vector.
+- Shape 3D: canvas WebGL từ MOPIX Studio, hình mẫu và nhập SVG/ảnh/GLB/OBJ, chỉnh hình khối/vật liệu/ánh sáng, xuất PNG/GLB hoặc dùng làm ảnh tham chiếu. Tạo ảnh hoàn thiện qua MUSE vẫn yêu cầu đăng nhập.
+- Video có ghép 2–8 clip, cắt đoạn, đổi thứ tự, giữ âm thanh, cắt thẳng/hòa tan và lưu vào thư viện; tối đa 5 phút.
+- Storyboard tối đa 8 cảnh, dùng hướng sáng tạo và ảnh chung, tạo ảnh từng cảnh rồi video từ keyframe; chuyển các clip hoàn tất sang ghép.
+- AI gợi ý trong các ô prompt chính: xem, sửa và áp dụng đề xuất; nút Thêm ảnh có nhãn rõ ràng.
 - Chỉnh ảnh, thiết kế concept, video, Upscale 4K và thư viện.
 - Nút Tạo nền tối, viền sáng chuyển động; preview/loading gọn.
 - So sánh ảnh bằng thanh kéo trái/phải hoặc trên/dưới, dùng chung cho preview tạo/chỉnh ảnh và Upscale 4K; có phím mũi tên, Home/End.
@@ -60,6 +64,7 @@ npm run check:no-film
 npm run check:layout
 npm run check:upscale
 npm run check:creative
+npm run check:creation-tools
 ```
 
 Các kiểm tra này chỉ thao tác giao diện bằng trình duyệt thử nghiệm, không gửi tác vụ tạo ảnh/video.

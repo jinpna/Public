@@ -13,7 +13,8 @@
     "check:layout": "node work/check-workspace-layout.cjs",
     "package:installed": "python3 work/package-update.py",
     "check:upscale": "node work/check-upscale-history.cjs && node work/check-upscale-preview.cjs && node work/check-busy-workspaces.cjs",
-    "check:creative": "node work/check-muse-access.cjs && node work/check-prompt-engine.cjs && node work/check-creative-workflow.cjs"
+    "check:creative": "node work/check-muse-access.cjs && node work/check-prompt-engine.cjs && node work/check-creative-workflow.cjs",
+    "check:creation-tools": "node work/check-video-tools.cjs && node work/check-creation-tools.cjs"
   },
   "devDependencies": {
     "lightningcss": "1.33.0",

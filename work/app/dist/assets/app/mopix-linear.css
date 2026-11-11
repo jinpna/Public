@@ -584,3 +584,76 @@ html body #root#root .muse-viewer .muse-viewer-result .upscale-compare-dialog>he
 html body #root#root .mopix-split-compare>.upscale-compare-divider{background:none!important}
 html body #root#root .mopix-split-compare>.upscale-compare-divider::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;background:#f7f8f8b3;pointer-events:none;z-index:-1}
 html body #root#root .mopix-split-compare[data-axis=y]>.upscale-compare-divider::before{top:50%;bottom:auto;left:0;right:0;width:100%;height:1px}
+
+/* Shape and video share the same desktop workspace grid. */
+html body #root#root .mopix-workspace{display:grid!important;grid-template-columns:var(--workspace-input) minmax(0,1fr) var(--workspace-tools)!important;gap:var(--workspace-gap)!important;padding:16px 24px 24px!important;width:100%!important;height:100%!important;min-height:0!important;flex:1!important;overflow:hidden!important;box-sizing:border-box!important;color:var(--mopix-silver)!important}
+html body #root#root .mopix-workspace :is(.mopix-work-panel,.mopix-work-preview){display:flex!important;flex-direction:column!important;min-width:0!important;min-height:0!important;height:100%!important;overflow:hidden!important;border:1px solid var(--mopix-line-active)!important;border-radius:8px!important;background:var(--mopix-panel)!important;box-sizing:border-box!important}
+html body #root#root .mopix-workspace :is(h1,h2,p){margin:0!important;font-weight:400!important}
+html body #root#root .mopix-work-panel>header{padding:var(--workspace-pad) var(--workspace-pad) 12px!important;flex:none!important;display:flex!important;flex-direction:column!important;gap:10px!important}
+html body #root#root .mopix-work-panel h1{font-size:24px!important;letter-spacing:-.6px!important;line-height:30px!important;color:var(--mopix-text)!important}
+html body #root#root .mopix-work-panel h2{font-size:15px!important;line-height:24px!important}
+html body #root#root .mopix-work-panel small,html body #root#root .mopix-caption{font-size:12px!important;line-height:18px!important;color:var(--mopix-subtle)!important}
+html body #root#root .mopix-panel-content{padding:0 var(--workspace-pad) var(--workspace-pad)!important;display:flex!important;flex-direction:column!important;gap:12px!important;flex:1!important;min-height:0!important;overflow:hidden!important}
+html body #root#root .mopix-workspace :is(button,a,select,input:not([type=checkbox]):not([type=range]):not([type=color])){min-height:34px!important;font-size:13px!important;font-weight:400!important;border-radius:5px!important;box-shadow:none!important}
+html body #root#root .mopix-workspace button,html body #root#root .mopix-workspace a{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;padding:7px 10px!important;border:1px solid #ffffff12!important;background:#ffffff03!important;color:#8a8f98!important;cursor:pointer!important;text-decoration:none!important}
+html body #root#root .mopix-workspace button:is(:hover,[aria-pressed=true]),html body #root#root .mopix-workspace a:hover{background:#ffffff0b!important;border-color:#ffffff25!important;color:#d0d6e0!important}
+html body #root#root .mopix-workspace :disabled{opacity:.4!important;cursor:default!important}
+html body #root#root .mopix-panel-content>label{display:flex!important;flex-direction:column!important;gap:7px!important;font-size:13px!important;line-height:18px!important;min-width:0!important}
+html body #root#root .mopix-panel-content :is(select,input:not([type=range]):not([type=checkbox]):not([type=color]),textarea){width:100%!important;max-width:100%!important;min-width:0!important;padding:8px 10px!important;background:#141516!important;border:1px solid #ffffff12!important;color:#d0d6e0!important;box-sizing:border-box!important;font-size:14px!important;line-height:1.5!important;outline:none!important}
+html body #root#root .mopix-panel-content :is(select,input,textarea):focus-visible{border-color:#ffffff40!important}
+html body #root#root .mopix-panel-content .mopix-prompt-field{flex:1!important;min-height:88px!important}
+html body #root#root .mopix-prompt-field textarea{resize:none!important;flex:1!important;min-height:54px!important;height:100%!important;border-radius:6px!important;overflow:auto!important}
+html body #root#root .mopix-panel-content .mopix-inline-field{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;flex:none!important}
+html body #root#root .mopix-inline-field :is(select,input[type=color]){width:auto!important;max-width:130px!important;height:34px!important}
+html body #root#root .mopix-inline-field input[type=checkbox]{width:16px;height:16px;accent-color:#8a8f98}
+html body #root#root .mopix-work-panel>footer{padding:10px var(--workspace-pad) 14px!important;border-top:1px solid #ffffff12!important;display:flex!important;flex-direction:column!important;gap:8px!important;flex:none!important;min-height:96px!important;box-sizing:border-box!important}
+html body #root#root .mopix-work-panel>footer>.muse-create-action{height:40px!important;min-height:40px!important;width:100%!important;color:#d0d6e0!important}
+html body #root#root :is(.mopix-two-actions,.mopix-video-entry-actions){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;flex:none!important}
+html body #root#root .mopix-shape-presets{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;flex:none!important}
+html body #root#root .mopix-shape-presets button{padding:5px!important;min-height:30px!important;font-size:12px!important}
+html body #root#root .mopix-work-preview>header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:12px 14px!important;border-bottom:1px solid #ffffff12!important;min-height:58px!important;box-sizing:border-box!important;flex:none!important}
+html body #root#root .mopix-work-preview>header h2{font-size:14px!important;color:#8a8f98!important}
+html body #root#root :is(.mopix-segment,.mopix-icon-row){display:flex!important;align-items:center!important;gap:4px!important;min-width:0!important;flex:none!important}
+html body #root#root .mopix-segment button{flex:1!important;padding:6px 8px!important;font-size:12px!important;white-space:nowrap!important}
+html body #root#root .mopix-inspector>.mopix-segment{margin:0 var(--workspace-pad) 16px!important}
+html body #root#root .mopix-work-preview>footer{display:flex!important;justify-content:space-between!important;gap:12px!important;padding:10px 14px!important;border-top:1px solid #ffffff12!important;flex:none!important;font-size:11px!important;color:#62666d!important}
+html body #root#root .mopix-shape-canvas{position:relative!important;flex:1!important;min-height:0!important;overflow:hidden!important}
+html body #root#root .mopix-shape-canvas canvas{display:block!important;width:100%!important;height:100%!important;outline:none!important;touch-action:none!important}
+html body #root#root .mopix-range-field>span{display:flex;justify-content:space-between;gap:10px;color:#8a8f98}
+html body #root#root .mopix-range-field input{width:100%;accent-color:#8a8f98}
+html body #root#root .mopix-result-stage{position:relative!important;flex:1!important;min-height:80px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#08090a!important;overflow:auto!important}
+html body #root#root .mopix-result-stage>:is(img,video){display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;min-height:0!important;max-width:100%!important;max-height:100%!important}
+html body #root#root .mopix-empty-state{display:flex!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;gap:16px!important;color:#62666d!important;font-size:13px!important;text-align:center!important;padding:20px!important;line-height:1.6!important}
+html body #root#root .mopix-video-actions{display:flex!important;gap:4px!important;flex-wrap:wrap!important}
+html body #root#root .mopix-video-actions button{font-size:11px!important;padding:5px 7px!important;min-height:30px!important;gap:4px!important}
+html body #root#root .mopix-video-source-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(130px,1fr))!important;gap:8px!important;padding:12px!important;overflow:auto!important;max-height:32%!important;min-height:0!important;border-top:1px solid #ffffff12!important}
+html body #root#root .mopix-video-source-grid>button{flex-direction:column!important;height:110px!important;min-height:110px!important;overflow:hidden!important;font-size:11px!important}
+html body #root#root .mopix-video-source-grid>button>span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+html body #root#root .mopix-video-source-grid img{height:48px!important;width:100%!important;object-fit:cover!important}
+html body #root#root :is(.mopix-clip-timeline,.mopix-storyboard-grid){display:flex!important;gap:8px!important;padding:12px!important;min-height:0!important;overflow:auto!important;flex:none!important;border-top:1px solid #ffffff12!important}
+html body #root#root .mopix-clip-timeline>button{flex-direction:column!important;min-width:112px!important;max-width:150px!important;height:80px!important;font-size:11px!important;overflow:hidden!important}
+html body #root#root .mopix-clip-timeline>button>span:nth-child(2){overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%}
+html body #root#root .mopix-storyboard-grid>button{display:flex!important;flex-direction:column!important;width:140px!important;min-width:140px!important;height:132px!important;font-size:11px!important;overflow:hidden!important}
+html body #root#root .mopix-storyboard-grid>button>img{height:72px!important;width:100%!important;object-fit:cover!important}
+html body #root#root .mopix-reference-thumbs{display:flex;gap:6px;height:48px;flex:none}
+html body #root#root .mopix-reference-thumbs>button{position:relative!important;width:48px!important;height:48px!important;padding:0!important;overflow:hidden!important}
+html body #root#root .mopix-reference-thumbs img{object-fit:cover;width:100%;height:100%}
+html body #root#root .mopix-reference-thumbs span{position:absolute;right:3px;top:0;color:white;text-shadow:0 1px 3px black}
+html body #root#root .mopix-video-entry-actions{margin-bottom:10px!important}
+html body #root#root .mopix-video-entry-actions>button{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-height:32px!important;padding:6px!important;font-size:12px!important;border:1px solid #ffffff16!important;border-radius:5px!important;background:#141516!important;color:#8a8f98!important}
+html body #root#root .mopix-ai-helper{display:flex!important;align-items:center!important;gap:8px!important;min-height:30px!important;flex:none!important;min-width:0!important}
+html body #root#root .mopix-ai-helper>.mopix-ai-suggest{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;width:auto!important;min-width:0!important;height:30px!important;min-height:30px!important;padding:5px 9px!important;color:#8a8f98!important;background:#ffffff04!important;border:1px solid #ffffff12!important;border-radius:5px!important;box-shadow:none!important;font-size:12px!important;font-weight:400!important}
+html body #root#root .mopix-ai-helper>.mopix-ai-suggest:hover{background:#ffffff0a!important;color:#d0d6e0!important}
+html body #root#root .mopix-ai-error{font-size:11px!important;color:#8a8f98!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+html body #root#root .mopix-ai-modal{width:min(640px,85vw)!important}
+html body #root#root .mopix-ai-modal textarea{box-sizing:border-box!important;display:block!important;width:100%!important;height:min(42vh,360px)!important;min-height:120px!important;margin:16px 0!important;padding:14px!important;resize:vertical!important;background:#141516!important;color:#d0d6e0!important;border:1px solid #ffffff1a!important;border-radius:6px!important;font-size:14px!important;line-height:1.6!important}
+html body #root#root .alara-rail .mopix-home-composer>footer{display:flex!important;flex-wrap:wrap!important;gap:6px!important;align-items:center!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>button:first-child{width:auto!important;min-width:88px!important;gap:6px!important;padding:6px 8px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>.muse-create-action{margin-left:auto!important;min-width:64px!important}
+@media(max-height:760px){html body #root#root .mopix-panel-content{gap:7px!important}html body #root#root .mopix-shape-presets{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}html body #root#root .mopix-shape-presets button{min-height:26px!important;padding:3px!important;font-size:11px!important}html body #root#root .mopix-shape-workspace>.mopix-work-panel:first-child .mopix-caption{display:none!important}html body #root#root .mopix-inspector>.mopix-segment{margin-bottom:10px!important}}
+@media(max-width:1100px){html body #root#root .mopix-work-preview>header{flex-wrap:wrap!important;padding:8px!important}html body #root#root .mopix-work-preview>header h2{font-size:12px!important}html body #root#root .mopix-segment button{font-size:11px!important;padding:5px!important}html body #root#root .mopix-work-preview>footer>span:last-child{display:none!important}}
+html body #root#root .mopix-workspace .mopix-panel-content .mopix-inline-field{white-space:nowrap!important}
+html body #root#root .mopix-workspace .mopix-panel-content .mopix-inline-field>select{width:110px!important;max-width:110px!important;flex:0 0 110px!important}
+html body #root#root .mopix-work-panel>footer>.muse-create-action{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+html body #root#root .mopix-workspace *,html body #root#root .mopix-workspace *::before,html body #root#root .mopix-workspace *::after{box-sizing:border-box!important}
+@media(max-height:760px){html body #root#root .mopix-shape-workspace>.mopix-work-panel:first-child>header>small{display:none!important}}

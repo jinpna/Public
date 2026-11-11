@@ -58,7 +58,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
  await nav().getByRole('button',{name:'Trang chủ',exact:true}).click();
  const first=await page.locator('.mopix-creative-quote').innerText();
  await page.clock.fastForward(4100);
- assert.notEqual(await page.locator('.mopix-creative-quote').innerText(),first);
+ assert.equal(await page.locator('.mopix-creative-quote').innerText(),first,'Home headline remains stable');
  assert.equal(await page.locator('.alara-image-stage>img').count(),9);
  assert.equal(await page.getByText('MOPIX / CREATIVE STUDIO',{exact:true}).count(),0);
  assert.equal(await page.locator('a[href^="mailto:monday.directory@gmail.com"]').count(),1);

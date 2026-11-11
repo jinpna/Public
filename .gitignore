@@ -17,6 +17,8 @@
 !/work/check-comet.cjs
 !/work/check-concept-dark.cjs
 !/work/check-quiet-preview.cjs
+!/work/check-video-tools.cjs
+!/work/check-creation-tools.cjs
 !/work/check-muse-access.cjs
 !/work/check-prompt-engine.cjs
 !/work/check-creative-workflow.cjs

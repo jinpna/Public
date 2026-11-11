@@ -83,6 +83,7 @@ app.use('/api/upscale', require('./routes/mopixUpscale.cjs'));
 app.use('/api/apix', require('./routes/apix.cjs'));
 app.use('/api/briefs', require('./routes/briefs.cjs'));
 app.use('/api/films', require('./routes/films.cjs'));
+app.use('/api/video-tools', require('./routes/videoTools.cjs').router);
 app.use('/api/exact-video', require('./routes/exactVideo.cjs'));
 app.use('/api/settings', settings_1.default);
 app.use('/api/color-presets', require('./colorPresets').router);
