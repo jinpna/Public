@@ -497,3 +497,66 @@ html body #root#root .mopix-upscale-empty progress::-webkit-progress-value{backg
 @media(max-height:760px){html body #root#root .mopix-upscale-input{gap:12px!important;padding:18px!important}html body #root#root .mopix-upscale-drop{height:140px!important;min-height:140px!important}}
 html body #root#root .muse-viewer-stage{position:relative!important}
 html body #root#root .mopix-preview-busy-overlay{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:8;width:min(340px,calc(100% - 32px));padding:4px 12px;background:#0f1011e8;border:1px solid #ffffff0d;border-radius:6px;backdrop-filter:blur(12px);pointer-events:none}
+/* Shared structured prompt tools. */
+html body #root#root .mopix-prompt-workspace{display:grid!important;grid-template-columns:minmax(240px,300px) minmax(280px,1fr) minmax(210px,300px);gap:16px;width:100%;height:100%;min-height:0;flex:1;overflow:hidden;padding:16px 24px 24px;box-sizing:border-box}
+html body #root#root .mopix-prompt-workspace>aside,html body #root#root .mopix-prompt-instrument{display:flex;flex-direction:column;gap:16px;min-width:0;min-height:0;padding:20px;background:#0f1011;border:1px solid #ffffff12;border-radius:8px;overflow:hidden}
+html body #root#root .mopix-prompt-workspace :is(h1,h2,h3,p){margin:0;font-weight:400!important}
+html body #root#root .mopix-prompt-workspace h1{font-size:22px;line-height:28px;color:#f7f8f8}
+html body #root#root .mopix-prompt-workspace h2{font-size:15px;line-height:24px;color:#d0d6e0}
+html body #root#root .mopix-prompt-workspace h3{font-size:12px;color:#8a8f98}
+html body #root#root .mopix-prompt-workspace :is(label,small){font-size:11px;line-height:16px;color:#8a8f98}
+html body #root#root :is(.mopix-prompt-workspace,.mopix-recipe-fields) label{display:flex;flex-direction:column;gap:6px;min-width:0}
+html body #root#root :is(.mopix-prompt-workspace,.mopix-recipe-dialog) :is(input:not([type=checkbox]),select,textarea){color:#d0d6e0!important;-webkit-text-fill-color:#d0d6e0!important;background:#111315!important;border:1px solid #ffffff12!important;border-radius:4px!important;padding:8px 10px!important;font:400 13px/1.5 'Inter Tight',sans-serif!important;min-width:0;width:100%;box-sizing:border-box;outline:none;resize:none}
+html body #root#root :is(.mopix-prompt-workspace,.mopix-recipe-dialog) :is(input:not([type=checkbox]),select){height:36px;min-height:36px}
+html body #root#root .mopix-prompt-workspace :is(input,textarea,select):focus{border-color:#ffffff30!important}
+html body #root#root :is(.mopix-prompt-workspace,.mopix-recipe-dialog,.mopix-login-dialog) button{color:#8a8f98!important;background:#ffffff03!important;border:1px solid #ffffff10!important;border-radius:4px!important;min-height:32px;padding:6px 10px;font:400 12px/18px 'Inter Tight',sans-serif!important;display:inline-flex;gap:8px;align-items:center;justify-content:center}
+html body #root#root :is(.mopix-prompt-workspace,.mopix-recipe-dialog,.mopix-login-dialog) button:is(:hover,[aria-pressed=true]){color:#d0d6e0!important;background:#ffffff09!important;border-color:#ffffff24!important}
+html body #root#root .mopix-prompt-settings>header{display:flex;flex-direction:column;gap:12px;flex:none}
+html body #root#root .mopix-prompt-mode,html body #root#root .mopix-prompt-settings>nav{display:flex;gap:4px}
+html body #root#root .mopix-prompt-mode>button{flex:1}
+html body #root#root .mopix-prompt-settings>nav>button{flex:1;font-size:11px!important;padding:4px!important}
+html body #root#root .mopix-prompt-fields{display:grid;grid-template-columns:1fr;gap:10px;min-height:0}
+html body #root#root .mopix-prompt-settings>footer{margin-top:auto;display:flex;flex-direction:column;gap:12px;flex:none;padding-top:12px;border-top:1px solid #ffffff0d}
+html body #root#root .mopix-check-row{display:flex!important;align-items:center!important;flex-direction:row!important;gap:8px!important;font-size:12px!important;color:#8a8f98!important}
+html body #root#root .mopix-check-row input{width:14px!important;height:14px!important;min-height:14px!important;accent-color:#8a8f98}
+html body #root#root .mopix-prompt-references{display:flex;gap:6px;height:60px;min-height:60px;overflow:hidden}
+html body #root#root .mopix-prompt-references>div{position:relative;min-width:0;flex:1;max-width:64px}
+html body #root#root .mopix-prompt-references img{width:100%;height:60px;object-fit:cover;border-radius:4px}
+html body #root#root .mopix-prompt-references>div>button{position:absolute;right:2px;top:2px;width:18px;height:18px;min-height:18px;padding:0;background:#08090add!important}
+html body #root#root .mopix-prompt-references>button{flex:1;min-width:48px;flex-direction:column;font-size:10px!important;gap:4px}
+html body #root#root .mopix-prompt-instrument>header,html body #root#root .mopix-prompt-preview-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
+html body #root#root .mopix-prompt-instrument>header button{width:32px;padding:0}
+html body #root#root .mopix-prompt-brief{flex:none}
+html body #root#root .mopix-prompt-brief textarea{height:140px}
+html body #root#root .mopix-prompt-preview-head>div{display:flex;gap:4px}
+html body #root#root .mopix-prompt-output{flex:1;min-height:60px!important;font-size:12px!important;line-height:1.65!important;color:#8a8f98!important;-webkit-text-fill-color:#8a8f98!important;overflow:auto}
+html body #root#root .mopix-prompt-instrument>footer{display:flex;gap:8px;flex:none}
+html body #root#root .mopix-prompt-instrument>footer>button:last-child{flex:1;height:40px}
+html body #root#root .mopix-prompt-instrument :is(.mopix-prompt-validation,.mopix-prompt-feedback,.mopix-prompt-provenance){font-size:11px;line-height:16px;color:#62666d;min-height:16px;flex:none}
+html body #root#root .mopix-prompt-validation{color:#d0d6e0!important}
+html body #root#root .mopix-prompt-demos>header{display:flex;flex-direction:column;gap:12px;flex:none}
+html body #root#root .mopix-prompt-demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;flex:1;min-height:0;overflow:auto}
+html body #root#root .mopix-prompt-demo-grid>button{position:relative;display:block;padding:0!important;min-height:0;overflow:hidden;border-radius:4px!important;aspect-ratio:3/4}
+html body #root#root .mopix-prompt-demo-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+html body #root#root .mopix-prompt-demo-grid button:hover img{transform:scale(1.035)}
+html body #root#root .mopix-prompt-demo-grid span{position:absolute;bottom:0;left:0;right:0;font-size:10px;line-height:14px;padding:20px 6px 6px;background:linear-gradient(transparent,#08090acc);text-align:left;color:#d0d6e0}
+html body #root#root .mopix-demo-note{font-size:10px!important;line-height:14px!important;color:#62666d!important;flex:none}
+html body #root#root .mopix-recipe-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+html body #root#root :is(.mopix-recipe-dialog,.mopix-login-dialog) footer{display:flex;justify-content:flex-end;margin-top:20px}
+html body #root#root .mopix-login-dialog p{font-size:14px;line-height:1.6;color:#8a8f98}
+@media(max-height:800px){html body #root#root .mopix-prompt-workspace>aside,html body #root#root .mopix-prompt-instrument{gap:10px;padding:16px}html body #root#root .mopix-prompt-fields{gap:6px}html body #root#root .mopix-prompt-brief textarea{height:110px}html body #root#root .mopix-prompt-settings:has(nav>button:nth-child(3)[aria-pressed=true]) .mopix-prompt-fields{grid-template-columns:repeat(2,minmax(0,1fr))}html body #root#root .mopix-prompt-settings:has(nav>button:nth-child(3)[aria-pressed=true]) .mopix-prompt-fields>label:nth-child(n+3){grid-column:1/-1}html body #root#root .mopix-prompt-settings>footer{gap:8px}}
+@media(max-width:1100px){html body #root#root .mopix-prompt-workspace{grid-template-columns:240px minmax(280px,1fr) 210px;gap:12px;padding:16px 24px 24px}html body #root#root .mopix-prompt-workspace>aside,html body #root#root .mopix-prompt-instrument{padding:14px}}
+@media(prefers-reduced-motion:reduce){html body #root#root .mopix-prompt-demo-grid img{transition:none}}
+html body #root#root .mopix-prompt-workspace h2{font-size:15px!important;line-height:22px!important}
+html body #root#root .mopix-prompt-workspace h1{font-size:20px!important;line-height:26px!important}
+html body #root#root .mopix-prompt-workspace :is(label,small){font-size:11px!important;line-height:16px!important}
+html body #root#root .mopix-prompt-workspace :is(input:not([type=checkbox]),select){height:32px!important;min-height:32px!important;max-height:32px!important;padding:5px 8px!important;font-size:12px!important}
+html body #root#root .mopix-prompt-references{height:48px!important;min-height:48px!important}
+html body #root#root .mopix-prompt-references img{height:48px!important}
+html body #root#root .mopix-prompt-settings>nav>button{white-space:nowrap!important;font-size:10px!important;line-height:16px!important;min-height:30px!important;padding:4px!important}
+html body #root#root .mopix-prompt-demo-grid{grid-auto-rows:140px!important;align-content:start!important}
+html body #root#root .mopix-prompt-demo-grid>button{position:relative!important;display:block!important;width:100%!important;height:140px!important;min-height:140px!important;aspect-ratio:auto!important;padding:0!important}
+html body #root#root .mopix-prompt-demo-grid img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}
+html body #root#root .mopix-prompt-demo-grid span{z-index:1;pointer-events:none;font-size:10px!important;line-height:14px!important}
+@media(max-height:800px){html body #root#root .mopix-prompt-settings{gap:8px!important}html body #root#root .mopix-prompt-settings>header{gap:8px!important}html body #root#root .mopix-prompt-settings:has(nav>button:nth-child(3)[aria-pressed=true]) .mopix-prompt-fields>label:nth-child(n+3){grid-column:auto!important}html body #root#root .mopix-prompt-settings>footer{padding-top:8px!important}}
+html body #root#root .mopix-prompt-references .mopix-ref-role{position:absolute;left:0;bottom:0;width:100%!important;height:18px!important;min-height:18px!important;max-height:18px!important;padding:0 2px!important;font-size:9px!important;line-height:14px!important;background:#08090aee!important;border-radius:0 0 4px 4px!important}

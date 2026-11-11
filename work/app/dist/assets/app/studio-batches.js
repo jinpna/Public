@@ -2,10 +2,10 @@ import {createMovieWizard} from './studio-movie-wizard.js?v=3';
 import {createBriefStudio} from './studio-briefs.js?v=3';
 import {createBatchScenes} from './studio-batch-scenes.js?v=1';
 import {createLongVideoSplitter} from './studio-video-split.js?v=1';
-import {createAssetPicker,assetURL} from './studio-assets.js?v=5';
+import {createAssetPicker,assetURL} from './studio-assets.js?v=6';
 import {createFilmStudio} from './studio-films.js?v=1';
 import {createRecovery} from './studio-recovery.js?v=25';
-import {createQuickStudio} from './studio-quick.js?v=86';
+import {createQuickStudio} from './studio-quick.js?v=87';
 // Batch image recreation and concurrent video queues; independent of Workflow.
 export function createBatchStudio(React){const InlineAssistant=createQuickStudio(React).InlineAssistant,Recovery=createRecovery(React);
  const{createElement:h,useState:S,useEffect:E,useRef:R}=React;const MovieWizard=createMovieWizard(React),Briefs=createBriefStudio(React),BatchScenes=createBatchScenes(React),LongSplitter=createLongVideoSplitter(React),Films=createFilmStudio(React),VideoPicker=createAssetPicker(React);

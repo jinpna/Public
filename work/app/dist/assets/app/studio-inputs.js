@@ -1,6 +1,6 @@
 import {createRegionEditor} from './studio-region-editor.js?v=4';
 import {createStudioIcon} from './studio-icons.js?v=24';
-import {assetURL,uploadStudioImages} from './studio-assets.js?v=5';
+import {assetURL,uploadStudioImages} from './studio-assets.js?v=6';
 export function createStudioInputs(React){const{createElement:h,useState:S,useEffect:E,useRef:R}=React,Icon=createStudioIcon(React);
 function RatioPicker({value,onChange,video=false,allowAuto=false,disabled=false}){const ratios=[...allowAuto?['auto']:[],...video?['9:16','16:9','1:1']:['1:1','3:4','9:16','16:9','4:3']];return h('div',{className:'muse-ratios ratio-picker-balanced','data-count':ratios.length,style:{'--ratio-count':ratios.length},role:'group','aria-label':'Tỷ lệ khung hình'},...ratios.map(r=>{const[w,t]=r==='auto'?[1,1]:r.split(':').map(Number);return h('button',{key:r,type:'button',disabled,'aria-label':r==='auto'?'Theo ảnh gốc':'Tỷ lệ '+r,'aria-pressed':r===value,onClick:()=>onChange(r),title:r==='auto'?'Theo ảnh gốc':'Tỷ lệ '+r},h('span',{className:'ratio-icon-slot'},h('span',{className:'muse-ratio-icon',style:{width:Math.round(28*w/Math.max(w,t))+'px',height:Math.round(28*t/Math.max(w,t))+'px'}},r==='auto'?'A':null)),h('small',null,r==='auto'?'Auto':r))}))}
 

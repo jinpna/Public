@@ -1,2 +1,2 @@
-import{studioAPI as api}from'./studio-assets.js?v=5';
+import{studioAPI as api}from'./studio-assets.js?v=6';
 export async function runApixUpscale(jobId,onStatus=()=>{}){let result=await api('/api/upscale/start',{jobId});for(let i=0;i<600;i++){onStatus(result);if(result.status==='completed')return result;if(result.status!=='running')throw Error(result.error||'Chưa hoàn tất Upscale 4K. Mở tab 4K để kiểm tra lại.');await new Promise(resolve=>setTimeout(resolve,2000));result=await api('/api/upscale/'+encodeURIComponent(result.id));}throw Error('Ảnh vẫn đang được xử lý. Mở tab 4K để kiểm tra lại.');}

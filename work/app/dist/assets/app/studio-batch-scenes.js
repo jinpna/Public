@@ -1,5 +1,5 @@
 import {createReferenceLock} from './studio-reference-lock.js?v=1';
-import {studioAPI as api,createAssetPicker,assetURL} from './studio-assets.js?v=5';
+import {studioAPI as api,createAssetPicker,assetURL} from './studio-assets.js?v=6';
 import {buildVideoSpec,canonicalVideoPrompt} from './studio-video-spec.js?v=36';
 export function createBatchScenes(React){const{createElement:h,useState:S,useEffect:E,useRef:R}=React,Picker=createAssetPicker(React),ReferenceLock=createReferenceLock(React);const fresh=()=>({id:crypto.randomUUID(),prompt:'',refs:[],duration:10});return function BatchScenes({onDone}){
 const[rows,ROWS]=S(()=>{try{return JSON.parse(localStorage.getItem('monday-batch-scene-draft'))||[fresh()]}catch{return [fresh()]}}),[sharedLock,SLOCK]=S(()=>localStorage.getItem('monday-batch-reference-lock')||''),[ratio,RATIO]=S('16:9'),[picker,PICK]=S(null),[busy,B]=S(false),[error,ERR]=S(''),[message,MSG]=S('');const lock=R(false);E(()=>{localStorage.setItem('monday-batch-reference-lock',sharedLock)},[sharedLock]);E(()=>{localStorage.setItem('monday-batch-scene-draft',JSON.stringify(rows))},[rows]);const patch=(id,data)=>ROWS(old=>old.map(r=>r.id===id?{...r,...data}:r));

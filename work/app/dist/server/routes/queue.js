@@ -182,6 +182,7 @@ router.get('/jobs', (req, res) => {
         }
         if(mediaType==='image'&&['create','edit','design'].includes(String(req.query.workspace))){
  const workspace=String(req.query.workspace);
+ conditions.push("id NOT LIKE 'mopix_image_%' AND id NOT LIKE 'apix_image_%' AND NOT EXISTS (SELECT 1 FROM job_context WHERE job_id=jobs.id AND json_extract(payload,'$.upscale.afterUrl')=jobs.video_url)");
  const classification="CASE WHEN COALESCE((SELECT json_extract(payload,'$.mode') FROM job_context WHERE job_id=jobs.id),'')='design' OR prompt LIKE 'DESIGN TASK:%' THEN 'design' WHEN COALESCE((SELECT json_extract(payload,'$.mode') FROM job_context WHERE job_id=jobs.id),'') IN ('edit','replace','refine','inpaint') OR prompt LIKE '[MUSE EDIT PLAN]%' OR prompt LIKE 'Edit image %' OR prompt LIKE 'EDIT:%' THEN 'edit' ELSE 'create' END";
  conditions.push('('+classification+') = ?');params.push(workspace);
  }

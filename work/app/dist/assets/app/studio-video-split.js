@@ -1,4 +1,4 @@
-import {studioAPI as api} from './studio-assets.js?v=5';
+import {studioAPI as api} from './studio-assets.js?v=6';
 export function inferVideoDuration(prompt){const text=String(prompt||'');const explicit=text.match(/(?:video|film|phim|thời lượng|duration|create|tạo).{0,30}?\b(\d+)[ -]?(?:seconds?|giây|secs?|s\b)/i)||text.match(/\b(\d+)[ -]?(?:seconds?|giây|secs?|s\b)/i);const ranges=[...text.matchAll(/\b\d+\s*[–—-]\s*(\d+)\s*(?:seconds?|giây|s)?\s*:/gi)];const n=ranges.length?Math.max(...ranges.map(m=>Number(m[1])),Number(explicit?.[1]||0)):Number(explicit?.[1]||30);return Math.max(10,Math.min(300,Math.ceil(n/5)*5))}
 export function buildLongVideoPlan({prompt,total=30,refTags=[],bible='',title='Phim từ kịch bản dài'}){
  const source=String(prompt||'').trim();total=Number(total);if(!source)throw Error('Nhập kịch bản trước khi chia cảnh.');if(total<10||total>300||total%5)throw Error('Chọn tổng thời lượng 10–300 giây, theo bước 5 giây.');if(refTags.length>5)throw Error('Chọn tối đa 5 ảnh tham chiếu.');

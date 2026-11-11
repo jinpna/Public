@@ -1,4 +1,4 @@
-import{studioAPI as api,createAssetPicker,assetURL}from'./studio-assets.js?v=5';
+import{studioAPI as api,createAssetPicker,assetURL}from'./studio-assets.js?v=6';
 import{createUpscaleCompare}from'./studio-upscale-compare.js?v=5';
 import{createStudioIcon}from'./studio-icons.js?v=24';
 import{createLiquidLoader}from'./studio-liquid-loader.js?v=6';

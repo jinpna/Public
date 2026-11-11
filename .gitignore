@@ -17,6 +17,9 @@
 !/work/check-comet.cjs
 !/work/check-concept-dark.cjs
 !/work/check-quiet-preview.cjs
+!/work/check-muse-access.cjs
+!/work/check-prompt-engine.cjs
+!/work/check-creative-workflow.cjs
 !/work/check-busy-workspaces.cjs
 !/work/check-upscale-preview.cjs
 !/work/check-upscale-history.cjs

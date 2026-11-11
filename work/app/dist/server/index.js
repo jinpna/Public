@@ -70,6 +70,7 @@ app.use(express_1.default.urlencoded({ extended: true, limit: '50mb' }));
 // Static file serving
 app.use('/uploads', express_1.default.static(uploadsDir));
 app.use('/videos', express_1.default.static(videosDir));
+require('./museAccess.cjs').installMuseAccess(app,require('./db').db);
 // API Routes
 app.use('/api/accounts', accounts_1.default);
 app.use('/api/refs', refs_1.default);

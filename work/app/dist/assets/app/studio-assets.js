@@ -1,6 +1,8 @@
+import{generationRequest,requireMuseLogin,reportMuseLogin}from'./mopix-session.js';
 export async function studioAPI(url,body,method='POST'){
+ if(body!==undefined&&generationRequest(url,method))await requireMuseLogin();
  const response=await fetch(url,body===undefined?undefined:{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
- const data=await response.json();if(!response.ok)throw Error(data.error||'Không thể hoàn tất thao tác.');return data;
+ const data=await response.json();if(data.code==='MUSE_LOGIN_REQUIRED')throw reportMuseLogin();if(!response.ok)throw Error(data.error||'Không thể hoàn tất thao tác.');return data;
 }
 export const assetURL=ref=>ref.url||ref.file_url||'/uploads/'+ref.filename;
 export const assetName=(ref,index=0)=>ref.original_name||ref.originalName||ref.name||'Ảnh '+(index+1);
