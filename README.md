@@ -16,6 +16,7 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 - 50 demo Recraft với prompt gốc và nguồn, chia 7 nhóm do MOPIX phân loại. Ảnh xem trước raster, kể cả nhóm minh họa vector.
 - Chỉnh ảnh, thiết kế concept, video, Upscale 4K và thư viện.
 - Nút Tạo nền tối, viền sáng chuyển động; preview/loading gọn.
+- So sánh ảnh bằng thanh kéo trái/phải hoặc trên/dưới, dùng chung cho preview tạo/chỉnh ảnh và Upscale 4K; có phím mũi tên, Home/End.
 - Preview 4K zoom theo con trỏ bằng transform, kéo để di chuyển, thao tác icon và xóa từng mục gần đây. Xóa gần đây giữ nguyên ảnh trong thư viện.
 - Trạng thái chờ dùng lưới chấm chuyển động với câu chữ luân phiên; tôn trọng chế độ giảm chuyển động.
 - Đã bỏ giao diện Làm phim và phần cài đặt proxy.

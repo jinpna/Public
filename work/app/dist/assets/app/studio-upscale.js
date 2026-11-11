@@ -1,5 +1,5 @@
 import{studioAPI as api,createAssetPicker,assetURL}from'./studio-assets.js?v=6';
-import{createUpscaleCompare}from'./studio-upscale-compare.js?v=5';
+import{createUpscaleCompare}from'./studio-upscale-compare.js?v=6';
 import{createStudioIcon}from'./studio-icons.js?v=24';
 import{createLiquidLoader}from'./studio-liquid-loader.js?v=6';
 export async function start4K(source){if(source instanceof File){const body=new FormData();body.append('file',source);const r=await fetch('/api/upscale/start',{method:'POST',body});const d=await r.json();if(!r.ok)throw Error(d.error||'Không gửi được ảnh.');return d}return api('/api/upscale/start',source)}

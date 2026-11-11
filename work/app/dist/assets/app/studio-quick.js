@@ -15,7 +15,7 @@ import {inferVideoDuration,createLongVideoSplitter} from './studio-video-split.j
 import {MOTION_LIBRARY} from './studio-motion-library.js?v=1';
 import {buildCharacterPrompts} from './studio-character.js?v=1';
 import {createStudioInputs} from './studio-inputs.js?v=55';
-import {createMediaViewer} from './studio-viewer.js?v=69';
+import {createMediaViewer} from './studio-viewer.js?v=70';
 import {canonicalVideoPrompt,VIDEO_MOTIONS,VIDEO_PRESET_GROUPS,videoDirection,buildVideoSpec,cleanVideoReferences} from './studio-video-spec.js?v=36';
 import {createRecovery} from './studio-recovery.js?v=25';
 import {createDropZone} from './studio-drop.js?v=10';
