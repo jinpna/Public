@@ -1,14 +1,14 @@
 // Attribute-only enhancement: React keeps ownership of every control and event.
 const controls=[
- '.image-preset-grid>button','.design-mode-grid>button',
- '.mopix-home-composer header button','.mopix-home-composer footer button',
+
+ '.mopix-home-composer footer button',
  '.mopix-ai-suggest','.muse-create-action','.muse-viewer-toolbar button',
- '.canvas-view-tabs button','.mopix-video-entry-actions button','.video-tool-pages button',
- '.mopix-video-actions button','.mopix-icon-row button','.mopix-two-actions button',
+ '.canvas-view-tabs button',
+ '.mopix-icon-row button',
  '.mopix-shape-toolbar button','.mopix-work-preview>header button',
- '.mopix-work-panel>header button','.mopix-prompt-mode button',
- '.mopix-prompt-instrument>footer button','.mopix-prompt-instrument>header button',
- '.muse-home-actions>button','.mopix-segment button',
+ '.mopix-work-panel>header button',
+ '.mopix-prompt-instrument>header button',
+
  '.asset-picker>header button','.asset-picker-toolbar>button',
  '.asset-picker-toolbar .sx-seg button','.asset-picker>footer>button'
 ].join(',');

@@ -47,3 +47,7 @@
 
 !work/app/dist/assets/data/
 !work/app/dist/assets/data/motion-library.json
+
+!/WORKFLOW-TEMPLATES-FOR-CODEX.md
+!/work/check-workflow-templates.cjs
+!work/app/dist/assets/data/workflow-templates.json

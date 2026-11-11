@@ -98,3 +98,11 @@ Quy trình hiện tại cần `/Applications/Monday MUSE AI.app` đã cài; nó 
 Script cài đặt giữ bản sao app trước cập nhật và ký lại app cục bộ. Không commit các archive, bản sao lưu hoặc thư mục dữ liệu người dùng.
 
 Font Inter Tight có giấy phép đi kèm tại `work/app/dist/assets/InterTight-OFL.txt`; các giấy phép tài nguyên khác nằm trong `work/app/dist/assets/licenses/`.
+
+## Workflow mẫu trong Canvas
+
+Preset Motion trên toolbar mở 5 workflow hoàn chỉnh (7–34 node). Nạp workflow thay Canvas sau xác nhận và sao lưu bản nháp cũ ở `mopix-node-canvas-backup`. Dữ liệu được kiểm tra bằng `sanitizeGraph`; thứ tự edges được giữ nguyên để tham chiếu `@image1`–`@image5` đúng ảnh. Các node yêu cầu ảnh riêng phải được tải ảnh trước khi chạy.
+
+“Chạy toàn bộ Canvas” chạy mọi nhánh theo thứ tự phụ thuộc; “Chạy tới node này” chỉ chạy phần dẫn tới node được chọn. Kết quả hoàn tất được dùng lại. Lỗi preflight chặn gửi; cảnh báo cần xác nhận trước khi tiếp tục. Video tham chiếu được phân tích khung mẫu thành prompt, không phải điều kiện video trực tiếp. Chưa có node Audio hoặc tự ghép phim cuối trong Canvas.
+
+Kiểm tra: `npm run check:workflows` dùng API MUSE mô phỏng, xác nhận chuỗi Wanyang 3 clip, nhánh độc lập, thứ tự ảnh, sao lưu, hủy nạp, dữ liệu lỗi và cảnh báo. Không dùng lượt tạo AI thực tế.

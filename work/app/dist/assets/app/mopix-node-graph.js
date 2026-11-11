@@ -17,7 +17,7 @@ export function connectNodes(graph,from,to){
  return{...graph,edges:[...graph.edges,{id:crypto.randomUUID(),from,to}]};
 }
 export const incomingNodes=(graph,id)=>graph.edges.filter(e=>e.to===id).map(e=>graph.nodes.find(n=>n.id===e.from)).filter(Boolean);
-export function graphSnapshot(graph){return{version:1,nodes:graph.nodes.map(({id,kind,x,y,title,prompt,ratio,duration,style,preset,asset,study,analysis,analysisKey,job})=>({id,kind,x,y,title,prompt,ratio,duration,style,preset,asset,study,analysis,analysisKey,job:job?{id:job.id,status:job.status,video_url:job.video_url,media_type:job.media_type}:undefined})),edges:graph.edges}}
+export function graphSnapshot(graph){return{version:1,template:graph.template,nodes:graph.nodes.map(({id,kind,x,y,title,prompt,ratio,duration,style,preset,asset,study,analysis,analysisKey,job})=>({id,kind,x,y,title,prompt,ratio,duration,style,preset,asset,study,analysis,analysisKey,job:job?{id:job.id,status:job.status,video_url:job.video_url,media_type:job.media_type}:undefined})),edges:graph.edges}}
 // Drafts are local state, not trusted media manifests. Only app-owned media paths
 // and the fixed engine settings survive a reload.
 export const localMediaURL=value=>typeof value==='string'&&/^\/(?:uploads|videos|media)\/[A-Za-z0-9_./%?=&-]+$/.test(value)&&!value.includes('..')?value:undefined;
@@ -31,6 +31,8 @@ export function sanitizeGraph(g){
   if(n.job&&typeof n.job.id==='string')clean.job={id:n.job.id.slice(0,200),status:['pending','running','completed','failed','cancelled'].includes(n.job.status)?n.job.status:'failed',media_type:n.kind,video_url:localMediaURL(n.job.video_url)};
   return clean;
  });
- const clean={version:1,nodes,edges:[]},edgeIds=new Set();for(const e of g.edges){if(typeof e.id!=='string'||edgeIds.has(e.id)||!canConnect(clean,e.from,e.to))throw Error('Invalid edge');edgeIds.add(e.id);clean.edges.push({id:e.id,from:e.from,to:e.to})}return clean;
+ const clean={version:1,nodes,edges:[]},edgeIds=new Set();for(const e of g.edges){if(typeof e.id!=='string'||edgeIds.has(e.id)||!canConnect(clean,e.from,e.to))throw Error('Invalid edge');edgeIds.add(e.id);clean.edges.push({id:e.id,from:e.from,to:e.to})}
+ for(const n of nodes)if(n.kind!=='text'&&incomingNodes(clean,n.id).filter(i=>i.kind==='image').length>5)throw Error('Node '+n.title+' nhận quá 5 ảnh.');
+ if(g.template&&typeof g.template.id==='string')clean.template={id:g.template.id.slice(0,100),name:String(g.template.name||'').slice(0,200),instructions:String(g.template.instructions||'').slice(0,5000)};return clean;
 }
 export function readGraph(){try{return sanitizeGraph(JSON.parse(localStorage.getItem('mopix-node-canvas')||'null'))}catch{return initialGraph()}}

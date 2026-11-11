@@ -1,0 +1,2669 @@
+{
+ "version": 1,
+ "source": "NewTake Gallery (newtake.ai/show) — structures learned from public workflows; prompts rewritten in MOPIX's own words, nothing copied verbatim. Viewed free, no login, 2026-11-11.",
+ "templates": [
+  {
+   "id": "tpl-big-antlers",
+   "name_vi": "Phim hoạt hình ngắn · 12 shot",
+   "name_en": "Animated Short · 12 Shots",
+   "category": "Hoạt hình / Phim ngắn",
+   "source_workflow": "BIG ANTLERS — NewTake Gallery, tác giả Lucas Ai",
+   "source_note": "Cấu trúc học theo (kịch bản Text + bảng nhân vật + tài sản -> storyboard -> video -> lắp ráp). Prompt viết lại bằng lời MOPIX, không copy nguyên văn. Video gốc 5s/shot nên khớp sẵn giới hạn 5s/10s của app.",
+   "description": "Phim hoạt hình 3D ngắn 60 giây, 12 shot x 5s: gạc khổng lồ của Bram, nai con và ba chú chim bunting trên sống núi tuyết. Cần tải ảnh character sheet + tài sản của bạn vào các node Ảnh trước khi chạy.",
+   "how_to_use_vi": "1) Tải ảnh bảng nhân vật và tài sản của bạn vào các node Ảnh. 2) Chạy từng node Ảnh storyboard, kiểm tra rồi mới chạy node Video tương ứng. 3) Bấm 'Chạy quy trình' trên node Video cuối để chạy cả chuỗi. 4) Ghép 12 clip bằng tính năng Ghép video rồi thêm nhạc.",
+   "nodes": [
+    {
+     "id": "ba-script",
+     "kind": "text",
+     "x": 40,
+     "y": 80,
+     "title": "Kịch bản 12 shot",
+     "prompt": "3D animation short, soft cinematic light, snowy mountain world. One clear hero (Bram, a deer with giant antlers), one fawn, three bunting birds. Warm dawn light against cold blue snow. 12 shots x 5 seconds, 16:9. Keep every character identical across shots; no deformed antlers, no distorted faces, no inconsistent snow.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-char-bram",
+     "kind": "image",
+     "x": 40,
+     "y": 370,
+     "title": "Bảng nhân vật · Bram",
+     "prompt": "Character sheet for Bram: adult deer with enormous branching antlers, calm eyes, thick winter coat. Front, side and three-quarter views, same antlers, same coat colors in every view. Upload your own sheet here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-char-fawn",
+     "kind": "image",
+     "x": 40,
+     "y": 660,
+     "title": "Bảng nhân vật · Nai con",
+     "prompt": "Character sheet for the fawn: small young deer, short antlers, big curious eyes, light brown coat. Front, side and three-quarter views. Upload your own sheet here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-buntings",
+     "kind": "image",
+     "x": 40,
+     "y": 950,
+     "title": "Tài sản · Chim bunting",
+     "prompt": "Three small bunting birds, soft brown and cream feathers, perched together. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-nest",
+     "kind": "image",
+     "x": 40,
+     "y": 1240,
+     "title": "Tài sản · Tổ chim",
+     "prompt": "A messy twig nest with a few downy feathers, tucked in a snowy branch. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-ridge",
+     "kind": "image",
+     "x": 40,
+     "y": 1530,
+     "title": "Tài sản · Sống núi tuyết",
+     "prompt": "A sharp snowy mountain ridge at dawn, cold blue shadows, warm first light. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-antlers",
+     "kind": "image",
+     "x": 40,
+     "y": 1820,
+     "title": "Tài sản · Gạc rời",
+     "prompt": "A pair of detached giant antlers lying in the snow, detailed bone texture. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-needle",
+     "kind": "image",
+     "x": 40,
+     "y": 2110,
+     "title": "Tài sản · Kim băng",
+     "prompt": "A tall thin ice needle formation, translucent blue, catching the light. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-asset-ice",
+     "kind": "image",
+     "x": 40,
+     "y": 2400,
+     "title": "Tài sản · Tảng băng",
+     "prompt": "A giant ice slab, deep blue cracks, glowing faintly from within. Upload your own asset image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-01",
+     "kind": "image",
+     "x": 346,
+     "y": 80,
+     "title": "Storyboard #01",
+     "prompt": "Storyboard frame, shot 01 of 12. Bram's giant antlers rise above the snowy ridge at dawn, frost-covered grass in the foreground. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-01",
+     "kind": "video",
+     "x": 652,
+     "y": 80,
+     "title": "Video Shot #01",
+     "prompt": "Animate @image1 as one continuous 5-second scene. The antlers slowly rise into frame from below; Bram's face appears at second 3; ends standing tall against the morning sky. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-02",
+     "kind": "image",
+     "x": 346,
+     "y": 370,
+     "title": "Storyboard #02",
+     "prompt": "Storyboard frame, shot 02 of 12. Bram collides with a small fawn on the ridge, snow bursting around them. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-02",
+     "kind": "video",
+     "x": 652,
+     "y": 370,
+     "title": "Video Shot #02",
+     "prompt": "Animate @image1 as one continuous 5-second scene. A quick stumble and recovery; the fawn shakes snow off, Bram lowers his antlers gently. Preserve Bram's antlers, face and proportions from @image2. The fawn follows @image3. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-03",
+     "kind": "image",
+     "x": 346,
+     "y": 660,
+     "title": "Storyboard #03",
+     "prompt": "Storyboard frame, shot 03 of 12. Bram and the fawn stand together, the fawn looking up at the giant antlers. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-03",
+     "kind": "video",
+     "x": 652,
+     "y": 660,
+     "title": "Video Shot #03",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Slow push-in on the two characters; the fawn takes one curious step closer. Preserve Bram's antlers, face and proportions from @image2. The fawn follows @image3. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-04",
+     "kind": "image",
+     "x": 346,
+     "y": 950,
+     "title": "Storyboard #04",
+     "prompt": "Storyboard frame, shot 04 of 12. Three bunting birds decide to trust the fawn's antlers and land on them. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-04",
+     "kind": "video",
+     "x": 652,
+     "y": 950,
+     "title": "Video Shot #04",
+     "prompt": "Animate @image1 as one continuous 5-second scene. The birds circle once, then settle one by one on the antlers; soft wing flutter. Preserve Bram's antlers, face and proportions from @image2. The fawn follows @image3. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-05",
+     "kind": "image",
+     "x": 346,
+     "y": 1240,
+     "title": "Storyboard #05",
+     "prompt": "Storyboard frame, shot 05 of 12. A mirror of ice shows a second chance; the fawn sees itself with great antlers. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-05",
+     "kind": "video",
+     "x": 652,
+     "y": 1240,
+     "title": "Video Shot #05",
+     "prompt": "Animate @image1 as one continuous 5-second scene. The reflection shimmers; the fawn's eyes widen; light ripples across the ice. Preserve Bram's antlers, face and proportions from @image2. The fawn follows @image3. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-06",
+     "kind": "image",
+     "x": 346,
+     "y": 1530,
+     "title": "Storyboard #06",
+     "prompt": "Storyboard frame, shot 06 of 12. An intruder moves through the blizzard toward the ridge. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-06",
+     "kind": "video",
+     "x": 652,
+     "y": 1530,
+     "title": "Video Shot #06",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Snow and wind intensify; a dark shape advances slowly through the whiteout. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-07",
+     "kind": "image",
+     "x": 346,
+     "y": 1820,
+     "title": "Storyboard #07",
+     "prompt": "Storyboard frame, shot 07 of 12. Bram and the fawn are lost inside an ice maze, walls glowing faint blue. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-07",
+     "kind": "video",
+     "x": 652,
+     "y": 1820,
+     "title": "Video Shot #07",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Slow dolly forward through the maze; reflections slide across the ice walls. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-08",
+     "kind": "image",
+     "x": 346,
+     "y": 2110,
+     "title": "Storyboard #08",
+     "prompt": "Storyboard frame, shot 08 of 12. An aurora-lit ice tunnel opens ahead, green and violet light dancing. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-08",
+     "kind": "video",
+     "x": 652,
+     "y": 2110,
+     "title": "Video Shot #08",
+     "prompt": "Animate @image1 as one continuous 5-second scene. The camera glides through the tunnel as the aurora pulses overhead. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-09",
+     "kind": "image",
+     "x": 346,
+     "y": 2400,
+     "title": "Storyboard #09",
+     "prompt": "Storyboard frame, shot 09 of 12. Bram uses his antlers to pull a pine tree upright in the snow. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-09",
+     "kind": "video",
+     "x": 652,
+     "y": 2400,
+     "title": "Video Shot #09",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Steady pull, branches shedding snow; the tree settles upright with a soft thud. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-10",
+     "kind": "image",
+     "x": 346,
+     "y": 2690,
+     "title": "Storyboard #10",
+     "prompt": "Storyboard frame, shot 10 of 12. A rainbow appears over the coldest sky as the storm clears. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-10",
+     "kind": "video",
+     "x": 652,
+     "y": 2690,
+     "title": "Video Shot #10",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Clouds part slowly; the rainbow fades in; snowflakes drift down in the light. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-11",
+     "kind": "image",
+     "x": 346,
+     "y": 2980,
+     "title": "Storyboard #11",
+     "prompt": "Storyboard frame, shot 11 of 12. The fawn follows its father's footprints through fresh snow. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-11",
+     "kind": "video",
+     "x": 652,
+     "y": 2980,
+     "title": "Video Shot #11",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Small steps matching the larger prints; the camera tracks low behind the fawn. Preserve Bram's antlers, face and proportions from @image2. The fawn follows @image3. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-sb-12",
+     "kind": "image",
+     "x": 346,
+     "y": 3270,
+     "title": "Storyboard #12",
+     "prompt": "Storyboard frame, shot 12 of 12. Bram and the fawn walk into the sunset, the antler shadow reaching the sky. Keep Bram's antlers, face and coat identical to the character sheets. No text in frame.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-vid-12",
+     "kind": "video",
+     "x": 652,
+     "y": 3270,
+     "title": "Video Shot #12",
+     "prompt": "Animate @image1 as one continuous 5-second scene. Long slow pull-back; their silhouettes shrink against the orange horizon. Preserve Bram's antlers, face and proportions from @image2. Cinematic orchestral score with winter wind SFX. Negative: deformed antlers, distorted face, inconsistent snow, jerky motion.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "ba-finish",
+     "kind": "text",
+     "x": 958,
+     "y": 80,
+     "title": "Hoàn thiện · Ghép + nhạc",
+     "prompt": "FINISHING (not a generation step): take the 12 finished 5s clips in order and join them with the app's Ghép video (Stitch) feature, then add the 1:00 cinematic music track and winter wind SFX. Final film: 60 seconds, 16:9. This node does not generate anything by itself.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    }
+   ],
+   "edges": [
+    {
+     "id": "ba-e001",
+     "from": "ba-script",
+     "to": "ba-sb-01"
+    },
+    {
+     "id": "ba-e002",
+     "from": "ba-script",
+     "to": "ba-sb-02"
+    },
+    {
+     "id": "ba-e003",
+     "from": "ba-script",
+     "to": "ba-sb-03"
+    },
+    {
+     "id": "ba-e004",
+     "from": "ba-script",
+     "to": "ba-sb-04"
+    },
+    {
+     "id": "ba-e005",
+     "from": "ba-script",
+     "to": "ba-sb-05"
+    },
+    {
+     "id": "ba-e006",
+     "from": "ba-script",
+     "to": "ba-sb-06"
+    },
+    {
+     "id": "ba-e007",
+     "from": "ba-script",
+     "to": "ba-sb-07"
+    },
+    {
+     "id": "ba-e008",
+     "from": "ba-script",
+     "to": "ba-sb-08"
+    },
+    {
+     "id": "ba-e009",
+     "from": "ba-script",
+     "to": "ba-sb-09"
+    },
+    {
+     "id": "ba-e010",
+     "from": "ba-script",
+     "to": "ba-sb-10"
+    },
+    {
+     "id": "ba-e011",
+     "from": "ba-script",
+     "to": "ba-sb-11"
+    },
+    {
+     "id": "ba-e012",
+     "from": "ba-script",
+     "to": "ba-sb-12"
+    },
+    {
+     "id": "ba-e013",
+     "from": "ba-char-bram",
+     "to": "ba-sb-01"
+    },
+    {
+     "id": "ba-e014",
+     "from": "ba-char-bram",
+     "to": "ba-sb-02"
+    },
+    {
+     "id": "ba-e015",
+     "from": "ba-char-bram",
+     "to": "ba-sb-03"
+    },
+    {
+     "id": "ba-e016",
+     "from": "ba-char-bram",
+     "to": "ba-sb-04"
+    },
+    {
+     "id": "ba-e017",
+     "from": "ba-char-bram",
+     "to": "ba-sb-05"
+    },
+    {
+     "id": "ba-e018",
+     "from": "ba-char-bram",
+     "to": "ba-sb-06"
+    },
+    {
+     "id": "ba-e019",
+     "from": "ba-char-bram",
+     "to": "ba-sb-07"
+    },
+    {
+     "id": "ba-e020",
+     "from": "ba-char-bram",
+     "to": "ba-sb-08"
+    },
+    {
+     "id": "ba-e021",
+     "from": "ba-char-bram",
+     "to": "ba-sb-09"
+    },
+    {
+     "id": "ba-e022",
+     "from": "ba-char-bram",
+     "to": "ba-sb-10"
+    },
+    {
+     "id": "ba-e023",
+     "from": "ba-char-bram",
+     "to": "ba-sb-11"
+    },
+    {
+     "id": "ba-e024",
+     "from": "ba-char-bram",
+     "to": "ba-sb-12"
+    },
+    {
+     "id": "ba-e025",
+     "from": "ba-char-fawn",
+     "to": "ba-sb-02"
+    },
+    {
+     "id": "ba-e026",
+     "from": "ba-char-fawn",
+     "to": "ba-sb-03"
+    },
+    {
+     "id": "ba-e027",
+     "from": "ba-char-fawn",
+     "to": "ba-sb-04"
+    },
+    {
+     "id": "ba-e028",
+     "from": "ba-char-fawn",
+     "to": "ba-sb-05"
+    },
+    {
+     "id": "ba-e029",
+     "from": "ba-char-fawn",
+     "to": "ba-sb-11"
+    },
+    {
+     "id": "ba-e030",
+     "from": "ba-asset-buntings",
+     "to": "ba-sb-04"
+    },
+    {
+     "id": "ba-e031",
+     "from": "ba-asset-buntings",
+     "to": "ba-sb-05"
+    },
+    {
+     "id": "ba-e032",
+     "from": "ba-asset-nest",
+     "to": "ba-sb-04"
+    },
+    {
+     "id": "ba-e033",
+     "from": "ba-asset-ridge",
+     "to": "ba-sb-01"
+    },
+    {
+     "id": "ba-e034",
+     "from": "ba-asset-ridge",
+     "to": "ba-sb-12"
+    },
+    {
+     "id": "ba-e035",
+     "from": "ba-asset-antlers",
+     "to": "ba-sb-01"
+    },
+    {
+     "id": "ba-e036",
+     "from": "ba-asset-antlers",
+     "to": "ba-sb-05"
+    },
+    {
+     "id": "ba-e037",
+     "from": "ba-asset-needle",
+     "to": "ba-sb-07"
+    },
+    {
+     "id": "ba-e038",
+     "from": "ba-asset-needle",
+     "to": "ba-sb-08"
+    },
+    {
+     "id": "ba-e039",
+     "from": "ba-asset-ice",
+     "to": "ba-sb-07"
+    },
+    {
+     "id": "ba-e040",
+     "from": "ba-asset-ice",
+     "to": "ba-sb-08"
+    },
+    {
+     "id": "ba-e041",
+     "from": "ba-asset-ice",
+     "to": "ba-sb-10"
+    },
+    {
+     "id": "ba-e042",
+     "from": "ba-sb-01",
+     "to": "ba-vid-01"
+    },
+    {
+     "id": "ba-e043",
+     "from": "ba-sb-02",
+     "to": "ba-vid-02"
+    },
+    {
+     "id": "ba-e044",
+     "from": "ba-sb-03",
+     "to": "ba-vid-03"
+    },
+    {
+     "id": "ba-e045",
+     "from": "ba-sb-04",
+     "to": "ba-vid-04"
+    },
+    {
+     "id": "ba-e046",
+     "from": "ba-sb-05",
+     "to": "ba-vid-05"
+    },
+    {
+     "id": "ba-e047",
+     "from": "ba-sb-06",
+     "to": "ba-vid-06"
+    },
+    {
+     "id": "ba-e048",
+     "from": "ba-sb-07",
+     "to": "ba-vid-07"
+    },
+    {
+     "id": "ba-e049",
+     "from": "ba-sb-08",
+     "to": "ba-vid-08"
+    },
+    {
+     "id": "ba-e050",
+     "from": "ba-sb-09",
+     "to": "ba-vid-09"
+    },
+    {
+     "id": "ba-e051",
+     "from": "ba-sb-10",
+     "to": "ba-vid-10"
+    },
+    {
+     "id": "ba-e052",
+     "from": "ba-sb-11",
+     "to": "ba-vid-11"
+    },
+    {
+     "id": "ba-e053",
+     "from": "ba-sb-12",
+     "to": "ba-vid-12"
+    },
+    {
+     "id": "ba-e054",
+     "from": "ba-char-bram",
+     "to": "ba-vid-01"
+    },
+    {
+     "id": "ba-e055",
+     "from": "ba-char-bram",
+     "to": "ba-vid-02"
+    },
+    {
+     "id": "ba-e056",
+     "from": "ba-char-bram",
+     "to": "ba-vid-03"
+    },
+    {
+     "id": "ba-e057",
+     "from": "ba-char-bram",
+     "to": "ba-vid-04"
+    },
+    {
+     "id": "ba-e058",
+     "from": "ba-char-bram",
+     "to": "ba-vid-05"
+    },
+    {
+     "id": "ba-e059",
+     "from": "ba-char-bram",
+     "to": "ba-vid-06"
+    },
+    {
+     "id": "ba-e060",
+     "from": "ba-char-bram",
+     "to": "ba-vid-07"
+    },
+    {
+     "id": "ba-e061",
+     "from": "ba-char-bram",
+     "to": "ba-vid-08"
+    },
+    {
+     "id": "ba-e062",
+     "from": "ba-char-bram",
+     "to": "ba-vid-09"
+    },
+    {
+     "id": "ba-e063",
+     "from": "ba-char-bram",
+     "to": "ba-vid-10"
+    },
+    {
+     "id": "ba-e064",
+     "from": "ba-char-bram",
+     "to": "ba-vid-11"
+    },
+    {
+     "id": "ba-e065",
+     "from": "ba-char-bram",
+     "to": "ba-vid-12"
+    },
+    {
+     "id": "ba-e066",
+     "from": "ba-char-fawn",
+     "to": "ba-vid-02"
+    },
+    {
+     "id": "ba-e067",
+     "from": "ba-char-fawn",
+     "to": "ba-vid-03"
+    },
+    {
+     "id": "ba-e068",
+     "from": "ba-char-fawn",
+     "to": "ba-vid-04"
+    },
+    {
+     "id": "ba-e069",
+     "from": "ba-char-fawn",
+     "to": "ba-vid-05"
+    },
+    {
+     "id": "ba-e070",
+     "from": "ba-char-fawn",
+     "to": "ba-vid-11"
+    }
+   ]
+  },
+  {
+   "id": "tpl-parkour-inline",
+   "name_vi": "Phim hành động · Giao hàng inline",
+   "name_en": "Action Short · Inline Courier",
+   "category": "Hành động / Live-action",
+   "source_workflow": "PARKOUR SPEED INLINE — NewTake Gallery, tác giả hermesy",
+   "source_note": "Cấu trúc học theo (1 bảng nhân vật nối ra mọi video, mỗi video 4-6 ảnh tham chiếu, không có bước ghép). Video gốc 15s/chapter đã chia lại thành 10s cho khớp giới hạn của app; prompt viết lại, không copy nguyên văn.",
+   "description": "Phim ngắn hành động live-action: Sara, nữ nhân viên giao hàng đi giày trượt inline, lướt qua New York 8 làn trong 6 chapter x 10s. Đầu ra là 6 clip riêng, không ghép.",
+   "how_to_use_vi": "1) Tải ảnh bảng nhân vật Sara và các ảnh bối cảnh vào các node Ảnh. 2) Chạy từng node Video theo thứ tự Chapter 1-6. 3) Muốn thành 1 phim dài thì ghép 6 clip bằng tính năng Ghép video.",
+   "nodes": [
+    {
+     "id": "pk-style",
+     "kind": "text",
+     "x": 40,
+     "y": 80,
+     "title": "Phong cách · Hành động",
+     "prompt": "Live-action action short, handheld energy, fast cuts. Hero: Sara, an inline-skating courier in New York. Lock her face, hair and outfit in every shot. SFX only, no background music. 6 chapters x 10 seconds, 16:9. Each chapter ends with a hook into the next.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-01",
+     "kind": "image",
+     "x": 40,
+     "y": 370,
+     "title": "Bảng nhân vật · Sara",
+     "prompt": "Character sheet for Sara: female inline-skating courier, dark practical outfit, helmet, confident expression. Front, side and full-body views, same face and outfit in every view. Upload your own sheet here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-02",
+     "kind": "image",
+     "x": 40,
+     "y": 660,
+     "title": "SUV đen",
+     "prompt": "A black SUV, clean modern design, parked on a New York street. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-03",
+     "kind": "image",
+     "x": 40,
+     "y": 950,
+     "title": "Công trường",
+     "prompt": "A New York construction site: scaffolding, workers, barriers, dust in the air. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-04",
+     "kind": "image",
+     "x": 40,
+     "y": 1240,
+     "title": "Ảnh 3",
+     "prompt": "Street-level reference photo for the chase route. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-05",
+     "kind": "image",
+     "x": 40,
+     "y": 1530,
+     "title": "Giày trượt inline",
+     "prompt": "Close-up of inline skates: wheels, boots, laces, motion blur on the ground. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-06",
+     "kind": "image",
+     "x": 40,
+     "y": 1820,
+     "title": "New York 8 làn",
+     "prompt": "Downtown New York, an 8-lane avenue, taxis and glass towers, daytime. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-07",
+     "kind": "image",
+     "x": 40,
+     "y": 2110,
+     "title": "Ảnh 16",
+     "prompt": "Street-level reference photo for the chase route. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-08",
+     "kind": "image",
+     "x": 40,
+     "y": 2400,
+     "title": "Dầm thép H",
+     "prompt": "Steel H-beams at a construction site, strong diagonal lines. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-09",
+     "kind": "image",
+     "x": 40,
+     "y": 2690,
+     "title": "Quảng trường + đài phun",
+     "prompt": "A city plaza with a fountain, people walking, open sky. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-img-10",
+     "kind": "image",
+     "x": 40,
+     "y": 2980,
+     "title": "Quảng trường + người",
+     "prompt": "A city plaza with pedestrians and street life, wide view. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-01",
+     "kind": "video",
+     "x": 346,
+     "y": 80,
+     "title": "Video Chapter 1",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 1: Sara skates through the 8-lane avenue, weaving between taxis, quick cuts, the black SUV appears at the end to hook Chapter 2. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-02",
+     "kind": "video",
+     "x": 346,
+     "y": 370,
+     "title": "Video Chapter 2",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 2: Sara cuts through the construction site, ducking scaffolding and workers, dust and motion blur. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-03",
+     "kind": "video",
+     "x": 346,
+     "y": 660,
+     "title": "Video Chapter 3",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 3: open plaza sprint past the fountain, pedestrians parting, sun glare on the wet pavement. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-04",
+     "kind": "video",
+     "x": 346,
+     "y": 950,
+     "title": "Video Chapter 4",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 4: the black SUV pulls alongside; Sara matches its speed, tense parallel tracking shot. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-05",
+     "kind": "video",
+     "x": 346,
+     "y": 1240,
+     "title": "Video Chapter 5",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 5: rooftop-level plaza chase, long shadows, Sara jumps a low barrier without breaking speed. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "pk-vid-06",
+     "kind": "video",
+     "x": 346,
+     "y": 1530,
+     "title": "Video Chapter 6",
+     "prompt": "One continuous 10-second action scene, 16:9. Chapter 6: final sprint, the SUV falls behind, Sara disappears into the avenue crowd; freeze on her smile. Lock Sara's face and outfit from @image1 (character sheet). SFX only, no music. Negative: distorted face, extra limbs, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    }
+   ],
+   "edges": [
+    {
+     "id": "pk-e001",
+     "from": "pk-style",
+     "to": "pk-img-01"
+    },
+    {
+     "id": "pk-e002",
+     "from": "pk-style",
+     "to": "pk-img-02"
+    },
+    {
+     "id": "pk-e003",
+     "from": "pk-style",
+     "to": "pk-img-03"
+    },
+    {
+     "id": "pk-e004",
+     "from": "pk-style",
+     "to": "pk-img-04"
+    },
+    {
+     "id": "pk-e005",
+     "from": "pk-style",
+     "to": "pk-img-05"
+    },
+    {
+     "id": "pk-e006",
+     "from": "pk-style",
+     "to": "pk-img-06"
+    },
+    {
+     "id": "pk-e007",
+     "from": "pk-style",
+     "to": "pk-img-07"
+    },
+    {
+     "id": "pk-e008",
+     "from": "pk-style",
+     "to": "pk-img-08"
+    },
+    {
+     "id": "pk-e009",
+     "from": "pk-style",
+     "to": "pk-img-09"
+    },
+    {
+     "id": "pk-e010",
+     "from": "pk-style",
+     "to": "pk-img-10"
+    },
+    {
+     "id": "pk-e011",
+     "from": "pk-img-01",
+     "to": "pk-vid-01"
+    },
+    {
+     "id": "pk-e012",
+     "from": "pk-img-01",
+     "to": "pk-vid-02"
+    },
+    {
+     "id": "pk-e013",
+     "from": "pk-img-01",
+     "to": "pk-vid-03"
+    },
+    {
+     "id": "pk-e014",
+     "from": "pk-img-01",
+     "to": "pk-vid-04"
+    },
+    {
+     "id": "pk-e015",
+     "from": "pk-img-01",
+     "to": "pk-vid-05"
+    },
+    {
+     "id": "pk-e016",
+     "from": "pk-img-01",
+     "to": "pk-vid-06"
+    },
+    {
+     "id": "pk-e017",
+     "from": "pk-img-06",
+     "to": "pk-vid-01"
+    },
+    {
+     "id": "pk-e018",
+     "from": "pk-img-05",
+     "to": "pk-vid-01"
+    },
+    {
+     "id": "pk-e019",
+     "from": "pk-img-09",
+     "to": "pk-vid-01"
+    },
+    {
+     "id": "pk-e020",
+     "from": "pk-img-02",
+     "to": "pk-vid-01"
+    },
+    {
+     "id": "pk-e021",
+     "from": "pk-img-03",
+     "to": "pk-vid-02"
+    },
+    {
+     "id": "pk-e022",
+     "from": "pk-img-08",
+     "to": "pk-vid-02"
+    },
+    {
+     "id": "pk-e023",
+     "from": "pk-img-06",
+     "to": "pk-vid-02"
+    },
+    {
+     "id": "pk-e024",
+     "from": "pk-img-05",
+     "to": "pk-vid-02"
+    },
+    {
+     "id": "pk-e025",
+     "from": "pk-img-06",
+     "to": "pk-vid-03"
+    },
+    {
+     "id": "pk-e026",
+     "from": "pk-img-09",
+     "to": "pk-vid-03"
+    },
+    {
+     "id": "pk-e027",
+     "from": "pk-img-10",
+     "to": "pk-vid-03"
+    },
+    {
+     "id": "pk-e028",
+     "from": "pk-img-05",
+     "to": "pk-vid-03"
+    },
+    {
+     "id": "pk-e029",
+     "from": "pk-img-02",
+     "to": "pk-vid-04"
+    },
+    {
+     "id": "pk-e030",
+     "from": "pk-img-06",
+     "to": "pk-vid-04"
+    },
+    {
+     "id": "pk-e031",
+     "from": "pk-img-08",
+     "to": "pk-vid-04"
+    },
+    {
+     "id": "pk-e032",
+     "from": "pk-img-03",
+     "to": "pk-vid-04"
+    },
+    {
+     "id": "pk-e033",
+     "from": "pk-img-09",
+     "to": "pk-vid-05"
+    },
+    {
+     "id": "pk-e034",
+     "from": "pk-img-10",
+     "to": "pk-vid-05"
+    },
+    {
+     "id": "pk-e035",
+     "from": "pk-img-06",
+     "to": "pk-vid-05"
+    },
+    {
+     "id": "pk-e036",
+     "from": "pk-img-05",
+     "to": "pk-vid-05"
+    },
+    {
+     "id": "pk-e037",
+     "from": "pk-img-02",
+     "to": "pk-vid-06"
+    },
+    {
+     "id": "pk-e038",
+     "from": "pk-img-06",
+     "to": "pk-vid-06"
+    },
+    {
+     "id": "pk-e039",
+     "from": "pk-img-09",
+     "to": "pk-vid-06"
+    },
+    {
+     "id": "pk-e040",
+     "from": "pk-img-10",
+     "to": "pk-vid-06"
+    }
+   ]
+  },
+  {
+   "id": "tpl-rin-jin",
+   "name_vi": "Phiêu lưu điện ảnh · Đền sa mạc",
+   "name_en": "Cinematic Adventure · Desert Temple",
+   "category": "Phiêu lưu / Điện ảnh",
+   "source_workflow": "RIN & JIN — NewTake Gallery, tác giả DKJ STUDIO",
+   "source_note": "Cấu trúc học theo (mỗi video 5 ảnh tham chiếu, 1 ảnh nối ra nhiều video, có bước HD riêng). Video gốc 30s đã chia thành 16 clip 10s; tỉ lệ gốc 21:9 đổi thành 16:9 vì app không hỗ trợ 21:9; bước HD thành node Text hướng dẫn sang màn Upscale 4K. Prompt viết lại, không copy nguyên văn.",
+   "description": "Phim phiêu lưu live-action: Rin và Jin trong ngôi đền sa mạc bị chôn vùi, chiến đấu với xác ướp để lấy cổ vật vàng. 16 clip x 10s, đầu ra là các clip riêng; clip ưng ý nhất thì đưa sang Upscale 4K.",
+   "how_to_use_vi": "1) Tải ảnh tham chiếu (mặt/trang phục Rin, Jin, súng, sảnh đền, cổ vật, xác ướp) vào 8 node Ảnh. 2) Chạy các node Video theo thứ tự. 3) Clip nào ưng ý thì đưa sang màn Nâng độ phân giải.",
+   "nodes": [
+    {
+     "id": "rj-style",
+     "kind": "text",
+     "x": 40,
+     "y": 80,
+     "title": "Phong cách · Phiêu lưu điện ảnh",
+     "prompt": "Live-action cinematic adventure: Rin and Jin in a buried desert temple, fighting mummies for a golden artifact. Korean dialogue, hard cuts and match-on-action, SFX only, no background music. Lock both heroes' faces, hair and outfits in every shot. 16 clips x 10 seconds, 16:9 (bản gốc 21:9, app chỉ hỗ trợ 16:9).",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-01",
+     "kind": "image",
+     "x": 40,
+     "y": 370,
+     "title": "Rin · Mặt",
+     "prompt": "Reference: Rin's face, determined expression, desert dust on skin. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-02",
+     "kind": "image",
+     "x": 40,
+     "y": 660,
+     "title": "Rin · Tóc + trang phục",
+     "prompt": "Reference: Rin's hair and desert adventurer outfit, same colors and gear in every shot. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-03",
+     "kind": "image",
+     "x": 40,
+     "y": 950,
+     "title": "Jin · Mặt",
+     "prompt": "Reference: Jin's face, calm under pressure. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-04",
+     "kind": "image",
+     "x": 40,
+     "y": 1240,
+     "title": "Jin · Trang phục",
+     "prompt": "Reference: Jin's outfit and gear, same colors and gear in every shot. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-05",
+     "kind": "image",
+     "x": 40,
+     "y": 1530,
+     "title": "Súng",
+     "prompt": "Reference: the heroes' gun, detailed prop. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-06",
+     "kind": "image",
+     "x": 40,
+     "y": 1820,
+     "title": "Sảnh đền đá",
+     "prompt": "Reference: the buried desert temple hall, stone columns, sand and torch light. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-07",
+     "kind": "image",
+     "x": 40,
+     "y": 2110,
+     "title": "Cổ vật vàng",
+     "prompt": "Reference: the golden artifact, glowing faintly. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-img-08",
+     "kind": "image",
+     "x": 40,
+     "y": 2400,
+     "title": "Xác ướp",
+     "prompt": "Reference: a mummy, wrapped linen, glowing eyes, slow menacing movement. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-01",
+     "kind": "video",
+     "x": 346,
+     "y": 80,
+     "title": "Video Cảnh 01",
+     "prompt": "One 10-second cinematic clip, 16:9, part 1 of 16. Rin and Jin enter the buried desert temple hall; torches flicker; the golden artifact glows ahead. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-02",
+     "kind": "video",
+     "x": 346,
+     "y": 370,
+     "title": "Video Cảnh 02",
+     "prompt": "One 10-second cinematic clip, 16:9, part 2 of 16. Six mummies rise from the sand; hard cut to Rin raising the gun. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-03",
+     "kind": "video",
+     "x": 346,
+     "y": 660,
+     "title": "Video Cảnh 03",
+     "prompt": "One 10-second cinematic clip, 16:9, part 3 of 16. Close-quarters fight: Jin blocks a mummy's arm, Rin fires, dust explodes. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-04",
+     "kind": "video",
+     "x": 346,
+     "y": 950,
+     "title": "Video Cảnh 04",
+     "prompt": "One 10-second cinematic clip, 16:9, part 4 of 16. Match-on-action: the artifact is grabbed mid-leap as a mummy lunges. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-05",
+     "kind": "video",
+     "x": 346,
+     "y": 1240,
+     "title": "Video Cảnh 05",
+     "prompt": "One 10-second cinematic clip, 16:9, part 5 of 16. The temple shakes; a column falls; the heroes sprint through the collapsing hall. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-06",
+     "kind": "video",
+     "x": 346,
+     "y": 1530,
+     "title": "Video Cảnh 06",
+     "prompt": "One 10-second cinematic clip, 16:9, part 6 of 16. Jin covers Rin while she reads the artifact's inscription by torchlight. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-07",
+     "kind": "video",
+     "x": 346,
+     "y": 1820,
+     "title": "Video Cảnh 07",
+     "prompt": "One 10-second cinematic clip, 16:9, part 7 of 16. A mummy horde closes in from both sides; the heroes stand back to back. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-08",
+     "kind": "video",
+     "x": 346,
+     "y": 2110,
+     "title": "Video Cảnh 08",
+     "prompt": "One 10-second cinematic clip, 16:9, part 8 of 16. Slow push-in on the artifact as its glow turns from gold to cold blue. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-09",
+     "kind": "video",
+     "x": 346,
+     "y": 2400,
+     "title": "Video Cảnh 09",
+     "prompt": "One 10-second cinematic clip, 16:9, part 9 of 16. Rin slides under a falling slab and comes up firing. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-10",
+     "kind": "video",
+     "x": 346,
+     "y": 2690,
+     "title": "Video Cảnh 10",
+     "prompt": "One 10-second cinematic clip, 16:9, part 10 of 16. Jin swings across a gap on a rope as mummies reach from below. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-11",
+     "kind": "video",
+     "x": 346,
+     "y": 2980,
+     "title": "Video Cảnh 11",
+     "prompt": "One 10-second cinematic clip, 16:9, part 11 of 16. The artifact pulses; every mummy freezes at once; silence, then sand falling. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-12",
+     "kind": "video",
+     "x": 346,
+     "y": 3270,
+     "title": "Video Cảnh 12",
+     "prompt": "One 10-second cinematic clip, 16:9, part 12 of 16. Rin and Jin run for the exit as the hall floods with sand and light. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-13",
+     "kind": "video",
+     "x": 346,
+     "y": 3560,
+     "title": "Video Cảnh 13",
+     "prompt": "One 10-second cinematic clip, 16:9, part 13 of 16. Final standoff at the temple gate: one mummy left, the artifact raised high. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-14",
+     "kind": "video",
+     "x": 346,
+     "y": 3850,
+     "title": "Video Cảnh 14",
+     "prompt": "One 10-second cinematic clip, 16:9, part 14 of 16. The gate seals behind them; desert wind; the heroes look at the artifact in Rin's hand. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-15",
+     "kind": "video",
+     "x": 346,
+     "y": 4140,
+     "title": "Video Cảnh 15",
+     "prompt": "One 10-second cinematic clip, 16:9, part 15 of 16. Flashback cut: how the artifact was hidden, told in 3 quick images. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-vid-16",
+     "kind": "video",
+     "x": 346,
+     "y": 4430,
+     "title": "Video Cảnh 16",
+     "prompt": "One 10-second cinematic clip, 16:9, part 16 of 16. Epilogue: dawn over the dunes, the heroes walk away, artifact secured. Lock Rin, Jin, the temple hall and props from @image1, @image2, @image3, @image4, @image5. Korean dialogue, SFX only, no music. Negative: distorted faces, extra limbs, warping stone.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "rj-hd",
+     "kind": "text",
+     "x": 652,
+     "y": 80,
+     "title": "Nâng cấp HD · Upscale 4K",
+     "prompt": "HD STEP (not a generation step): pick your best clip from the 16 and send it to the app's Upscale 4K screen (Nâng độ phân giải). The canvas has no HD node; upscaling happens outside the workflow. This node does not generate anything by itself.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    }
+   ],
+   "edges": [
+    {
+     "id": "rj-e001",
+     "from": "rj-style",
+     "to": "rj-img-01"
+    },
+    {
+     "id": "rj-e002",
+     "from": "rj-style",
+     "to": "rj-img-02"
+    },
+    {
+     "id": "rj-e003",
+     "from": "rj-style",
+     "to": "rj-img-03"
+    },
+    {
+     "id": "rj-e004",
+     "from": "rj-style",
+     "to": "rj-img-04"
+    },
+    {
+     "id": "rj-e005",
+     "from": "rj-style",
+     "to": "rj-img-05"
+    },
+    {
+     "id": "rj-e006",
+     "from": "rj-style",
+     "to": "rj-img-06"
+    },
+    {
+     "id": "rj-e007",
+     "from": "rj-style",
+     "to": "rj-img-07"
+    },
+    {
+     "id": "rj-e008",
+     "from": "rj-style",
+     "to": "rj-img-08"
+    },
+    {
+     "id": "rj-e009",
+     "from": "rj-img-01",
+     "to": "rj-vid-01"
+    },
+    {
+     "id": "rj-e010",
+     "from": "rj-img-02",
+     "to": "rj-vid-01"
+    },
+    {
+     "id": "rj-e011",
+     "from": "rj-img-03",
+     "to": "rj-vid-01"
+    },
+    {
+     "id": "rj-e012",
+     "from": "rj-img-05",
+     "to": "rj-vid-01"
+    },
+    {
+     "id": "rj-e013",
+     "from": "rj-img-07",
+     "to": "rj-vid-01"
+    },
+    {
+     "id": "rj-e014",
+     "from": "rj-img-02",
+     "to": "rj-vid-02"
+    },
+    {
+     "id": "rj-e015",
+     "from": "rj-img-03",
+     "to": "rj-vid-02"
+    },
+    {
+     "id": "rj-e016",
+     "from": "rj-img-04",
+     "to": "rj-vid-02"
+    },
+    {
+     "id": "rj-e017",
+     "from": "rj-img-06",
+     "to": "rj-vid-02"
+    },
+    {
+     "id": "rj-e018",
+     "from": "rj-img-08",
+     "to": "rj-vid-02"
+    },
+    {
+     "id": "rj-e019",
+     "from": "rj-img-01",
+     "to": "rj-vid-03"
+    },
+    {
+     "id": "rj-e020",
+     "from": "rj-img-03",
+     "to": "rj-vid-03"
+    },
+    {
+     "id": "rj-e021",
+     "from": "rj-img-04",
+     "to": "rj-vid-03"
+    },
+    {
+     "id": "rj-e022",
+     "from": "rj-img-05",
+     "to": "rj-vid-03"
+    },
+    {
+     "id": "rj-e023",
+     "from": "rj-img-07",
+     "to": "rj-vid-03"
+    },
+    {
+     "id": "rj-e024",
+     "from": "rj-img-02",
+     "to": "rj-vid-04"
+    },
+    {
+     "id": "rj-e025",
+     "from": "rj-img-04",
+     "to": "rj-vid-04"
+    },
+    {
+     "id": "rj-e026",
+     "from": "rj-img-05",
+     "to": "rj-vid-04"
+    },
+    {
+     "id": "rj-e027",
+     "from": "rj-img-06",
+     "to": "rj-vid-04"
+    },
+    {
+     "id": "rj-e028",
+     "from": "rj-img-08",
+     "to": "rj-vid-04"
+    },
+    {
+     "id": "rj-e029",
+     "from": "rj-img-01",
+     "to": "rj-vid-05"
+    },
+    {
+     "id": "rj-e030",
+     "from": "rj-img-03",
+     "to": "rj-vid-05"
+    },
+    {
+     "id": "rj-e031",
+     "from": "rj-img-05",
+     "to": "rj-vid-05"
+    },
+    {
+     "id": "rj-e032",
+     "from": "rj-img-06",
+     "to": "rj-vid-05"
+    },
+    {
+     "id": "rj-e033",
+     "from": "rj-img-07",
+     "to": "rj-vid-05"
+    },
+    {
+     "id": "rj-e034",
+     "from": "rj-img-02",
+     "to": "rj-vid-06"
+    },
+    {
+     "id": "rj-e035",
+     "from": "rj-img-04",
+     "to": "rj-vid-06"
+    },
+    {
+     "id": "rj-e036",
+     "from": "rj-img-06",
+     "to": "rj-vid-06"
+    },
+    {
+     "id": "rj-e037",
+     "from": "rj-img-07",
+     "to": "rj-vid-06"
+    },
+    {
+     "id": "rj-e038",
+     "from": "rj-img-08",
+     "to": "rj-vid-06"
+    },
+    {
+     "id": "rj-e039",
+     "from": "rj-img-01",
+     "to": "rj-vid-07"
+    },
+    {
+     "id": "rj-e040",
+     "from": "rj-img-03",
+     "to": "rj-vid-07"
+    },
+    {
+     "id": "rj-e041",
+     "from": "rj-img-05",
+     "to": "rj-vid-07"
+    },
+    {
+     "id": "rj-e042",
+     "from": "rj-img-07",
+     "to": "rj-vid-07"
+    },
+    {
+     "id": "rj-e043",
+     "from": "rj-img-08",
+     "to": "rj-vid-07"
+    },
+    {
+     "id": "rj-e044",
+     "from": "rj-img-01",
+     "to": "rj-vid-08"
+    },
+    {
+     "id": "rj-e045",
+     "from": "rj-img-02",
+     "to": "rj-vid-08"
+    },
+    {
+     "id": "rj-e046",
+     "from": "rj-img-04",
+     "to": "rj-vid-08"
+    },
+    {
+     "id": "rj-e047",
+     "from": "rj-img-06",
+     "to": "rj-vid-08"
+    },
+    {
+     "id": "rj-e048",
+     "from": "rj-img-08",
+     "to": "rj-vid-08"
+    },
+    {
+     "id": "rj-e049",
+     "from": "rj-img-01",
+     "to": "rj-vid-09"
+    },
+    {
+     "id": "rj-e050",
+     "from": "rj-img-02",
+     "to": "rj-vid-09"
+    },
+    {
+     "id": "rj-e051",
+     "from": "rj-img-03",
+     "to": "rj-vid-09"
+    },
+    {
+     "id": "rj-e052",
+     "from": "rj-img-05",
+     "to": "rj-vid-09"
+    },
+    {
+     "id": "rj-e053",
+     "from": "rj-img-07",
+     "to": "rj-vid-09"
+    },
+    {
+     "id": "rj-e054",
+     "from": "rj-img-02",
+     "to": "rj-vid-10"
+    },
+    {
+     "id": "rj-e055",
+     "from": "rj-img-03",
+     "to": "rj-vid-10"
+    },
+    {
+     "id": "rj-e056",
+     "from": "rj-img-04",
+     "to": "rj-vid-10"
+    },
+    {
+     "id": "rj-e057",
+     "from": "rj-img-06",
+     "to": "rj-vid-10"
+    },
+    {
+     "id": "rj-e058",
+     "from": "rj-img-08",
+     "to": "rj-vid-10"
+    },
+    {
+     "id": "rj-e059",
+     "from": "rj-img-01",
+     "to": "rj-vid-11"
+    },
+    {
+     "id": "rj-e060",
+     "from": "rj-img-03",
+     "to": "rj-vid-11"
+    },
+    {
+     "id": "rj-e061",
+     "from": "rj-img-04",
+     "to": "rj-vid-11"
+    },
+    {
+     "id": "rj-e062",
+     "from": "rj-img-05",
+     "to": "rj-vid-11"
+    },
+    {
+     "id": "rj-e063",
+     "from": "rj-img-07",
+     "to": "rj-vid-11"
+    },
+    {
+     "id": "rj-e064",
+     "from": "rj-img-02",
+     "to": "rj-vid-12"
+    },
+    {
+     "id": "rj-e065",
+     "from": "rj-img-04",
+     "to": "rj-vid-12"
+    },
+    {
+     "id": "rj-e066",
+     "from": "rj-img-05",
+     "to": "rj-vid-12"
+    },
+    {
+     "id": "rj-e067",
+     "from": "rj-img-06",
+     "to": "rj-vid-12"
+    },
+    {
+     "id": "rj-e068",
+     "from": "rj-img-08",
+     "to": "rj-vid-12"
+    },
+    {
+     "id": "rj-e069",
+     "from": "rj-img-01",
+     "to": "rj-vid-13"
+    },
+    {
+     "id": "rj-e070",
+     "from": "rj-img-03",
+     "to": "rj-vid-13"
+    },
+    {
+     "id": "rj-e071",
+     "from": "rj-img-05",
+     "to": "rj-vid-13"
+    },
+    {
+     "id": "rj-e072",
+     "from": "rj-img-06",
+     "to": "rj-vid-13"
+    },
+    {
+     "id": "rj-e073",
+     "from": "rj-img-07",
+     "to": "rj-vid-13"
+    },
+    {
+     "id": "rj-e074",
+     "from": "rj-img-02",
+     "to": "rj-vid-14"
+    },
+    {
+     "id": "rj-e075",
+     "from": "rj-img-04",
+     "to": "rj-vid-14"
+    },
+    {
+     "id": "rj-e076",
+     "from": "rj-img-06",
+     "to": "rj-vid-14"
+    },
+    {
+     "id": "rj-e077",
+     "from": "rj-img-07",
+     "to": "rj-vid-14"
+    },
+    {
+     "id": "rj-e078",
+     "from": "rj-img-08",
+     "to": "rj-vid-14"
+    },
+    {
+     "id": "rj-e079",
+     "from": "rj-img-01",
+     "to": "rj-vid-15"
+    },
+    {
+     "id": "rj-e080",
+     "from": "rj-img-03",
+     "to": "rj-vid-15"
+    },
+    {
+     "id": "rj-e081",
+     "from": "rj-img-05",
+     "to": "rj-vid-15"
+    },
+    {
+     "id": "rj-e082",
+     "from": "rj-img-07",
+     "to": "rj-vid-15"
+    },
+    {
+     "id": "rj-e083",
+     "from": "rj-img-08",
+     "to": "rj-vid-15"
+    },
+    {
+     "id": "rj-e084",
+     "from": "rj-img-01",
+     "to": "rj-vid-16"
+    },
+    {
+     "id": "rj-e085",
+     "from": "rj-img-02",
+     "to": "rj-vid-16"
+    },
+    {
+     "id": "rj-e086",
+     "from": "rj-img-04",
+     "to": "rj-vid-16"
+    },
+    {
+     "id": "rj-e087",
+     "from": "rj-img-06",
+     "to": "rj-vid-16"
+    },
+    {
+     "id": "rj-e088",
+     "from": "rj-img-08",
+     "to": "rj-vid-16"
+    }
+   ]
+  },
+  {
+   "id": "tpl-snapback-mv",
+   "name_vi": "MV ca nhạc · 12 Segment",
+   "name_en": "Music Video · 12 Segments",
+   "category": "MV / Ca nhạc",
+   "source_workflow": "다미-snapback music video — NewTake Gallery, tác giả 맛집하이에나",
+   "source_note": "Cấu trúc học theo (bảng nhân vật + bảng mặt + ảnh Scene nối ra nhiều Segment, mỗi Segment neo 1 lát audio). App không có node Audio nên 12 lát audio thành hướng dẫn hát nhép trong prompt; video gốc 15s/segment chia lại 10s; bước lắp ráp 2:58 thành node Text hướng dẫn dùng Ghép video. Prompt viết lại, không copy nguyên văn.",
+   "description": "MV phong cách K-pop 2:58, 12 Segment x 10s: bảng nhân vật + bảng mặt khóa ngoại hình, 4 bối cảnh brutalist, hát nhép khớp nhịp 1.5s. Ghép 12 segment rồi thêm nhạc ở bước cuối.",
+   "how_to_use_vi": "1) Tải ảnh bảng nhân vật, bảng mặt và 4 ảnh Scene vào các node Ảnh. 2) Chạy 12 Segment theo thứ tự. 3) Ghép 12 clip bằng tính năng Ghép video rồi thêm nhạc 2:58.",
+   "nodes": [
+    {
+     "id": "mv-concept",
+     "kind": "text",
+     "x": 40,
+     "y": 80,
+     "title": "Concept MV",
+     "prompt": "Cold cinematic K-pop MV, low saturation, steel-blue to cyan palette with neon green accents, brutalist concrete spaces. Lip-sync must match the beat every 1.5 seconds. The performer is on screen from the very first frame. 12 segments x 10 seconds, 16:9. (Bản gốc 2:58 với 12 lát audio 15s; app không có node Audio nên nhịp nhạc được ghi trong prompt từng Segment, nhạc thêm ở bước lắp ráp.)",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-char",
+     "kind": "image",
+     "x": 40,
+     "y": 370,
+     "title": "Bảng nhân vật · Turnaround",
+     "prompt": "Character turnaround sheet for the performer: front, side, back, same face, hair and outfit. Upload your own sheet here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-face",
+     "kind": "image",
+     "x": 40,
+     "y": 660,
+     "title": "Bảng mặt · Face sheet",
+     "prompt": "Face sheet for the performer: close-ups, same face and hairstyle in every angle. Upload your own sheet here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-scene-01",
+     "kind": "image",
+     "x": 40,
+     "y": 950,
+     "title": "Bối cảnh · Scene 1",
+     "prompt": "Brutalist concrete hall, cold steel-blue light, haze in the air. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-scene-02",
+     "kind": "image",
+     "x": 40,
+     "y": 1240,
+     "title": "Bối cảnh · Scene 2",
+     "prompt": "Concrete corridor with cyan neon strips, wet floor reflections. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-scene-03",
+     "kind": "image",
+     "x": 40,
+     "y": 1530,
+     "title": "Bối cảnh · Scene 3",
+     "prompt": "Open concrete rooftop at dusk, city lights far below, cyan sky. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-scene-04",
+     "kind": "image",
+     "x": 40,
+     "y": 1820,
+     "title": "Bối cảnh · Scene 4",
+     "prompt": "Dark studio with a single neon green accent wall and drifting smoke. Upload your own image here.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-01",
+     "kind": "video",
+     "x": 346,
+     "y": 80,
+     "title": "Video Segment 01",
+     "prompt": "One 10-second MV segment, 16:9, part 01 of 12. Opening: performer walks into the concrete hall as the beat drops, first lip-sync line on the 1.5s pulse. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 1). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-02",
+     "kind": "video",
+     "x": 346,
+     "y": 370,
+     "title": "Video Segment 02",
+     "prompt": "One 10-second MV segment, 16:9, part 02 of 12. Close-up verse: face locked to the face sheet, slow orbit around the performer. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 1). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-03",
+     "kind": "video",
+     "x": 346,
+     "y": 660,
+     "title": "Video Segment 03",
+     "prompt": "One 10-second MV segment, 16:9, part 03 of 12. First chorus: wide shot, neon strips flare, performer hits the hook line. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 1). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-04",
+     "kind": "video",
+     "x": 346,
+     "y": 950,
+     "title": "Video Segment 04",
+     "prompt": "One 10-second MV segment, 16:9, part 04 of 12. Bridge in the corridor: walking shot, reflections sliding on the wet floor. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 2). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-05",
+     "kind": "video",
+     "x": 346,
+     "y": 1240,
+     "title": "Video Segment 05",
+     "prompt": "One 10-second MV segment, 16:9, part 05 of 12. Dance break: fast cuts on the beat, concrete and cyan light strobing. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 2). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-06",
+     "kind": "video",
+     "x": 346,
+     "y": 1530,
+     "title": "Video Segment 06",
+     "prompt": "One 10-second MV segment, 16:9, part 06 of 12. Second verse: rooftop at dusk, wind in hair, city lights behind. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 2). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-07",
+     "kind": "video",
+     "x": 346,
+     "y": 1820,
+     "title": "Video Segment 07",
+     "prompt": "One 10-second MV segment, 16:9, part 07 of 12. Pre-chorus build: push-in as the music tightens, breath visible in cold air. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 3). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-08",
+     "kind": "video",
+     "x": 346,
+     "y": 2110,
+     "title": "Video Segment 08",
+     "prompt": "One 10-second MV segment, 16:9, part 08 of 12. Second chorus: full energy, neon green accent wall, smoke drifting. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 3). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-09",
+     "kind": "video",
+     "x": 346,
+     "y": 2400,
+     "title": "Video Segment 09",
+     "prompt": "One 10-second MV segment, 16:9, part 09 of 12. Rap section: low angle, performer advances toward camera on every beat. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 3). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-10",
+     "kind": "video",
+     "x": 346,
+     "y": 2690,
+     "title": "Video Segment 10",
+     "prompt": "One 10-second MV segment, 16:9, part 10 of 12. Quiet bridge: single spotlight, whispered lines, slow crane down. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 4). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-11",
+     "kind": "video",
+     "x": 346,
+     "y": 2980,
+     "title": "Video Segment 11",
+     "prompt": "One 10-second MV segment, 16:9, part 11 of 12. Final chorus: all scenes flash in rhythm, biggest movement of the video. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 4). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-seg-12",
+     "kind": "video",
+     "x": 346,
+     "y": 3270,
+     "title": "Video Segment 12",
+     "prompt": "One 10-second MV segment, 16:9, part 12 of 12. Outro: performer walks away down the corridor, lights dim one by one. Lock the performer from @image1 (turnaround sheet), face and hair from @image2 (face sheet), space and light from @image3 (Scene 4). Lip-sync to the beat every 1.5 seconds. Negative: distorted face, off-sync lips, warping background.",
+     "ratio": "16:9",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "mv-finish",
+     "kind": "text",
+     "x": 652,
+     "y": 80,
+     "title": "Hoàn thiện · Ghép + nhạc",
+     "prompt": "FINISHING (not a generation step): join the 12 segments in order with the app's Ghép video (Stitch) feature, then add the full 2:58 music track so the lip-sync lands on the beat. This node does not generate anything by itself.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    }
+   ],
+   "edges": [
+    {
+     "id": "mv-e001",
+     "from": "mv-concept",
+     "to": "mv-char"
+    },
+    {
+     "id": "mv-e002",
+     "from": "mv-concept",
+     "to": "mv-face"
+    },
+    {
+     "id": "mv-e003",
+     "from": "mv-concept",
+     "to": "mv-scene-01"
+    },
+    {
+     "id": "mv-e004",
+     "from": "mv-concept",
+     "to": "mv-scene-02"
+    },
+    {
+     "id": "mv-e005",
+     "from": "mv-concept",
+     "to": "mv-scene-03"
+    },
+    {
+     "id": "mv-e006",
+     "from": "mv-concept",
+     "to": "mv-scene-04"
+    },
+    {
+     "id": "mv-e007",
+     "from": "mv-concept",
+     "to": "mv-seg-01"
+    },
+    {
+     "id": "mv-e008",
+     "from": "mv-concept",
+     "to": "mv-seg-02"
+    },
+    {
+     "id": "mv-e009",
+     "from": "mv-concept",
+     "to": "mv-seg-03"
+    },
+    {
+     "id": "mv-e010",
+     "from": "mv-concept",
+     "to": "mv-seg-04"
+    },
+    {
+     "id": "mv-e011",
+     "from": "mv-concept",
+     "to": "mv-seg-05"
+    },
+    {
+     "id": "mv-e012",
+     "from": "mv-concept",
+     "to": "mv-seg-06"
+    },
+    {
+     "id": "mv-e013",
+     "from": "mv-concept",
+     "to": "mv-seg-07"
+    },
+    {
+     "id": "mv-e014",
+     "from": "mv-concept",
+     "to": "mv-seg-08"
+    },
+    {
+     "id": "mv-e015",
+     "from": "mv-concept",
+     "to": "mv-seg-09"
+    },
+    {
+     "id": "mv-e016",
+     "from": "mv-concept",
+     "to": "mv-seg-10"
+    },
+    {
+     "id": "mv-e017",
+     "from": "mv-concept",
+     "to": "mv-seg-11"
+    },
+    {
+     "id": "mv-e018",
+     "from": "mv-concept",
+     "to": "mv-seg-12"
+    },
+    {
+     "id": "mv-e019",
+     "from": "mv-char",
+     "to": "mv-seg-01"
+    },
+    {
+     "id": "mv-e020",
+     "from": "mv-char",
+     "to": "mv-seg-02"
+    },
+    {
+     "id": "mv-e021",
+     "from": "mv-char",
+     "to": "mv-seg-03"
+    },
+    {
+     "id": "mv-e022",
+     "from": "mv-char",
+     "to": "mv-seg-04"
+    },
+    {
+     "id": "mv-e023",
+     "from": "mv-char",
+     "to": "mv-seg-05"
+    },
+    {
+     "id": "mv-e024",
+     "from": "mv-char",
+     "to": "mv-seg-06"
+    },
+    {
+     "id": "mv-e025",
+     "from": "mv-char",
+     "to": "mv-seg-07"
+    },
+    {
+     "id": "mv-e026",
+     "from": "mv-char",
+     "to": "mv-seg-08"
+    },
+    {
+     "id": "mv-e027",
+     "from": "mv-char",
+     "to": "mv-seg-09"
+    },
+    {
+     "id": "mv-e028",
+     "from": "mv-char",
+     "to": "mv-seg-10"
+    },
+    {
+     "id": "mv-e029",
+     "from": "mv-char",
+     "to": "mv-seg-11"
+    },
+    {
+     "id": "mv-e030",
+     "from": "mv-char",
+     "to": "mv-seg-12"
+    },
+    {
+     "id": "mv-e031",
+     "from": "mv-face",
+     "to": "mv-seg-01"
+    },
+    {
+     "id": "mv-e032",
+     "from": "mv-face",
+     "to": "mv-seg-02"
+    },
+    {
+     "id": "mv-e033",
+     "from": "mv-face",
+     "to": "mv-seg-03"
+    },
+    {
+     "id": "mv-e034",
+     "from": "mv-face",
+     "to": "mv-seg-04"
+    },
+    {
+     "id": "mv-e035",
+     "from": "mv-face",
+     "to": "mv-seg-05"
+    },
+    {
+     "id": "mv-e036",
+     "from": "mv-face",
+     "to": "mv-seg-06"
+    },
+    {
+     "id": "mv-e037",
+     "from": "mv-face",
+     "to": "mv-seg-07"
+    },
+    {
+     "id": "mv-e038",
+     "from": "mv-face",
+     "to": "mv-seg-08"
+    },
+    {
+     "id": "mv-e039",
+     "from": "mv-face",
+     "to": "mv-seg-09"
+    },
+    {
+     "id": "mv-e040",
+     "from": "mv-face",
+     "to": "mv-seg-10"
+    },
+    {
+     "id": "mv-e041",
+     "from": "mv-face",
+     "to": "mv-seg-11"
+    },
+    {
+     "id": "mv-e042",
+     "from": "mv-face",
+     "to": "mv-seg-12"
+    },
+    {
+     "id": "mv-e043",
+     "from": "mv-scene-01",
+     "to": "mv-seg-01"
+    },
+    {
+     "id": "mv-e044",
+     "from": "mv-scene-01",
+     "to": "mv-seg-02"
+    },
+    {
+     "id": "mv-e045",
+     "from": "mv-scene-01",
+     "to": "mv-seg-03"
+    },
+    {
+     "id": "mv-e046",
+     "from": "mv-scene-02",
+     "to": "mv-seg-04"
+    },
+    {
+     "id": "mv-e047",
+     "from": "mv-scene-02",
+     "to": "mv-seg-05"
+    },
+    {
+     "id": "mv-e048",
+     "from": "mv-scene-02",
+     "to": "mv-seg-06"
+    },
+    {
+     "id": "mv-e049",
+     "from": "mv-scene-03",
+     "to": "mv-seg-07"
+    },
+    {
+     "id": "mv-e050",
+     "from": "mv-scene-03",
+     "to": "mv-seg-08"
+    },
+    {
+     "id": "mv-e051",
+     "from": "mv-scene-03",
+     "to": "mv-seg-09"
+    },
+    {
+     "id": "mv-e052",
+     "from": "mv-scene-04",
+     "to": "mv-seg-10"
+    },
+    {
+     "id": "mv-e053",
+     "from": "mv-scene-04",
+     "to": "mv-seg-11"
+    },
+    {
+     "id": "mv-e054",
+     "from": "mv-scene-04",
+     "to": "mv-seg-12"
+    }
+   ]
+  },
+  {
+   "id": "tpl-wanyang-selfie",
+   "name_vi": "Hài ngắn · Selfie dọc 9:16",
+   "name_en": "Comedy Short · Vertical Selfie",
+   "category": "Hài / Ngắn dọc",
+   "source_workflow": "운장 테레비에 출연한 와냥선생 — NewTake Gallery, tác giả 관우",
+   "source_note": "Cấu trúc học theo (3 ảnh tham chiếu nối vào 1 video, fan-in 3). Video gốc 1 shot 30s liên tục đã chia thành 3 phần 10s nối tiếp nhau (video -> video) cho khớp giới hạn của app. Prompt viết lại, không copy nguyên văn.",
+   "description": "Phim ngắn hài dọc 9:16: người đàn ông mặc hanbok Joseon và mèo trắng Wanyang quay kiểu selfie ven sông, mèo vỗ đổ cốc cà phê. 3 phần x 10s nối tiếp nhau.",
+   "how_to_use_vi": "1) Tải 3 ảnh tham chiếu (mèo, nam chính, ba lô) vào các node Ảnh. 2) Chạy Phần 1, rồi Phần 2, Phần 3 theo thứ tự (nối video -> video). 3) Ghép 3 clip lại nếu muốn 1 video 30s.",
+   "nodes": [
+    {
+     "id": "wy-style",
+     "kind": "text",
+     "x": 40,
+     "y": 80,
+     "title": "Phong cách · Hài selfie",
+     "prompt": "Comedy selfie short, 9:16 vertical: a man in Joseon hanbok and his white cat teacher Wanyang appear on a TV show, filmed selfie-style. Korean dialogue, no subtitles, no background music, only ambient sound. Lock the man's face, hanbok, hat, the cat and the cat backpack in every shot. One continuous 30-second selfie shot, split into 3 x 10s parts.",
+     "ratio": "16:9",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-img-01",
+     "kind": "image",
+     "x": 40,
+     "y": 370,
+     "title": "Bảng nhân vật · Mèo Wanyang",
+     "prompt": "Character sheet for Wanyang the white Persian cat: 4 angles, close-up details and color palette. Upload your own sheet here.",
+     "ratio": "9:16",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-img-02",
+     "kind": "image",
+     "x": 40,
+     "y": 660,
+     "title": "Nam chính · Hanbok",
+     "prompt": "The male lead in Joseon hanbok and gat hat: front and full-body views. Upload your own image here.",
+     "ratio": "9:16",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-img-03",
+     "kind": "image",
+     "x": 40,
+     "y": 950,
+     "title": "Ba lô mèo",
+     "prompt": "A hanbok-style cat backpack with a round window and tassels. Upload your own image here.",
+     "ratio": "9:16",
+     "duration": 5,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-vid-01",
+     "kind": "video",
+     "x": 346,
+     "y": 80,
+     "title": "Video Phần 1/3",
+     "prompt": "One continuous 10-second vertical selfie shot, 9:16, part 1 of 3. Phần 1/3: a continuous selfie shot walking along the riverside in the late afternoon; the man holds a selfie stick and a coffee cup; the cat sits in the backpack. Steady forward walk, river and sunset light behind; the cat looks around curiously. Lock the cat from @image1, the man's face and hanbok from @image2, the backpack from @image3. Korean dialogue, no subtitles, ambient sound only. Negative: distorted face, warped hat, extra limbs.",
+     "ratio": "9:16",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-vid-02",
+     "kind": "video",
+     "x": 346,
+     "y": 370,
+     "title": "Video Phần 2/3",
+     "prompt": "One continuous 10-second vertical selfie shot, 9:16, part 2 of 3. Phần 2/3: the cat in the backpack suddenly paws the cup; coffee spills on the hanbok; the gat hat slips down. Quick comic beat: paw, spill, hat sliding; the man's surprised face; the cat looks smug. Lock the cat from @image1, the man's face and hanbok from @image2, the backpack from @image3. Korean dialogue, no subtitles, ambient sound only. Negative: distorted face, warped hat, extra limbs.",
+     "ratio": "9:16",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    },
+    {
+     "id": "wy-vid-03",
+     "kind": "video",
+     "x": 346,
+     "y": 660,
+     "title": "Video Phần 3/3",
+     "prompt": "One continuous 10-second vertical selfie shot, 9:16, part 3 of 3. Phần 3/3: the man fixes his hat with one hand while still holding the phone; the cat looks triumphant. Slow settle back to a calm selfie smile; end on the cat's smug face in the backpack window. Lock the cat from @image1, the man's face and hanbok from @image2, the backpack from @image3. Korean dialogue, no subtitles, ambient sound only. Negative: distorted face, warped hat, extra limbs.",
+     "ratio": "9:16",
+     "duration": 10,
+     "style": "",
+     "preset": ""
+    }
+   ],
+   "edges": [
+    {
+     "id": "wy-e001",
+     "from": "wy-style",
+     "to": "wy-img-01"
+    },
+    {
+     "id": "wy-e002",
+     "from": "wy-style",
+     "to": "wy-img-02"
+    },
+    {
+     "id": "wy-e003",
+     "from": "wy-style",
+     "to": "wy-img-03"
+    },
+    {
+     "id": "wy-e004",
+     "from": "wy-style",
+     "to": "wy-vid-01"
+    },
+    {
+     "id": "wy-e005",
+     "from": "wy-style",
+     "to": "wy-vid-02"
+    },
+    {
+     "id": "wy-e006",
+     "from": "wy-style",
+     "to": "wy-vid-03"
+    },
+    {
+     "id": "wy-e007",
+     "from": "wy-img-01",
+     "to": "wy-vid-01"
+    },
+    {
+     "id": "wy-e008",
+     "from": "wy-img-01",
+     "to": "wy-vid-02"
+    },
+    {
+     "id": "wy-e009",
+     "from": "wy-img-01",
+     "to": "wy-vid-03"
+    },
+    {
+     "id": "wy-e010",
+     "from": "wy-img-02",
+     "to": "wy-vid-01"
+    },
+    {
+     "id": "wy-e011",
+     "from": "wy-img-02",
+     "to": "wy-vid-02"
+    },
+    {
+     "id": "wy-e012",
+     "from": "wy-img-02",
+     "to": "wy-vid-03"
+    },
+    {
+     "id": "wy-e013",
+     "from": "wy-img-03",
+     "to": "wy-vid-01"
+    },
+    {
+     "id": "wy-e014",
+     "from": "wy-img-03",
+     "to": "wy-vid-02"
+    },
+    {
+     "id": "wy-e015",
+     "from": "wy-img-03",
+     "to": "wy-vid-03"
+    },
+    {
+     "id": "wy-e016",
+     "from": "wy-vid-01",
+     "to": "wy-vid-02"
+    },
+    {
+     "id": "wy-e017",
+     "from": "wy-vid-02",
+     "to": "wy-vid-03"
+    }
+   ]
+  }
+ ]
+}

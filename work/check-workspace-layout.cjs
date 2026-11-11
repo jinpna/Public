@@ -39,7 +39,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
    const geometry=Object.fromEntries(['columns','input','prompt','action','folder'].map(k=>[k,report[k]]));
    if(reference)assert.deepEqual(geometry,reference,`${size.width}: ${tab} differs from image workspace`);
    else reference=geometry;
-   if(['Tạo ảnh','Chỉnh ảnh'].includes(tab))assert.equal(report.tileFont,'0px');
+   if(['Tạo ảnh','Chỉnh ảnh'].includes(tab))assert(parseFloat(report.tileFont)>0,'Tool labels must be visible');
    await page.screenshot({path:`outputs/workspace-${size.width}-${tabs.indexOf(tab)}.png`});
   }
   console.log('Shared workspace geometry verified',size);
@@ -60,7 +60,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
  const first=await page.locator('.mopix-creative-quote').innerText();
  await page.clock.fastForward(4100);
  assert.equal(await page.locator('.mopix-creative-quote').innerText(),first,'Home headline remains stable');
- assert.equal(await page.locator('.alara-image-stage>img').count(),9);
+ assert.equal(await page.locator('.alara-image-stage>img').count(),20);
  assert.equal(await page.getByText('MOPIX / CREATIVE STUDIO',{exact:true}).count(),0);
  assert.equal(await page.locator('a[href^="mailto:monday.directory@gmail.com"]').count(),1);
  await page.getByRole('button',{name:'Ủng hộ Monday',exact:true}).click();

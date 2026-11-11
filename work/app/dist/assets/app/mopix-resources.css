@@ -1,0 +1,37 @@
+html body #root#root .mopix-resources{height:100%;min-height:0;display:flex;flex-direction:column;padding:20px;background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:8px;gap:16px}
+html body #root#root .mopix-resources>header{display:flex;align-items:center;gap:12px;flex:none}
+html body #root#root .mopix-resources>header>div{flex:1}
+html body #root#root .mopix-resources h2{font-size:20px;margin:0 0 6px}
+html body #root#root .mopix-resources :is(p,small){font-size:12px;color:var(--ui-muted);line-height:1.5}
+html body #root#root .mopix-resources>header :is(input,select){max-width:200px;height:36px;padding:7px 10px}
+html body #root#root .mopix-resource-body{display:flex;gap:20px;min-height:0;flex:1}
+html body #root#root .mopix-resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;align-content:start;overflow:auto;flex:1;min-width:0}
+html body #root#root .mopix-resource-grid>button{display:flex;flex-direction:column;gap:8px;text-align:left;justify-content:flex-start;background:#ffffff03;border:1px solid var(--ui-border);border-radius:6px;padding:12px;min-height:130px;overflow:hidden}
+html body #root#root .mopix-resource-grid>button:hover,html body #root#root .mopix-resource-grid>button[aria-pressed=true]{background:#ffffff07;border-color:#ffffff30}
+html body #root#root .mopix-resource-grid img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#141618;border-radius:4px}
+html body #root#root .mopix-resources h3{font-size:15px;margin:0;color:var(--ui-text)}
+html body #root#root .mopix-resource-body>aside{width:310px;flex:none;overflow:auto;border-left:1px solid var(--ui-border);padding-left:20px;display:flex;flex-direction:column;gap:14px}
+html body #root#root .mopix-resource-body>aside>header{display:flex;justify-content:space-between;align-items:center}
+html body #root#root .mopix-resource-body>aside>img{width:100%;max-height:240px;object-fit:contain}
+html body #root#root .mopix-resource-body textarea{width:100%;min-height:100px;padding:12px;resize:vertical;font-size:13px}
+html body #root#root .mopix-resource-actions{display:flex;gap:8px}
+html body #root#root .mopix-resource-actions button{display:flex;gap:6px;align-items:center;padding:8px;flex:1;font-size:12px}
+html body #root#root .mopix-resources a{color:var(--ui-muted);font-size:12px}
+html body #root#root .mopix-resources>footer{display:flex;justify-content:space-between;font-size:12px;color:var(--ui-muted);flex:none}
+html body #root#root .unified-library>.mopix-resources{flex:1;min-height:0}
+@media(max-width:1100px){html body #root#root .mopix-resource-body>aside{width:260px}html body #root#root .mopix-resources>header{flex-wrap:wrap}}
+
+html body #root#root#root .mopix-resource-grid{grid-auto-rows:max-content!important}
+html body #root#root#root .mopix-resource-grid>button{height:auto!important;max-height:none!important;min-height:130px!important;flex-shrink:0!important}
+html body #root#root#root .mopix-resource-grid img{height:180px!important;aspect-ratio:auto!important;flex-shrink:0!important;object-fit:contain!important}
+html body #root#root#root .mopix-resources h4{font-size:13px;margin:8px 0 0}
+html body #root#root .mopix-batch-workbench{display:grid;grid-template-columns:330px 1fr;gap:18px;min-height:0;flex:1}
+html body #root#root .mopix-batch-workbench>aside,html body #root#root .mopix-batch-workbench>section{display:flex;flex-direction:column;gap:12px;min-height:0;padding:20px;background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:8px}
+html body #root#root .mopix-batch-workbench h2{font-size:20px;margin:0}
+html body #root#root .mopix-batch-workbench :is(p,small){font-size:12px;color:var(--ui-muted);line-height:1.5}
+html body #root#root .mopix-batch-workbench textarea{flex:1;min-height:100px;padding:12px;resize:none}
+html body #root#root .mopix-batch-workbench :is(button,select){padding:8px 12px;border:1px solid var(--ui-border);border-radius:5px;background:var(--ui-field);font-size:12px}
+html body #root#root .mopix-batch-workbench label{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+html body #root#root .mopix-batch-jobs{min-height:0;overflow:auto}
+html body #root#root .mopix-batch-jobs article{border-bottom:1px solid var(--ui-border);padding:14px 0;font-size:12px;display:flex;align-items:center;gap:12px}
+html body #root#root .mopix-batch-jobs article>p{flex:1;white-space:pre-wrap}

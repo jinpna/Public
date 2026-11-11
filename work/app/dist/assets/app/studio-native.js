@@ -1,5 +1,5 @@
-import{createCreativeQuote}from'./mopix-creative-quote.js?v=2';
-import{createAlaraFrame}from'./mopix-alara-home.js';
+import{createCreativeQuote}from'./mopix-creative-quote.js?v=3';
+import{createAlaraFrame}from'./mopix-alara-home.js?v=2';
 import {createIntroExperience} from './studio-atmosphere.js?v=3';
 import {createHomeWordmark} from './studio-home-wordmark.js?v=3';
 import {createTerms} from './studio-terms.js?v=1';
