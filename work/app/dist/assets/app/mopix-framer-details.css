@@ -1,0 +1,66 @@
+/* Original implementation informed by the three supplied Framer references. */
+#root .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+html body #root#root#root .mopix-account-table-card{width:100%;background:#111314;border:1px solid #2a2d30;border-radius:12px;overflow:hidden;color:#e1e4e8}
+#root .mopix-account-table-card>header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 26px;background:#191b1d;border-bottom:1px solid #2a2d30}
+#root .mopix-account-table-card h2{margin:0;font-size:16px;font-weight:500;letter-spacing:-.02em}
+#root .mopix-account-table-card header p{margin:7px 0 0;font-size:12px;color:#858d95}
+html body #root#root#root .mopix-account-table-card button{width:auto;min-height:32px;padding:7px 11px;border:1px solid #34383c;border-radius:6px;background:#ffffff04;color:#c8ced5;white-space:nowrap;font:inherit;font-size:12px;cursor:pointer;transition:background .18s,border-color .18s}
+html body #root#root#root .mopix-account-table-card button:hover{background:#ffffff0b;border-color:#58606a;color:#fff}
+html body #root#root#root .mopix-account-table-card button:focus-visible{outline:2px solid #9ecbb4;outline-offset:3px}
+#root .mopix-account-table-card button:disabled{opacity:.45;cursor:wait}
+#root .account-table-scroll{overflow-x:auto;outline-offset:-3px}
+#root .mopix-account-table-card table{width:100%;min-width:690px;border-collapse:collapse;text-align:left;table-layout:auto}
+#root .mopix-account-table-card thead{background:#0e1011;color:#7c858e}
+#root .mopix-account-table-card thead th{padding:13px 20px;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+#root .mopix-account-table-card tbody :is(th,td){height:82px;padding:18px 20px;border-top:1px solid #ffffff09;font-size:12px;font-weight:400;vertical-align:middle}
+#root .mopix-account-table-card tbody tr{transition:background .18s}
+#root .mopix-account-table-card tbody tr:hover{background:#ffffff03}
+#root .account-platform{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-weight:500}
+#root .account-platform>i{display:grid;place-items:center;width:28px;height:28px;border:1px solid #3b4148;border-radius:7px;background:#20242a;color:#dce2e8;font-size:12px;font-weight:600;font-style:normal}
+#root .account-identifier{display:block;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#aeb6bf}
+#root .mopix-account-table-card td small{display:block;margin-top:6px;font-size:10px;color:#727b85}
+#root .account-status{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:5px 8px;border-radius:5px;font-size:10px;background:#21252a;color:#939ca7}
+#root .account-status>i{width:5px;height:5px;border-radius:50%;background:currentColor}
+#root .account-status.is-connected{background:#173327;color:#8fd8ac}
+#root .account-status.is-error{background:#3a2326;color:#f2a4ab}
+#root .account-balance{font-variant-numeric:tabular-nums;white-space:nowrap;color:#aeb6bf}
+#root .account-actions{text-align:right}
+#root .mopix-account-table-card>footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;border-top:1px solid #2a2d30;font-size:11px;color:#858d95}
+#root .account-message,#root .account-flow-note{margin:16px 24px;padding:14px 16px;background:#ffffff04;border:1px solid #34383c;border-radius:6px;font-size:12px;line-height:1.7;color:#b5bec7}
+#root .account-message.is-error{border-color:#663b40;color:#eda5ad}
+#root .account-flow-note strong{font-weight:500;color:#e1e4e8}
+#root .account-flow-note p{margin:6px 0 0}
+/* Terminal: reveal indicates activity only. Elapsed time is never presented as progress. */
+html body #root#root#root .mopix-terminal-loader{width:min(440px,calc(100% - 48px));margin:0 auto;display:flex;flex-direction:column;gap:18px;padding:25px 26px;border:1px solid #ffffff10;border-radius:8px;background:linear-gradient(135deg,#161a1a99,#0c0f1066);text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#root .terminal-loader-header{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px;line-height:1.5;letter-spacing:.015em;color:#d3e5dc;text-shadow:0 0 12px #c4f0d52b}
+#root .terminal-loader-header>span{display:flex;align-items:center;gap:9px}
+#root .terminal-loader-header i{display:block;width:5px;height:5px;background:#9ccbb0;box-shadow:0 0 10px #98d1b84d;border-radius:50%;animation:terminal-breathe 2s ease-in-out infinite}
+#root .terminal-elapsed{color:#7c8b84;font-size:10px;font-variant-numeric:tabular-nums;text-shadow:none}
+#root .terminal-reveal{font-size:12px;line-height:1.85;min-height:3.7em;color:#d3e5dc;overflow-wrap:anywhere}
+#root .terminal-reveal>span{opacity:.14;transition:opacity .14s}
+#root .terminal-reveal>span.is-lit{opacity:.9;text-shadow:0 0 8px #a8d7bb25}
+#root .terminal-reveal>span.is-edge{animation:terminal-edge .15s steps(2,end) var(--terminal-delay) infinite}
+html body #root#root#root .mopix-terminal-loader.is-compact{width:calc(100% - 20px);padding:12px;gap:8px;border:0;background:transparent}
+#root .mopix-terminal-loader.is-compact .terminal-loader-header{font-size:10px;gap:8px}
+#root .mopix-terminal-loader.is-compact .terminal-reveal{font-size:10px;line-height:1.6;min-height:3.2em}
+@keyframes terminal-edge{0%,100%{opacity:.25}50%{opacity:.85;text-shadow:1px 0 4px #acd5bccc}}
+@keyframes terminal-breathe{0%,100%{opacity:.45}50%{opacity:1}}
+/* Draw and erase an SVG path instead of moving a background pill. */
+html body #root#root#root .muse-global-nav.has-svg-underlines{display:flex;align-items:center;gap:28px}
+html body #root#root#root .muse-global-nav.has-svg-underlines>nav{position:relative!important;left:auto!important;top:auto!important;transform:none!important;margin:0 auto!important;max-width:calc(100% - 210px);height:54px!important;overflow-x:auto;overflow-y:hidden;border-radius:10px!important;padding:3px 8px!important;background:#0e1011c9!important;scrollbar-width:none;gap:1px}
+html body #root#root#root .muse-global-nav.has-svg-underlines>nav>button{width:auto!important;min-width:0!important;max-width:none!important;flex:0 0 auto!important;height:46px!important;min-height:46px!important;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 11px 4px!important;border-radius:5px!important;position:relative!important;background:none!important}
+html body #root#root#root .muse-global-nav.has-svg-underlines .nav-item-label{display:inline;font-size:11px;line-height:1.3;white-space:nowrap}
+html body #root#root#root .muse-global-nav.has-svg-underlines>nav>button>svg:not(.nav-svg-underline){width:16px!important;height:16px!important;flex-shrink:0}
+html body #root#root#root .muse-global-nav.has-svg-underlines>nav>button>svg.nav-svg-underline{position:absolute;left:10px;bottom:1px;width:calc(100% - 20px)!important;height:9px!important;overflow:visible;color:#b6d5c3;pointer-events:none}
+#root .nav-svg-underline path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .4s cubic-bezier(.22,.61,.36,1);opacity:.9}
+#root .has-svg-underlines nav button:is(:hover,:focus-visible,[aria-current=page]) .nav-svg-underline path{stroke-dashoffset:0}
+html body #root#root#root .has-svg-underlines nav button:focus-visible{outline:1px solid #95b4a3!important;outline-offset:-2px!important}
+@media(max-width:1450px){html body #root#root#root .muse-global-nav.has-svg-underlines .nav-item-label{display:none!important}html body #root#root#root .muse-global-nav.has-svg-underlines>nav>button{width:40px!important;min-width:40px!important;padding:0 8px 4px!important}}
+@media(max-width:700px){html body #root#root#root .muse-global-nav.has-svg-underlines{gap:14px}html body #root#root#root .muse-global-nav.has-svg-underlines>nav{max-width:calc(100% - 100px)}#root .mopix-account-table-card>header{padding:18px}#root .mopix-account-table-card>footer{padding:14px 18px;align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){#root .terminal-reveal>span,#root .nav-svg-underline path{transition:none}#root .terminal-loader-header i,#root .terminal-reveal>span.is-edge{animation:none}#root .mopix-account-table-card tbody tr{transition:none}}
+
+html body #root#root#root .mopix-account-table-card button{border-radius:6px!important;background:#ffffff04!important;min-height:32px!important;padding:7px 11px!important}
+html body #root#root#root .mopix-account-table-card button:hover{background:#ffffff0b!important}
+html body #root#root#root .account-status.is-connected{background:#173327!important;color:#8fd8ac!important}
+html body #root#root#root .account-status.is-muted{background:#21252a!important;color:#939ca7!important}
+html body #root#root#root .muse-global-nav.has-svg-underlines>nav{width:max-content!important;min-width:0!important;flex-shrink:1!important;justify-content:flex-start!important}

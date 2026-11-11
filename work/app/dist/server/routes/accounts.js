@@ -221,6 +221,12 @@ router.post('/:id/close-browser', async (req, res) => {
         return res.status(500).json({ error: error.message });
     }
 });
+// Disconnect clears the local authenticated session without deleting account history.
+router.post('/:id/disconnect', require('../accountDisconnect.cjs').createDisconnectHandler({
+    db: db_1.db, browserManager: browserManager_1.browserManager, museWorker: museWorker_1.museWorker,
+    profileDirFor: museWorker_1.profileDirFor, fs: fs_1.default,
+    getAccounts: getSanitizedAccounts, broadcast: ws_1.broadcast,
+}));
 // DELETE /api/accounts/:id - remove account, reassign its jobs
 router.delete('/:id', (req, res) => {
     try {

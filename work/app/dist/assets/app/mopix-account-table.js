@@ -1,0 +1,23 @@
+// Connection badges and balances come exclusively from the account API.
+export function accountState(account){
+ if(!account.enabled)return{label:account.hasCookie?'Tạm ngưng':'Chưa kết nối',tone:'muted'};
+ if(account.status==='online')return{label:'Đã kết nối',tone:'connected'};
+ if(account.status==='error')return{label:'Cần đăng nhập lại',tone:'error'};
+ return{label:'Chưa kết nối',tone:'muted'};
+}
+export function accountBalance(account){const value=account.usage_tokens_left;return value!==null&&value!==undefined&&value!==''&&Number.isFinite(Number(value))?Number(value).toLocaleString('vi-VN')+' token':'Chưa cập nhật'}
+export function createAccountTable(React){const{createElement:h,useState:S,useEffect:E,useRef:R}=React;return function AccountTable({accounts=[],onAccounts,onConnect,onReconnect}){
+ const[busy,B]=S(''),[error,ERR]=S(''),[notice,N]=S(''),[flowInfo,F]=S(false);const live=R(true),lock=R(false);
+ E(()=>{live.current=true;return()=>{live.current=false}},[]);
+ async function refresh(){const r=await fetch('/api/accounts');if(!r.ok)throw Error('Không tải được tài khoản. Vui lòng thử lại.');const rows=await r.json();if(!Array.isArray(rows))throw Error('Dữ liệu tài khoản không hợp lệ.');if(live.current)onAccounts(rows)}
+ async function action(id,fn){if(lock.current)return;lock.current=true;B(id);ERR('');N('');try{await fn()}catch(e){if(live.current)ERR(e.message)}finally{lock.current=false;if(live.current)B('')}}
+ async function disconnect(account){await action(account.id,async()=>{const r=await fetch('/api/accounts/'+encodeURIComponent(account.id)+'/disconnect',{method:'POST'});const d=await r.json();if(!r.ok)throw Error(d.error||'Không ngắt được kết nối.');await refresh();if(live.current)N('Đã đăng xuất MUSE trên ứng dụng này.')})}
+ const rows=accounts.length?accounts:[{id:'muse-empty',identifier:'Chưa có tài khoản',enabled:false,status:'offline'}];
+ return h('section',{className:'mopix-account-table-card','aria-labelledby':'account-table-title'},h('header',null,h('div',null,h('h2',{id:'account-table-title'},'Tài khoản đã kết nối'),h('p',null,'Quản lý kết nối và số dư của bạn.')),h('button',{type:'button',className:'account-refresh',disabled:!!busy,onClick:()=>action('refresh',refresh)},busy==='refresh'?'Đang cập nhật…':'Làm mới')),
+ error&&h('p',{className:'account-message is-error',role:'alert'},error),notice&&h('p',{className:'account-message',role:'status'},notice),
+ h('div',{className:'account-table-scroll',tabIndex:0,role:'region','aria-label':'Danh sách kết nối'},h('table',null,h('caption',{className:'visually-hidden'},'Trạng thái tài khoản và số dư MUSE'),h('thead',null,h('tr',null,...['Nền tảng','Tài khoản','Trạng thái','Số dư',''].map((text,i)=>h('th',{key:i,scope:'col'},text||h('span',{className:'visually-hidden'},'Thao tác'))))),h('tbody',null,
+ ...rows.map(a=>{const state=accountState(a),empty=a.id==='muse-empty',connected=state.tone==='connected';return h('tr',{key:a.id},h('th',{scope:'row'},h('span',{className:'account-platform'},h('i',{'aria-hidden':true},'M'),'MUSE')),h('td',null,h('span',{className:'account-identifier'},a.identifier||'Tài khoản MUSE'),a.usage_checked_at&&h('small',null,'Số dư cập nhật '+new Date(a.usage_checked_at).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}))),h('td',null,h('span',{className:'account-status is-'+state.tone},h('i',{'aria-hidden':true}),state.label)),h('td',{className:'account-balance'},empty?'—':accountBalance(a)),h('td',{className:'account-actions'},h('button',{type:'button',disabled:!!busy,onClick:()=>empty?onConnect():connected?disconnect(a):action(a.id,()=>onReconnect(a)),className:connected?'account-disconnect':''},busy===a.id?'Đang xử lý…':connected?'Ngắt kết nối':empty?'Kết nối':'Đăng nhập lại')))}),
+ h('tr',null,h('th',{scope:'row'},h('span',{className:'account-platform'},h('i',{'aria-hidden':true},'G'),'Google Flow')),h('td',null,h('span',{className:'account-identifier'},'Chưa có tài khoản')),h('td',null,h('span',{className:'account-status is-muted'},h('i',{'aria-hidden':true}),'Chưa kết nối')),h('td',{className:'account-balance'},'—'),h('td',{className:'account-actions'},h('button',{type:'button','aria-expanded':flowInfo,onClick:()=>F(!flowInfo)},'Kết nối')))))),
+ flowInfo&&h('div',{className:'account-flow-note',role:'note'},h('strong',null,'Google Flow chưa được hỗ trợ'),h('p',null,'Ứng dụng chưa có kết nối Google Flow để tạo ảnh hoặc video. Đăng nhập Google không đồng nghĩa với kết nối Flow. Chưa có tác vụ nào được gửi và không trừ token.')),
+ h('footer',null,h('span',null,accounts.filter(a=>accountState(a).tone==='connected').length+' tài khoản đang kết nối'),h('button',{type:'button',disabled:!!busy,onClick:onConnect},'+ Thêm tài khoản MUSE')));
+}}
