@@ -13,6 +13,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
   let reference;
   for(const tab of tabs){
    await nav().getByRole('button',{name:tab,exact:true}).click();
+   await page.locator('main .muse-compose-actions>button.mopix-icon-action').waitFor();
    const report=await page.locator('main').last().evaluate(main=>{
     const rect=e=>{const r=e.getBoundingClientRect();return [r.x,r.y,r.width,r.height].map(n=>Math.round(n*10)/10)};
     const composer=main.children[0],tools=main.children[2];
@@ -21,7 +22,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
      input:rect(composer.querySelector('.quick-reference-strip,.sx-strip-empty')),
      prompt:rect(composer.querySelector('.muse-prompt-editor')),
      action:rect(composer.querySelector('.muse-compose-actions>button')),
-     folder:rect(composer.querySelector('.mopix-output-folder')),
+     folder:composer.querySelectorAll('.mopix-output-folder').length,
      toolsOverflow:tools.scrollHeight-tools.clientHeight,
      scroll:document.documentElement.scrollHeight>innerHeight,
      clipped:[...composer.querySelectorAll('button,select'),...tools.querySelectorAll('button')].filter(e=>{
@@ -38,7 +39,7 @@ const base=process.env.MOPIX_TEST_URL||'http://localhost:3008';
    const geometry=Object.fromEntries(['columns','input','prompt','action','folder'].map(k=>[k,report[k]]));
    if(reference)assert.deepEqual(geometry,reference,`${size.width}: ${tab} differs from image workspace`);
    else reference=geometry;
-   if(['Tạo ảnh','Chỉnh ảnh'].includes(tab))assert.equal(report.tileFont,'13px');
+   if(['Tạo ảnh','Chỉnh ảnh'].includes(tab))assert.equal(report.tileFont,'0px');
    await page.screenshot({path:`outputs/workspace-${size.width}-${tabs.indexOf(tab)}.png`});
   }
   console.log('Shared workspace geometry verified',size);

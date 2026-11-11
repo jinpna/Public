@@ -1,6 +1,6 @@
-import{createAIHelper}from'./mopix-ai-helper.js';
+import{createAIHelper}from'./mopix-ai-helper.js?v=2';
 import{CREATIVE_CATEGORIES,recipeDefaults,compileCreativePrompt,creativeManifest,validateCreativePrompt}from'./mopix-prompt-engine.js';
-import{createAssetPicker,assetURL}from'./studio-assets.js?v=6';
+import{createAssetPicker,assetURL}from'./studio-assets.js?v=7';
 import{createStudioIcon}from'./studio-icons.js?v=24';
 export function createAdvancedPrompt(React){const{createElement:h,useState:S,useEffect:E}=React,AIHelper=createAIHelper(React),Picker=createAssetPicker(React),Icon=createStudioIcon(React);return function AdvancedPrompt({onNavigate}){
  const[c,C]=S(()=>{try{return{...recipeDefaults(),...JSON.parse(localStorage.getItem('mopix-prompt-draft')||'{}')}}catch{return recipeDefaults()}}),[refs,REFS]=S([]),[section,SECTION]=S('scene'),[format,FMT]=S('text'),[picker,PICK]=S(false),[feed,FEED]=S([]),[filter,FILTER]=S('all'),[notice,N]=S(''),[error,ERR]=S(''),[demo,DEMO]=S(null);

@@ -1,4 +1,4 @@
-import {studioAPI as api} from './studio-assets.js?v=6';
+import {studioAPI as api} from './studio-assets.js?v=7';
 export function explainFailure(error=''){
  const e=String(error);
  if(/PROMPT_POLICY_ERROR|MUSE_NEEDS_REVISION|từ chối|chính sách/i.test(e))return {title:'Cần điều chỉnh yêu cầu',message:'MUSE chưa thể thực hiện yêu cầu hiện tại. Xem phản hồi bên dưới, sửa mô tả rồi gửi lại.',retry:false};

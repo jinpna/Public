@@ -5,8 +5,8 @@ import {createHomeWordmark} from './studio-home-wordmark.js?v=3';
 import {createTerms} from './studio-terms.js?v=1';
 import {createHomeMotion} from './studio-home-motion.js?v=2';
 import {createLiquidLoader} from './studio-liquid-loader.js?v=6';
-import {createStudioInputs} from './studio-inputs.js?v=55';
-import {createAssetPicker,assetURL} from './studio-assets.js?v=6';
+import {createStudioInputs} from './studio-inputs.js?v=56';
+import {createAssetPicker,assetURL} from './studio-assets.js?v=7';
 import {createStudioIcon} from './studio-icons.js?v=24';
 // Small native components. React is supplied by the host; no second React runtime.
 export function createNativeStudio(React) {

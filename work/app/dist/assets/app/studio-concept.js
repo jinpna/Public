@@ -1,4 +1,4 @@
-import {createAssetPicker,assetURL,studioAPI as api} from './studio-assets.js?v=6';
+import {createAssetPicker,assetURL,studioAPI as api} from './studio-assets.js?v=7';
 import {createStudioIcon} from './studio-icons.js?v=24';
 export const CONCEPT_MODES=[['concept-person','Nhân vật','person'],['concept-product','Sản phẩm','product'],['concept-elements','Phần tử 3D','product'],['concept-kv','Hình ảnh chủ đạo','concept'],['concept-compose','Ghép thành hình chủ đạo','grid']];
 export const isConcept=mode=>CONCEPT_MODES.some(m=>m[0]===mode);

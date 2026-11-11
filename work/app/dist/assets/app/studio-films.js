@@ -1,4 +1,4 @@
-import {studioAPI as api,createAssetPicker,assetURL} from './studio-assets.js?v=6';
+import {studioAPI as api,createAssetPicker,assetURL} from './studio-assets.js?v=7';
 const scene=()=>({id:crypto.randomUUID(),episode:1,title:'Cảnh mới',prompt:'',end:'',duration:10,refTags:[]});
 export function createFilmStudio(React){const{createElement:h,useState:S,useEffect:E,useRef:R}=React,Picker=createAssetPicker(React);return function FilmStudio(){
 const[list,LIST]=S([]),[p,P]=S(null),[refs,REFS]=S([]),[busy,B]=S(false),[error,ERR]=S(''),[note,NOTE]=S(''),[picker,PICK]=S(null),[episode,EP]=S('all'),[dirty,D]=S(false);const live=R(true),lock=R(false),dirtyRef=R(false);dirtyRef.current=dirty;

@@ -1,0 +1,108 @@
+/* MOPIX component contract. Dark adaptation of BoardUI sizing and focus states.
+   The reference runtime is deliberately not imported: one React, one tooltip. */
+@font-face{font-family:'MOPIX Alpha Lyrae';src:url('/assets/fonts/AlphaLyrae-Medium.woff2') format('woff2');font-style:normal;font-weight:400 500;font-display:swap}
+:root{
+ --ui-canvas:#090a0b;--ui-panel:#101113;--ui-field:#141618;--ui-hover:#1b1e21;
+ --ui-border:#ffffff12;--ui-border-hover:#ffffff24;--ui-text:#dde1e5;--ui-muted:#858b94;
+ --ui-radius:10px;--ui-field-radius:8px;--ui-action:36px;--ui-icon:20px;
+ --ui-fast:150ms;--ui-ease:cubic-bezier(.2,.7,.2,1);
+ --mopix-bg:var(--ui-canvas);--mopix-panel:var(--ui-panel);--mopix-input:var(--ui-field);
+ --mopix-control:var(--ui-field);--mopix-hover:var(--ui-hover);--mopix-line:var(--ui-border);
+ --mopix-fg:var(--ui-text);--mopix-muted:var(--ui-muted);
+ --mopix-font:'MOPIX Alpha Lyrae','Mopix Inter Tight',sans-serif;
+}
+html body,html body #root#root,html body #root#root :is(button,a,input,textarea,select,label,p,small,span,strong,h1,h2,h3,h4,output,[contenteditable],summary),html body dialog,html body dialog *,.muse-tooltip,.muse-tooltip *{
+ font-family:var(--mopix-font)!important;font-weight:400!important;font-synthesis:none!important;
+ font-feature-settings:'calt' 0,'liga' 0!important;font-variation-settings:normal!important;
+}
+html body #root#root :is(button,a,input,textarea,select,[contenteditable]){
+ transition:background-color var(--ui-fast) var(--ui-ease),border-color var(--ui-fast) var(--ui-ease),color var(--ui-fast) var(--ui-ease),box-shadow var(--ui-fast) var(--ui-ease),transform var(--ui-fast) var(--ui-ease)!important;
+}
+html body #root#root :is(.quick-compose,.sx-composer-panel,.muse-viewer,.muse-tools-drawer,.quick-tools-unified,.motion-tools-refresh,.mopix-work-panel,.mopix-work-preview,.mopix-upscale-input,.mopix-upscale-result,.asset-picker,.muse-settings-content){
+ background:var(--ui-panel)!important;border:1px solid var(--ui-border)!important;border-radius:var(--ui-radius)!important;box-shadow:0 4px 18px #00000018!important;
+}
+html body #root#root :is(textarea,[contenteditable=true],input:not([type=range]):not([type=checkbox]):not([type=file]),select){
+ background:var(--ui-field)!important;border-color:var(--ui-border)!important;border-radius:var(--ui-field-radius)!important;color:var(--ui-text)!important;
+}
+html body #root#root :is(button,a,[tabindex]):focus-visible{
+ outline:2px solid #a2aab8!important;outline-offset:3px!important;box-shadow:0 0 0 5px #ffffff07!important;
+}
+html body #root#root button.mopix-icon-action{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ width:var(--ui-action)!important;min-width:var(--ui-action)!important;max-width:var(--ui-action)!important;
+ height:var(--ui-action)!important;min-height:var(--ui-action)!important;max-height:var(--ui-action)!important;
+ padding:8px!important;gap:0!important;flex:0 0 auto!important;
+ font-size:0!important;line-height:0!important;border-radius:8px!important;
+ background:#ffffff03!important;border:1px solid var(--ui-border)!important;color:var(--ui-muted)!important;
+ box-shadow:0 1px 2px #00000020!important;overflow:hidden!important;margin:0!important;
+}
+html body #root#root button.mopix-icon-action :is(span,small,strong){font-size:0!important;line-height:0!important}
+html body #root#root button.mopix-icon-action svg{width:var(--ui-icon)!important;height:var(--ui-icon)!important;min-width:var(--ui-icon)!important;flex-shrink:0!important;color:inherit!important;-webkit-text-fill-color:currentColor!important;opacity:1!important}
+html body #root#root button.mopix-icon-action:hover:not(:disabled){background:var(--ui-hover)!important;color:#f1f3f5!important;border-color:var(--ui-border-hover)!important;transform:translateY(-1px)}
+html body #root#root button.mopix-icon-action:is([aria-pressed=true],.active){background:#ffffff0b!important;color:#f1f3f5!important;border-color:#ffffff30!important;box-shadow:inset 0 1px 0 #ffffff0a!important}
+html body #root#root button.mopix-icon-action:disabled{opacity:.4!important;transform:none!important}
+html body #root#root button.muse-create-action.mopix-icon-action{background:#24292e!important;border-color:#ffffff26!important;color:#e8ecf0!important;margin-left:auto!important}
+html body #root#root button.muse-create-action.mopix-icon-action:hover:not(:disabled){background:#30363d!important;border-color:#ffffff40!important}
+html body #root#root .muse-compose-actions:has(>.mopix-icon-action){display:flex!important;align-items:center!important;justify-content:flex-end!important;padding:12px 16px!important;min-height:62px!important}
+html body #root#root :is(.image-preset-grid,.design-mode-grid){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;grid-auto-rows:64px!important;align-content:start!important;flex:0 0 auto!important;height:auto!important;min-height:0!important}
+html body #root#root :is(.image-preset-grid,.design-mode-grid)>button.mopix-icon-action{width:100%!important;max-width:none!important;height:64px!important;min-height:64px!important;max-height:64px!important}
+html body #root#root :is(.image-preset-grid,.design-mode-grid)>button.mopix-icon-action svg{width:24px!important;height:24px!important}
+html body #root#root .design-mode-grid>button.mopix-icon-action:last-child:nth-child(odd){grid-column:1/-1}
+html body #root#root :is(.image-presets,.mopix-design-tools) .preset-help,html body #root#root .image-presets .native-eyebrow{display:none!important}
+html body #root#root .design-tool-section{margin-bottom:16px!important}
+html body #root#root .design-tool-section h3{font-size:12px!important;margin:0 0 10px!important;color:var(--ui-muted)!important}
+html body #root#root .alara-rail .mopix-home-composer>footer{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;min-height:48px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>button.mopix-icon-action{width:36px!important;min-width:36px!important;max-width:36px!important;padding:8px!important}
+html body #root#root .alara-rail .mopix-home-composer>footer>select{height:36px!important;min-height:36px!important;padding:6px!important;font-size:12px!important;min-width:56px!important;width:56px!important}
+html body #root#root .alara-rail .mopix-home-composer{border-radius:10px!important;background:var(--ui-panel)!important;border-color:var(--ui-border)!important;box-shadow:0 4px 20px #00000018!important}
+html body #root#root .alara-rail .mopix-home-composer textarea{background:transparent!important;border:none!important}
+html body #root#root :is(.muse-ratios,.ratio-picker-balanced){display:flex!important;align-items:center!important;justify-content:space-between!important;gap:4px!important;background:#090a0b!important;border:1px solid var(--ui-border)!important;border-radius:10px!important;padding:6px!important;min-height:54px!important}
+html body #root#root .muse-ratios>button{height:40px!important;min-height:40px!important;flex:1 1 0!important;min-width:0!important;padding:6px 2px!important;border:0!important;border-radius:6px!important;background:transparent!important;transition:background-color .15s,transform .18s!important}
+html body #root#root .muse-ratios>button small{display:none!important}
+html body #root#root .muse-ratios>button:hover:not(:disabled){background:#ffffff08!important;transform:translateY(-2px)}
+html body #root#root .muse-ratios>button[aria-pressed=true]{background:#ffffff10!important}
+html body #root#root .muse-ratio-icon{max-width:24px!important;max-height:24px!important;border-color:#adb5bf!important;border-radius:2px!important}
+html body #root#root .quick-reference-strip{gap:8px!important}
+html body #root#root .quick-reference-strip>button.quick-add-image{background:linear-gradient(145deg,#171a1d,#111315)!important;border:1px dashed #ffffff20!important;border-radius:10px!important;position:relative!important;overflow:hidden!important;opacity:1!important}
+html body #root#root .quick-reference-strip>button.quick-add-image:hover:not(:disabled){background:#1c2024!important;border-color:#ffffff40!important}
+html body #root#root .quick-reference-strip>button.quick-add-image svg{width:24px!important;height:24px!important;color:#a9b1bb!important}
+html body #root#root .quick-reference-strip>button.quick-add-image small{font-size:0!important;line-height:0!important}
+html body #root#root .studio-drop{position:relative!important;isolation:isolate}
+html body #root#root .studio-drop-overlay{position:absolute!important;inset:0!important;z-index:4!important;display:flex!important;align-items:center!important;justify-content:center!important;border:1px dashed #a5b0be!important;border-radius:10px!important;background:#12171cf2!important;backdrop-filter:blur(8px);color:#c7d0db!important;font-size:13px!important;pointer-events:none!important}
+html body #root#root .studio-drop.is-over{box-shadow:0 0 0 3px #ffffff08!important;border-radius:10px!important}
+html body #root#root .upscale-compare-dialog{background:#0c0e10!important;border:1px solid var(--ui-border)!important;border-radius:10px!important;overflow:hidden}
+html body #root#root .upscale-compare-divider{background:#e1e6ec99!important;width:1px!important}
+html body #root#root .upscale-compare-divider>span{width:32px!important;height:42px!important;border-radius:9px!important;background:#13171be8!important;color:#d1d8df!important;border:1px solid #ffffff30!important;box-shadow:0 3px 12px #0008!important;backdrop-filter:blur(12px)}
+html body #root#root .upscale-compare-divider:hover>span,html body #root#root .upscale-compare-divider:focus-visible>span{background:#262d34!important}
+html body #root#root .mopix-split-compare[data-axis=y] .upscale-compare-divider{width:100%!important;height:1px!important}
+html body #root#root .mopix-split-compare[data-axis=y] .upscale-compare-divider>span{width:42px!important;height:32px!important}
+.muse-tooltip{position:fixed!important;z-index:2147483647!important;background:#202327!important;border:1px solid #ffffff1a!important;border-radius:8px!important;box-shadow:0 6px 24px #0006!important;padding:8px 10px!important;max-width:260px!important;pointer-events:none!important;transition:opacity .12s,transform .12s!important}
+.muse-tooltip strong{font-size:12px!important;line-height:18px!important;color:#e2e6eb!important}
+.muse-tooltip span{font-size:11px!important;line-height:16px!important;color:#959da8!important}
+@media(max-height:780px){html body #root#root :is(.image-preset-grid,.design-mode-grid){grid-auto-rows:48px!important;gap:6px!important}html body #root#root :is(.image-preset-grid,.design-mode-grid)>button.mopix-icon-action{height:48px!important;min-height:48px!important;max-height:48px!important}html body #root#root .design-tool-section{margin-bottom:10px!important}}
+@media(prefers-reduced-motion:reduce){html body #root#root *,html body dialog *{transition:none!important;scroll-behavior:auto!important}html body #root#root button.mopix-icon-action:hover,html body #root#root .muse-ratios>button:hover{transform:none!important}}
+.mopix-image-mentions{position:fixed;z-index:2147483646;width:208px;max-height:260px;overflow:auto;padding:6px;background:#181b1f;border:1px solid #ffffff20;border-radius:8px;box-shadow:0 12px 32px #0006;font:400 13px/1.4 var(--mopix-font)}
+.mopix-image-mentions button{display:flex;align-items:center;gap:10px;width:100%;padding:6px;border:0;border-radius:5px;background:none;color:#c4cbd4;text-align:left}
+.mopix-image-mentions button[aria-selected=true]{background:#ffffff0c}
+.mopix-image-mentions img{width:32px;height:32px;object-fit:cover;border-radius:4px}
+html body #root#root .mopix-compare-scrubber{display:flex!important;align-items:center!important;padding:8px 20px!important;height:32px!important;background:#101316!important;flex:0 0 32px!important;border-top:1px solid #ffffff0a!important}
+html body #root#root .mopix-compare-scrubber input{width:100%!important;accent-color:#a8b4c2!important;cursor:ew-resize!important}
+html body .mopix-motion-style-dialog{max-width:960px!important;width:min(960px,94vw)!important;max-height:90vh!important;padding:24px!important;background:#101214!important;border:1px solid #ffffff20!important;border-radius:12px!important;color:#dce2e9!important}
+.mopix-motion-style-dialog::backdrop{background:#000a;backdrop-filter:blur(8px)}
+.mopix-motion-style-dialog header,.mopix-motion-style-dialog footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mopix-motion-style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-height:65vh;overflow:auto;padding:8px 0}
+.mopix-motion-style-grid>button{display:flex;align-items:center;gap:12px;padding:10px;background:#14171a;border:1px solid #ffffff12;border-radius:8px;text-align:left;color:#c8d0da;min-width:0;cursor:pointer;transition:background .15s,border-color .15s}
+.mopix-motion-style-grid>button:hover,.mopix-motion-style-grid>button[aria-pressed=true]{background:#20262b;border-color:#ffffff38}
+.mopix-motion-style-grid img{width:64px;height:64px;object-fit:cover;border-radius:5px;flex-shrink:0}
+.mopix-motion-style-grid span{display:grid;gap:5px;min-width:0}
+.mopix-motion-style-grid strong{font-size:13px}.mopix-motion-style-grid small{font-size:11px;color:#858f9b}
+.mopix-motion-style-picker>button{display:flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px;border:1px solid #ffffff16;border-radius:8px;background:#14181c;color:#a8b2bf}
+@media(max-width:1100px){.mopix-motion-style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mopix-motion-style-grid img{width:48px;height:48px}}
+/* Explicit icon contract outranks the legacy home/button selectors. */
+html body #root#root#root#root button.mopix-icon-action{font-size:0!important;line-height:0!important;width:36px!important;min-width:36px!important;max-width:36px!important;height:36px!important;min-height:36px!important;max-height:36px!important;padding:8px!important;gap:0!important;flex:0 0 auto!important}
+html body #root#root#root#root button.mopix-icon-action>:is(h1,h2,h3,p,small,strong,span:not(:has(svg))){display:none!important}
+html body #root#root#root#root :is(.image-preset-grid,.design-mode-grid)>button.mopix-icon-action{width:100%!important;max-width:none!important;height:64px!important;min-height:64px!important;max-height:64px!important}
+html body #root#root#root#root .muse-home-actions>button.mopix-icon-action{width:100%!important;max-width:none!important}
+html body #root#root#root#root .mopix-home-composer textarea{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html body #root#root#root#root .alara-rail .mopix-home-composer>footer>select{min-width:64px!important;width:64px!important}
+@media(max-height:780px){html body #root#root#root#root :is(.image-preset-grid,.design-mode-grid)>button.mopix-icon-action{height:48px!important;min-height:48px!important;max-height:48px!important}}

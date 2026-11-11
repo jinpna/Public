@@ -4,12 +4,12 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 
 ## Giao diện hiện tại
 
-- Dark mode thống nhất; Inter Tight Regular 400 lưu trực tiếp trong app.
+- Dark mode thống nhất; Alpha Lyrae Medium lưu trong app; Inter Tight dự phòng cho dấu tiếng Việt còn thiếu. Tắt contextual alternates trong thao tác để không tự biến chữ thành pixel.
 - Trang chủ tạo nhanh ảnh/video, ảnh demo và hiệu ứng chuyển cảnh.
 - Tiêu đề sáng tạo cố định, không đổi liên tục; 9 ảnh demo, có ghi nguồn trong `assets/carousel/sources.json`.
 - Tạo ảnh/video và trợ lý MUSE yêu cầu tài khoản bật và đã đăng nhập; máy chủ cũng kiểm tra phiên. Upscale 4K dùng độc lập.
 - Preview của từng tab bắt đầu trống; chỉ hiện tác vụ vừa tạo hoặc kết quả người dùng chọn. Lịch sử Upscale tách khỏi các tab tạo.
-- Bốn tab dùng chung kích thước cột, ô ảnh, prompt và thanh Tạo; lựa chọn thư mục lưu đồng bộ qua cài đặt.
+- Bốn tab dùng chung kích thước cột, ô ảnh, prompt và thanh Tạo; thư mục lưu chỉ xuất hiện trong Cài đặt.
 - Tạo ảnh có 10 nút cố định ở bên phải, cấu hình khung hình, ánh sáng, bố cục và vai trò ảnh. Bấm lại nút đã chọn để tinh chỉnh.
 - Chỉnh ảnh có xóa watermark/logo; bấm lại để khoanh vùng cần xử lý.
 - Tab Prompt nâng cao cho ảnh/video: prompt và JSON, vai trò tham chiếu, timeline, kiểm tra xung đột, sao chép và chuyển sang tab tạo. MUSE chỉ được gọi khi bấm tối ưu; bộ biên soạn cấu trúc dùng được ngoại tuyến.
@@ -17,12 +17,15 @@ Bản giao diện desktop đang sử dụng, chốt ngày 11/11/2026. Repo này 
 - Shape 3D: canvas WebGL từ MOPIX Studio, hình mẫu và nhập SVG/ảnh/GLB/OBJ, chỉnh hình khối/vật liệu/ánh sáng, xuất PNG/GLB hoặc dùng làm ảnh tham chiếu. Tạo ảnh hoàn thiện qua MUSE vẫn yêu cầu đăng nhập.
 - Video có ghép 2–8 clip, cắt đoạn, đổi thứ tự, giữ âm thanh, cắt thẳng/hòa tan và lưu vào thư viện; tối đa 5 phút.
 - Storyboard tối đa 8 cảnh, dùng hướng sáng tạo và ảnh chung, tạo ảnh từng cảnh rồi video từ keyframe; chuyển các clip hoàn tất sang ghép.
-- AI gợi ý trong các ô prompt chính: xem, sửa và áp dụng đề xuất; nút Thêm ảnh có nhãn rõ ràng.
+- AI gợi ý trong các ô prompt chính: xem, sửa và áp dụng đề xuất; thao tác icon có tên truy cập và tooltip.
 - Chỉnh ảnh, thiết kế concept, video, Upscale 4K và thư viện.
 - Nút Tạo nền tối, viền sáng chuyển động; preview/loading gọn.
 - So sánh ảnh bằng thanh kéo trái/phải hoặc trên/dưới, dùng chung cho preview tạo/chỉnh ảnh và Upscale 4K; có phím mũi tên, Home/End.
 - Preview 4K zoom theo con trỏ bằng transform, kéo để di chuyển, thao tác icon và xóa từng mục gần đây. Xóa gần đây giữ nguyên ảnh trong thư viện.
 - Trạng thái chờ dùng lưới chấm chuyển động với câu chữ luân phiên; tôn trọng chế độ giảm chuyển động.
+- Tham chiếu ảnh theo thứ tự @image1…@image5; menu @ có ảnh nhỏ, giữ mã tài nguyên thật khi gửi API.
+- 12 phong cách Motion: poster Miushare / Bang Motion, công thức prompt và camera do MOPIX biên soạn lại. 5s = một cảnh; 10s = hai cảnh liên tục, mỗi cảnh 5s. Không nhúng trình chạy GSAP, không cam kết đầu ra 60fps.
+- Loader kho 50 motion đã sẵn sàng, dữ liệu đang rỗng để chờ file thật từ người dùng.
 - Đã bỏ giao diện Làm phim và phần cài đặt proxy.
 
 ## Cấu trúc để sửa tiếp

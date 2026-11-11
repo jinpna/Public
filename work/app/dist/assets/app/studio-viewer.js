@@ -1,7 +1,7 @@
 import {createLiquidLoader} from './studio-liquid-loader.js?v=6';
 import {createPanZoom} from './studio-panzoom.js?v=2';
-import {createUpscaleCompare} from './studio-upscale-compare.js?v=7';
-import {studioAPI as api,assetURL} from './studio-assets.js?v=6';
+import {createUpscaleCompare} from './studio-upscale-compare.js?v=8';
+import {studioAPI as api,assetURL} from './studio-assets.js?v=7';
 import {createStudioIcon} from './studio-icons.js?v=24';
 export function createMediaViewer(React){const{createElement:h,useState:S,useEffect:E,useRef:R}=React,Icon=createStudioIcon(React),Comparison=createUpscaleCompare(React),LiquidLoader=createLiquidLoader(React),PanZoom=createPanZoom(React);
 return function MediaViewer({media,job,sourceGuide=null,sourceOriginal=null,jobs=[],onSelect,onReuse,processing=false,active=[],onCancel,onNavigate,Recovery,onToggleTools,onUseInput,toolsVisible=true}){
