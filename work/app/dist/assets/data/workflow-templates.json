@@ -801,12 +801,13 @@
      "kind": "image",
      "x": 40,
      "y": 370,
-     "title": "Bảng nhân vật · Sara",
+     "title": "Nhân vật Sara · 1365 × 768",
      "prompt": "Character sheet for Sara: female inline-skating courier, dark practical outfit, helmet, confident expression. Front, side and full-body views, same face and outfit in every view. Upload your own sheet here.",
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/parkour-char-sheet.png"
     },
     {
      "id": "pk-img-02",
@@ -837,12 +838,13 @@
      "kind": "image",
      "x": 40,
      "y": 1240,
-     "title": "Ảnh 3",
+     "title": "Định hướng · Poster Parkour",
      "prompt": "Street-level reference photo for the chase route. Upload your own image here.",
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/parkour-poster.png"
     },
     {
      "id": "pk-img-05",
@@ -861,12 +863,13 @@
      "kind": "image",
      "x": 40,
      "y": 1820,
-     "title": "New York 8 làn",
+     "title": "New York · Bảng 4 cảnh",
      "prompt": "Downtown New York, an 8-lane avenue, taxis and glass towers, daytime. Upload your own image here.",
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/parkour-storyboard-ny.png"
     },
     {
      "id": "pk-img-07",
@@ -897,12 +900,13 @@
      "kind": "image",
      "x": 40,
      "y": 2690,
-     "title": "Quảng trường + đài phun",
+     "title": "Quảng trường · Bảng cảnh",
      "prompt": "A city plaza with a fountain, people walking, open sky. Upload your own image here.",
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/parkour-storyboard-plaza.png"
     },
     {
      "id": "pk-img-10",
@@ -1190,7 +1194,46 @@
      "from": "pk-img-10",
      "to": "pk-vid-06"
     }
-   ]
+   ],
+   "demo": {
+    "version": 1,
+    "provider": "user-supplied",
+    "source": "NewTake reference images supplied by the user",
+    "assets": [
+     {
+      "nodeId": "pk-img-01",
+      "url": "/assets/data/demo-refs/parkour-char-sheet.png",
+      "sha256": "ed2ce339f97a2dc8ff6c70fd040c6451c21b83f48450116756236139213b802c",
+      "mime": "image/png",
+      "width": 1365,
+      "height": 768
+     },
+     {
+      "nodeId": "pk-img-04",
+      "url": "/assets/data/demo-refs/parkour-poster.png",
+      "sha256": "f448020cff46a80c77bf7043bc5332de033628186c49450a3d2ea1b0c51d6e54",
+      "mime": "image/png",
+      "width": 1672,
+      "height": 941
+     },
+     {
+      "nodeId": "pk-img-06",
+      "url": "/assets/data/demo-refs/parkour-storyboard-ny.png",
+      "sha256": "e413ca8ba6c4d0f113d97651bf4fafb297efaa3cff44bf857839363767e01a03",
+      "mime": "image/png",
+      "width": 2048,
+      "height": 1024
+     },
+     {
+      "nodeId": "pk-img-09",
+      "url": "/assets/data/demo-refs/parkour-storyboard-plaza.png",
+      "sha256": "b17e41fbf2e5ea593641a58626d79fac109a4b5f209fdfdb6b9ff8e6420b72f6",
+      "mime": "image/png",
+      "width": 2048,
+      "height": 1024
+     }
+    ]
+   }
   },
   {
    "id": "tpl-rin-jin",
@@ -1990,7 +2033,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-char-sheet.png"
     },
     {
      "id": "mv-face",
@@ -2002,7 +2046,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-face-sheet.png"
     },
     {
      "id": "mv-scene-01",
@@ -2014,7 +2059,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-scene1.png"
     },
     {
      "id": "mv-scene-02",
@@ -2026,7 +2072,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-scene2.png"
     },
     {
      "id": "mv-scene-03",
@@ -2038,7 +2085,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-scene3.png"
     },
     {
      "id": "mv-scene-04",
@@ -2050,7 +2098,8 @@
      "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/snapback-scene4.png"
     },
     {
      "id": "mv-seg-01",
@@ -2480,7 +2529,62 @@
      "from": "mv-scene-04",
      "to": "mv-seg-12"
     }
-   ]
+   ],
+   "demo": {
+    "version": 1,
+    "provider": "user-supplied",
+    "source": "NewTake reference images supplied by the user",
+    "assets": [
+     {
+      "nodeId": "mv-char",
+      "url": "/assets/data/demo-refs/snapback-char-sheet.png",
+      "sha256": "343bf598e0e0120c6b57188d07ee45efba686166b18265ee5eae87047de6beb2",
+      "mime": "image/png",
+      "width": 1536,
+      "height": 1024
+     },
+     {
+      "nodeId": "mv-face",
+      "url": "/assets/data/demo-refs/snapback-face-sheet.png",
+      "sha256": "81c0dbbf9c844005bce68960bf7d5c4d094aaab93cd54b3a7197e587e9b08dd6",
+      "mime": "image/png",
+      "width": 1536,
+      "height": 1024
+     },
+     {
+      "nodeId": "mv-scene-01",
+      "url": "/assets/data/demo-refs/snapback-scene1.png",
+      "sha256": "c8e9171258cce095937cabe844c5250226106f3b41e77c69bb6ea62bc19befc6",
+      "mime": "image/png",
+      "width": 1456,
+      "height": 816
+     },
+     {
+      "nodeId": "mv-scene-02",
+      "url": "/assets/data/demo-refs/snapback-scene2.png",
+      "sha256": "772587a5d045eba119fb1ba86eb4c52de66f1ed7b611b0a889e0367b59f997b3",
+      "mime": "image/png",
+      "width": 1456,
+      "height": 816
+     },
+     {
+      "nodeId": "mv-scene-03",
+      "url": "/assets/data/demo-refs/snapback-scene3.png",
+      "sha256": "35c7c62a60ade41a35f552ef0a3cecae2e847b27c1cd2bd1bc9b20924e40f1ea",
+      "mime": "image/png",
+      "width": 1456,
+      "height": 816
+     },
+     {
+      "nodeId": "mv-scene-04",
+      "url": "/assets/data/demo-refs/snapback-scene4.png",
+      "sha256": "7aa3f3ef56263c984bfdc166be7b8b830a36af83268ca8983279ac5ded391155",
+      "mime": "image/png",
+      "width": 1456,
+      "height": 816
+     }
+    ]
+   }
   },
   {
    "id": "tpl-wanyang-selfie",
@@ -2511,10 +2615,11 @@
      "y": 370,
      "title": "Bảng nhân vật · Mèo Wanyang",
      "prompt": "Character sheet for Wanyang the white Persian cat: 4 angles, close-up details and color palette. Upload your own sheet here.",
-     "ratio": "9:16",
+     "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/wanyang-char-cat.png"
     },
     {
      "id": "wy-img-02",
@@ -2523,10 +2628,11 @@
      "y": 660,
      "title": "Nam chính · Hanbok",
      "prompt": "The male lead in Joseon hanbok and gat hat: front and full-body views. Upload your own image here.",
-     "ratio": "9:16",
+     "ratio": "16:9",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/wanyang-char-man-hanbok.png"
     },
     {
      "id": "wy-img-03",
@@ -2535,10 +2641,11 @@
      "y": 950,
      "title": "Ba lô mèo",
      "prompt": "A hanbok-style cat backpack with a round window and tassels. Upload your own image here.",
-     "ratio": "9:16",
+     "ratio": "1:1",
      "duration": 5,
      "style": "",
-     "preset": ""
+     "preset": "",
+     "demoImage": "/assets/data/demo-refs/wanyang-cat-backpack.png"
     },
     {
      "id": "wy-vid-01",
@@ -2663,7 +2770,38 @@
      "from": "wy-vid-02",
      "to": "wy-vid-03"
     }
-   ]
+   ],
+   "demo": {
+    "version": 1,
+    "provider": "user-supplied",
+    "source": "NewTake reference images supplied by the user",
+    "assets": [
+     {
+      "nodeId": "wy-img-01",
+      "url": "/assets/data/demo-refs/wanyang-char-cat.png",
+      "sha256": "4ed2dce8a271bbfd283f99c817bb9063c87d2e345c920a508e30ad4b30aa6423",
+      "mime": "image/png",
+      "width": 1536,
+      "height": 909
+     },
+     {
+      "nodeId": "wy-img-02",
+      "url": "/assets/data/demo-refs/wanyang-char-man-hanbok.png",
+      "sha256": "2ac912d5e0eeefbee3cd080e08af23202dd280245fda6280a12554ab23fbdfad",
+      "mime": "image/png",
+      "width": 1668,
+      "height": 943
+     },
+     {
+      "nodeId": "wy-img-03",
+      "url": "/assets/data/demo-refs/wanyang-cat-backpack.png",
+      "sha256": "1c635b9f7f81f41ac0104d68e4715a6f8eb2997bf3db6205785fed328e33d77a",
+      "mime": "image/png",
+      "width": 1402,
+      "height": 1122
+     }
+    ]
+   }
   }
  ]
 }
